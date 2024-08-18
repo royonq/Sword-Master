@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public Vector2 movementDirection;
     public Rigidbody2D rb;

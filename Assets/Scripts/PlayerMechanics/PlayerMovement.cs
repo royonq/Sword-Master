@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public Vector2 movementDirection;
     public Rigidbody2D rb;
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
 
     public void MovePlayer()
     {
-        rb.velocity = movementSpeed * Time.deltaTime * movementDirection;
+        rb.velocity = movementSpeed * movementDirection;
     }
 }
 

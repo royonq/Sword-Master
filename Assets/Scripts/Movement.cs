@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
 
     public void MovePlayer()
     {
-        rb.velocity = movementSpeed * Time.deltaTime * movementDirection;
+        rb.velocity = movementSpeed * movementDirection;
     }
 }
 

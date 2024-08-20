@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pursuit : MonoBehaviour
+public class FollowTarget : MonoBehaviour
 {
     public Transform target;
     public Rigidbody2D rb;
@@ -11,11 +11,11 @@ public class Pursuit : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Following();
+        Follow();
     }
-    public void Following()
+    public void Follow()
     {
         Vector2 direction = target.position - transform.position;
-        rb.velocity = speed *  direction;
+        rb.velocity = speed * direction;
     }
 }

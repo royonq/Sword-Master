@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 868551400}
   rb: {fileID: 0}
-  speed: 50
+  speed: 5
 --- !u!50 &857548881
 Rigidbody2D:
   serializedVersion: 4

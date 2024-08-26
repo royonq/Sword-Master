@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    public Transform Traget;
-    public Rigidbody2D rb;
-    public float speed;
+    [SerializeField] private Transform Traget;
+    private Rigidbody2D rb;
+    [SerializeField] private float speed;
 
     private void Start()
     {

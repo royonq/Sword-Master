@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Vector2 movementDirection;
-    public Rigidbody2D rb;
-    public float movementSpeed;
+    private Vector2 movementDirection;
+    private Rigidbody2D rb;
+    [SerializeField] private float movementSpeed;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

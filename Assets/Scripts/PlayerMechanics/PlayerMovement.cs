@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementDirection;
     private Rigidbody2D rb;
     [SerializeField] private float movementSpeed;
+    private int moneyCount;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +24,16 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer()
     {
         rb.velocity = movementSpeed * movementDirection;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("MONEY"))
+        {
+            moneyCount += Coin.coinCost;
+            Destroy(collision.gameObject);
+            Debug.Log(moneyCount);
+        }
     }
 }
 

@@ -6,7 +6,7 @@ public class PlayerWallet : MonoBehaviour
     private Coin _coin;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("MONEY"))
+        if (collision.CompareTag("Money"))
         {
             _coin = collision.GetComponent<Coin>();
             MoneyPickUp(_coin.Cost);

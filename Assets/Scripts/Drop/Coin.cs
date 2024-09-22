@@ -1,4 +1,7 @@
-public class Coin
+using UnityEngine;
+
+public class Coin : MonoBehaviour
 {
-    public const int coinCost = 10;
+    [SerializeField] private int _cost;
+    public int Cost { get { return _cost; } }
 }

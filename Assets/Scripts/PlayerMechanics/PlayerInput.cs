@@ -8,10 +8,7 @@ public class PlayerInput : MonoBehaviour
     }
     private void Update()
     {
-        _playerMovement.Movement();
-    }
-    private void FixedUpdate()
-    {
-        _playerMovement.MovePlayer();
+        Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _playerMovement.MoveDirection = movementDirection;
     }
 }

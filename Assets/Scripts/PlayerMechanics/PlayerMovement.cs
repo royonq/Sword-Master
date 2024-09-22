@@ -2,25 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector2 movementDirection;
     private Rigidbody2D rb;
     [SerializeField] private float movementSpeed;
+    private Vector2 movementDirection;
+    public Vector2 MoveDirection { set { movementDirection = value; } }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    private void Update()
-    {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-    }
-
     private void FixedUpdate()
     {
         MovePlayer();
     }
-
-    public void MovePlayer()
+    private void MovePlayer()
     {
         rb.velocity = movementSpeed * movementDirection;
     }

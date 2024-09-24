@@ -1,6 +1,7 @@
 using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private PausePanel _pausePannel;
     private PlayerMovement _playerMovement;
     private void Start()
     {
@@ -10,5 +11,10 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         _playerMovement.MoveDirection = movementDirection;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _pausePannel.SetPanelActive();
+        }
     }
 }

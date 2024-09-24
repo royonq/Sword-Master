@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PausePannel : MonoBehaviour
 {
+    [SerializeField] private PauseController _pauseController;
     private void OnEnable()
     {
-        Time.timeScale = 0;
+        _pauseController.Pause();
     }
     private void OnDisable()
     {
-        Time.timeScale = 1;
+        _pauseController.Unpause();
     }
 }

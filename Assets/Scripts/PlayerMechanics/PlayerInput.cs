@@ -2,11 +2,11 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement _playerMovement;
-    private PlayerPause _playerPause;
+    private PauseController _pauseController;
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-        _playerPause = GetComponent<PlayerPause>();
+        _pauseController = GetComponent<PauseController>();
     }
     private void Update()
     {
@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            _playerPause.Pause();
+            _pauseController.SwichPause();
         }
     }
 }

@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class ReferencePoint : MonoBehaviour
 {
-    public  void FixByPlayer(Vector3 playerPosition)
+    [SerializeField] private Transform _playerPosition;
+    private void Update()
     {
-        transform.position = playerPosition;
+        FixByPlayer();
+    }
+    public void FixByPlayer()
+    {
+        if (_playerPosition == null)
+        {
+            return;
+        }
+        transform.position = _playerPosition.position;
     }
 }

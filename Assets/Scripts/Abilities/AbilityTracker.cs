@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReferencePoint : MonoBehaviour
+public class AbilityTracker : MonoBehaviour
 {
     [SerializeField] private Transform _playerPosition;
     private void Update()

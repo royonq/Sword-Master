@@ -3,10 +3,14 @@ using UnityEngine;
 public class SatelliteSword : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed;
-    private Rigidbody _rb;
-    private Vector2 _swordMoveDirection;
-    private void Start()
+
+    private void FixedUpdate()
     {
-        _rb = GetComponent<Rigidbody>();
+        RotateAroundPlayer();
+    }
+
+    private void RotateAroundPlayer()
+    {
+        transform.Rotate(Vector3.forward * _rotationSpeed * Time.fixedDeltaTime);
     }
 }

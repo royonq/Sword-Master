@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AbilityTracker : MonoBehaviour
+public class PlayerPositionTracker : MonoBehaviour
 {
     [SerializeField] private Transform _playerPosition;
     private void Update()
@@ -9,10 +9,6 @@ public class AbilityTracker : MonoBehaviour
     }
     public void FixByPlayer()
     {
-        if (_playerPosition == null)
-        {
-            return;
-        }
         transform.position = _playerPosition.position;
     }
 }

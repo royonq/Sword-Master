@@ -3,13 +3,12 @@ using UnityEngine;
 public class FollowTarget : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] private SpawnEnemies _spawnEnemies;
+    public Transform Target { set { _target = value; } }
     private Rigidbody2D _rb;
     [SerializeField] private float _speed;
 
     private void Start()
     {
-        _target = _spawnEnemies.PlayerPosition;
         _rb = GetComponent<Rigidbody2D>();
     }
 

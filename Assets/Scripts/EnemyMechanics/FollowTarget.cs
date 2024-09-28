@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    [SerializeField] private Transform Traget;
-    private Rigidbody2D rb;
-    [SerializeField] private float speed;
+    [SerializeField] private Transform _target;
+    private Rigidbody2D _rb;
+    [SerializeField] private float _speed;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -18,7 +18,11 @@ public class FollowTarget : MonoBehaviour
 
     public void Follow()
     {
-        Vector2 direction = Traget.position - transform.position;
-        rb.velocity = speed * direction;
+        if (_target == null)
+        {
+            return;
+        }
+        Vector2 direction = _target.position - transform.position;
+        _rb.velocity = _speed * direction;
     }
 }

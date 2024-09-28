@@ -5,9 +5,9 @@ public class PlayerPositionTracker : MonoBehaviour
     [SerializeField] private Transform _playerPosition;
     private void Update()
     {
-        FixByPlayer();
+        TrackPlayer();
     }
-    public void FixByPlayer()
+    public void TrackPlayer()
     {
         transform.position = _playerPosition.position;
     }

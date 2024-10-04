@@ -7,7 +7,7 @@ public class Sword : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            var enemyhealth = collision.GetComponent<EnemyHealth>();
+            var enemyhealth = collision.GetComponent<Health>();
             enemyhealth.TakeDamage(_damage);
         }
     }

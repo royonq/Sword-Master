@@ -3,11 +3,11 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private PausePanel _pausePannel;
     private PlayerMovement _playerMovement;
-    private UseAbitities _useAbitities;
+    private UseSatilateSword _useAbitities;
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-        _useAbitities = GetComponent<UseAbitities>();
+        _useAbitities = GetComponent<UseSatilateSword>();
     }
     private void Update()
     {

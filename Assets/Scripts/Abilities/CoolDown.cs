@@ -13,7 +13,11 @@ public class CoolDown : MonoBehaviour
     {
         _abilityImage.fillAmount = 0;
     }
-    public IEnumerator Cooldown()
+    public void StartCooldown()
+    {
+        StartCoroutine(Cooldown());
+    }
+    private IEnumerator Cooldown()
     {
         _iscooldown = true;
         _abilityImage.fillAmount = 1; 

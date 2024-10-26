@@ -9,8 +9,7 @@ public class UseSatilateSword : MonoBehaviour
     {
         if (!_cooldown.IsCooldown)
         {
-            StopAllCoroutines();
-            StartCoroutine(_cooldown.Cooldown());
+            _cooldown.StartCooldown();
             Instantiate(_sword, _playerTracker.position, _playerTracker.rotation, _playerTracker);
         }    
     }

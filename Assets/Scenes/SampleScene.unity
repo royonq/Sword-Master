@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160a2ce3f437adf41a634e574d292126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeCooldown: 3
+  _timeCooldown: 5
   _abilityImage: {fileID: 665518176}
 --- !u!1 &2100311800
 GameObject:

@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class SatelliteSword : MonoBehaviour
 {
-    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private AbilitySateliteSword _abilitySateliteSword;
+     private float _rotationSpeed;
 
     private void FixedUpdate()
     {
+        _rotationSpeed = _abilitySateliteSword.RotationSpeed;
         RotateAroundPlayer();
     }
 

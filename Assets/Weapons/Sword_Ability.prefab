@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf81c2345f7c2354483aa0ba3f645f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 15
+  _abilitySateliteSword: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
 --- !u!1 &2756192474105323788
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,4 +194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82c459ab312fde4382bb6991fe67ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
+  _abilitySateliteSword: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}

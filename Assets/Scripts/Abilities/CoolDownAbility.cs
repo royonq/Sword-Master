@@ -4,14 +4,22 @@ using UnityEngine.UI;
 
 public class CoolDownAbility : MonoBehaviour
 {
-
-    [SerializeField] private float _timeAbilityCooldown;
-    [SerializeField] private Image _abilityImage;
+    [SerializeField] private AbilitySateliteSword _abilitySateliteSword;
+    private float _timeAbilityCooldown;
+    private Image _abilityColdownImage;
     private bool _isAbilityCooldown;
     public bool IsAbilityCooldown { get { return _isAbilityCooldown; } }
     private void Start()
     {
-        _abilityImage.fillAmount = 0;
+        _timeAbilityCooldown = _abilitySateliteSword.TimeCooldown;
+
+        _abilityColdownImage = GetComponentsInChildren<Image>()[1];
+        _abilityColdownImage.sprite = _abilitySateliteSword.AbilityCooldownIcon;
+
+        Image abilityImage = GetComponent<Image>();
+        abilityImage.sprite = _abilitySateliteSword.AbilityIcon;
+
+        _abilityColdownImage.fillAmount = 0;
     }
     public void StartCooldown()
     {
@@ -20,15 +28,15 @@ public class CoolDownAbility : MonoBehaviour
     private IEnumerator Cooldown()
     {
         _isAbilityCooldown = true;
-        _abilityImage.fillAmount = 1; 
+        _abilityColdownImage.fillAmount = 1; 
 
-        while (_abilityImage.fillAmount > 0)
+        while (_abilityColdownImage.fillAmount > 0)
         {
-            _abilityImage.fillAmount -= 1 / _timeAbilityCooldown * Time.deltaTime; 
+            _abilityColdownImage.fillAmount -= 1 / _timeAbilityCooldown * Time.deltaTime; 
             yield return null; 
         }
 
-        _abilityImage.fillAmount = 0; 
+        _abilityColdownImage.fillAmount = 0; 
         _isAbilityCooldown = false; 
     }
 }

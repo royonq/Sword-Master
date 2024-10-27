@@ -24,6 +24,6 @@ public class FollowTarget : MonoBehaviour
             return;
         }
         Vector2 direction = _target.position - transform.position;
-        _rb.velocity = _speed * direction;
+        _rb.velocity = _speed * direction.normalized;
     }
 }

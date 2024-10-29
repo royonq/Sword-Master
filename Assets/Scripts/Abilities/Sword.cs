@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    [SerializeField] private AbilitySateliteSword _abilitySateliteSword;
+    private SwordAbilityManager _swordAbilityManager;
     private float _damage;
     private void Start()
     {
-        _damage = _abilitySateliteSword.Damage;
+        _swordAbilityManager = GetComponentInParent<SwordAbilityManager>();
+        _damage = _swordAbilityManager.Damage;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

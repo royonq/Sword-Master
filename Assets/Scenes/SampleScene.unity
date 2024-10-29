@@ -1015,7 +1015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _abilitySateliteSword: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
-  _abilityColdownImage: {fileID: 0}
 --- !u!1 &1617316991
 GameObject:
   m_ObjectHideFlags: 0

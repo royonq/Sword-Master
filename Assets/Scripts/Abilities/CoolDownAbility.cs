@@ -7,17 +7,17 @@ public class CoolDownAbility : MonoBehaviour
     [SerializeField] private AbilitySateliteSword _abilitySateliteSword;
     private float _timeAbilityCooldown;
     private Image _abilityColdownImage;
+    private Image _abilityImage;
     private bool _isAbilityCooldown;
     public bool IsAbilityCooldown { get { return _isAbilityCooldown; } }
     private void Start()
     {
         _timeAbilityCooldown = _abilitySateliteSword.TimeCooldown;
 
+        _abilityImage = GetComponent<Image>();
         _abilityColdownImage = GetComponentsInChildren<Image>()[1];
-        _abilityColdownImage.sprite = _abilitySateliteSword.AbilityCooldownIcon;
 
-        Image abilityImage = GetComponent<Image>();
-        abilityImage.sprite = _abilitySateliteSword.AbilityIcon;
+        _abilityImage.sprite = _abilitySateliteSword.AbilityIcon;
 
         _abilityColdownImage.fillAmount = 0;
     }

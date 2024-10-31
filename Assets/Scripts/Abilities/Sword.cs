@@ -9,6 +9,7 @@ public class Sword : MonoBehaviour
         _swordAbilityManager = GetComponentInParent<SwordAbilityManager>();
         _damage = _swordAbilityManager.Damage;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))

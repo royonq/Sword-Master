@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: SatilateSword
   m_EditorClassIdentifier: 
   _damage: 15
-  _rotationSpeed: 100
+  _rotationSpeed: 280
   _timeCooldown: 2
   _abilityIcon: {fileID: -7305847012044084315, guid: cb35e57c1d4253c49959825ee915b90b, type: 3}
-  _abilityCooldownIcon: {fileID: 7482667652216324306, guid: 59392d01de4c3a146ab969aede1917d3, type: 3}

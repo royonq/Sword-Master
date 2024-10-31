@@ -1,4 +1,5 @@
 using UnityEngine;
+
 [CreateAssetMenu(fileName = "SatilateSword",menuName = "Abilities")]
 public class AbilitySateliteSword : ScriptableObject
 {

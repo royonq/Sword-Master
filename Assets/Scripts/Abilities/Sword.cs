@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private SwordAbilityManager _swordAbilityManager;
     private float _damage;
-    private void Start()
-    {
-        _swordAbilityManager = GetComponentInParent<SwordAbilityManager>();
-        _damage = _swordAbilityManager.Damage;
-    }
+    public float Damage { set { _damage = value; } }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,4 +14,5 @@ public class Sword : MonoBehaviour
             enemyhealth.TakeDamage(_damage);
         }
     }
+
 }

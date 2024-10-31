@@ -172,7 +172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2243342923232474894}
   - component: {fileID: 1988438371465418127}
-  - component: {fileID: 2631776919762952589}
   m_Layer: 0
   m_Name: Sword_Ability
   m_TagString: Untagged
@@ -208,16 +207,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82c459ab312fde4382bb6991fe67ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2631776919762952589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756192474105323788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d885cb3ff9e5a4499097d4a5ec47a3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _abilitySateliteSword: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
+  _sword: {fileID: 8683786256584869806}

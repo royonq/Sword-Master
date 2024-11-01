@@ -2,12 +2,13 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private PausePanel _pausePannel;
+    [SerializeField] private PlayerStats _playerStats;
     private PlayerMovement _playerMovement;
     private UseSatilateSword _useAbitities;
+    private Health _health;
     private void Start()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
-        _useAbitities = GetComponent<UseSatilateSword>();
+        SetPlayerStats();
     }
     private void Update()
     {
@@ -22,5 +23,15 @@ public class PlayerInput : MonoBehaviour
         {
             _useAbitities.InstantiateSword();
         }
+    }
+    private void SetPlayerStats()
+    {
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement.MovementSpeed = _playerStats.Speed;
+
+        _health = GetComponent<Health>();
+        _health.CurrentHealth = _playerStats.Health;
+
+        _useAbitities = GetComponent<UseSatilateSword>();
     }
 }

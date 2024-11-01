@@ -4,31 +4,37 @@ using UnityEngine.UI;
 
 public class CoolDownAbility : MonoBehaviour
 {
-
-    [SerializeField] private float _timeAbilityCooldown;
-    [SerializeField] private Image _abilityImage;
+    [SerializeField] private Image _abilityColdownImage;
+    private Image _abilityImage;
     private bool _isAbilityCooldown;
     public bool IsAbilityCooldown { get { return _isAbilityCooldown; } }
     private void Start()
     {
-        _abilityImage.fillAmount = 0;
+        _abilityColdownImage.fillAmount = 0;
     }
-    public void StartCooldown()
+    public void SetAbilityImage(Sprite abilityIcon)
     {
-        StartCoroutine(Cooldown());
+        _abilityImage = GetComponent<Image>();
+        _abilityImage.sprite = abilityIcon;
     }
-    private IEnumerator Cooldown()
+
+    public void StartCooldown(float cooldown)
+    {
+        StartCoroutine(Cooldown(cooldown));
+    }
+
+    private IEnumerator Cooldown(float cooldown)
     {
         _isAbilityCooldown = true;
-        _abilityImage.fillAmount = 1; 
+        _abilityColdownImage.fillAmount = 1; 
 
-        while (_abilityImage.fillAmount > 0)
+        while (_abilityColdownImage.fillAmount > 0)
         {
-            _abilityImage.fillAmount -= 1 / _timeAbilityCooldown * Time.deltaTime; 
+            _abilityColdownImage.fillAmount -= 1 / cooldown * Time.deltaTime; 
             yield return null; 
         }
 
-        _abilityImage.fillAmount = 0; 
+        _abilityColdownImage.fillAmount = 0; 
         _isAbilityCooldown = false; 
     }
 }

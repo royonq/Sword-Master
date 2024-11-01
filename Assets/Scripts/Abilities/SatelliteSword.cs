@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SatelliteSword : MonoBehaviour
 {
-    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private Sword _sword;
+    private float _rotationSpeed;
 
     private void FixedUpdate()
     {
@@ -11,6 +12,12 @@ public class SatelliteSword : MonoBehaviour
 
     private void RotateAroundPlayer()
     {
-        transform.Rotate(Vector3.forward * _rotationSpeed * Time.fixedDeltaTime);
+        transform.Rotate(_rotationSpeed * Time.fixedDeltaTime * Vector3.forward);
+    }
+
+    public void SetSwordStats(float damage, float rotationSpeed)
+    {
+        _rotationSpeed = rotationSpeed;
+        _sword.Damage = damage;
     }
 }

@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    [SerializeField] private float _damage;
+    private float _damage;
+    public float Damage { set { _damage = value; } }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -11,4 +14,5 @@ public class Sword : MonoBehaviour
             enemyhealth.TakeDamage(_damage);
         }
     }
+
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 000140d9e97b3c54b8a1e72e3bf5197e
+guid: 7342c2b33d9b594448d0324124cc889e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5707046193352654740
-    second: flySword_0
+      213: 8866859031774075253
+    second: Taoist_0_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flySword_0
+      name: Taoist_0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 225
-        height: 225
+        width: 156
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c60487079bf7cc0b0800000000000000
-      internalID: -5707046193352654740
+      spriteID: 5799b5e8f496d0b70800000000000000
+      internalID: 8866859031774075253
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      flySword_0: -5707046193352654740
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

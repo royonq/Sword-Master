@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Taoist_0_0: 8866859031774075253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

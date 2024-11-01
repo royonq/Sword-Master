@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float _health;
+    private float _health;
+    public float CurrentHealth { set { _health = value; } }
     public void TakeDamage(float recivedDamage)
     {
         _health -= recivedDamage;

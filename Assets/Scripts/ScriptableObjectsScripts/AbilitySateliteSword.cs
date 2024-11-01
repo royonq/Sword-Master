@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SatilateSword",menuName = "Abilities")]
+[CreateAssetMenu(fileName = "NewAbility",menuName = "Abilities")]
 public class AbilitySateliteSword : ScriptableObject
 {
     [SerializeField] private float _damage;

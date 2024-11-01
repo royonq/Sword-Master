@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    private Transform _target;
     public Transform Target { set { _target = value; } }
     private Rigidbody2D _rb;
     [SerializeField] private float _speed;
+    public float Speed { set { _speed = value; } }
 
     private void Start()
     {

@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class Enemy : Mob
 {
-    private Vector2 _direction;
-
+    private float _expirience;
     public void FindPlayer()
     {
 
     }
 
     public void Follow()
+    {
+
+    }
+
+    public void DropXP()
     {
 
     }

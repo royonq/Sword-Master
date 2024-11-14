@@ -7,7 +7,6 @@ public class Mob : MonoBehaviour
     private float _speed;
     private float _damage;
     private float _damageRate;
-    private float _expirience;
     private Vector2 _direction;
 
     public void Move()

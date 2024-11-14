@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnemyDamage : Mob
 {
     private float _damage;
     public float Damage { set { _damage = value; } }

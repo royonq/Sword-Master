@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InitializeEnemyStats : MonoBehaviour
+public class InitializeEnemyStats : Mob
 {
     [SerializeField] EnemyStats _enemyStats;
     private Health _health;

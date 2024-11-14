@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerInput : Mob
+public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private PausePanel _pausePannel;
     private UseSatilateSword _useAbitities;

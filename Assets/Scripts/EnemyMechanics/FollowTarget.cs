@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FollowTarget : Mob
+public class FollowTarget : MonoBehaviour
 {
     private Transform _target;
     public Transform Target { set { _target = value; } }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SetPlayerParams : Mob
+public class SetPlayerParams : MonoBehaviour
 {
     [SerializeField] private PlayerStats _playerStats;
     private PlayerMovement _playerMovement;

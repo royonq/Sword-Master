@@ -39,14 +39,14 @@ public class Mob : MonoBehaviour
 
     }
 
-    public void SetStun()
+    public void AplyStun()
     {
 
     }
 
-    public void GetStun()
+    public void ReceiveStun()
     {
-
+       
     }
 
 }

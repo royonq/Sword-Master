@@ -1,9 +1,13 @@
-using UnityEngine;
-
 public class Player : Mob
 {
     private int _level;
+    private int _moneyCount;
 
+
+    private void Start()
+    {
+
+    }
     public void LevelUp()
     {
 
@@ -32,10 +36,15 @@ public class Player : Mob
     public void BuyItem()
     {
 
-    } 
+    }
 
     public void OpenInventory()
     {
 
+    }
+
+    public void MoneyPickUp(int pickedMoney)
+    {
+        _moneyCount += pickedMoney;
     }
 }

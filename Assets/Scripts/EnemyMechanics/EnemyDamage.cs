@@ -8,8 +8,6 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var _playerHealth = collision.gameObject.GetComponent<Health>();
-            _playerHealth.TakeDamage(_damage);
             Destroy(gameObject);
         }
     }

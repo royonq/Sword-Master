@@ -23,7 +23,7 @@ public class Player : Mob
 
     }
 
-    public void UseWorkBEnch()
+    public void UseWorkBench()
     {
 
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : Mob
 {
-    private float _expirience;
+    private float _killExpirience;
     public void FindPlayer()
     {
 

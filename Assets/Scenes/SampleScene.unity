@@ -537,12 +537,10 @@ GameObject:
   - component: {fileID: 868551402}
   - component: {fileID: 868551403}
   - component: {fileID: 868551409}
+  - component: {fileID: 868551412}
   - component: {fileID: 868551410}
-  - component: {fileID: 868551401}
   - component: {fileID: 868551404}
-  - component: {fileID: 868551407}
   - component: {fileID: 868551408}
-  - component: {fileID: 868551411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -617,18 +615,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &868551401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868551398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f7c0beb723bce64baef44248b5c69d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &868551402
 Rigidbody2D:
   serializedVersion: 4
@@ -712,18 +698,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec3928322bc524643a70a11c8b9d7c69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &868551407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868551398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bf1e48298f5da43bce53d9a2cb2f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &868551408
@@ -833,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pausePannel: {fileID: 1689673605}
---- !u!114 &868551411
+--- !u!114 &868551412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -842,10 +816,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 868551398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f102a9aacc9f7484fa746b996c50b2fc, type: 3}
+  m_Script: {fileID: 11500000, guid: e8cc53cb77061f649b1f8585873d54e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStats: {fileID: 11400000, guid: ecd49b0475275f346abf4fa24341c572, type: 2}
 --- !u!1 &882896951
 GameObject:
   m_ObjectHideFlags: 0

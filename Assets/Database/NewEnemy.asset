@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: NewEnemy
   m_EditorClassIdentifier: 
   _health: 10
-  _speed: 5
+  _movementSpeed: 0
   _damage: 5
+  _attackSpeed: 0
+  _mobStats: {fileID: 11400000, guid: 623e05a3041812f43b1ee7af74bee43b, type: 2}
+  _killExpirience: 0

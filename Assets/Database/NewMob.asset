@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8ff0bf33e330f44baf38bef5826a06, type: 3}
-  m_Name: NewPlayer
+  m_Script: {fileID: 11500000, guid: 8d597e274870f1d4ea3bb7ef49ebb1f6, type: 3}
+  m_Name: NewMob
   m_EditorClassIdentifier: 
-  _health: 10000
+  _health: 0
   _movementSpeed: 0
   _damage: 0
   _attackSpeed: 0
-  _mobStats: {fileID: 11400000, guid: 623e05a3041812f43b1ee7af74bee43b, type: 2}
-  _moneyCount: 0

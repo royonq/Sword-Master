@@ -7,10 +7,10 @@ public class Mob : MonoBehaviour
     private float _attackSpeed;
 
     private Rigidbody2D _rb;
-    private float _movementSpeed = 5;
+    private float _movementSpeed;
     private Vector2 _movementDirection;
     public Vector2 MoveDirection { set { _movementDirection = value; } }
-
+    
 
     private void Awake()
     {
@@ -20,22 +20,31 @@ public class Mob : MonoBehaviour
     {
         Move();
     }
-    public void Move()
+
+    protected virtual void SetStats(MobStats mobStats)
+    {
+        _health = mobStats.Health;
+        _movementSpeed = mobStats.MovementSpeed;
+        _attackSpeed = mobStats.AttackSpeed;
+        _damage = mobStats.Damage;
+    }
+
+    private void Move()
     {
         _rb.velocity = _movementSpeed * _movementDirection;
     }
 
-    public void Heal()
+    private void Heal()
     {
 
     }
 
-    public void Damage()
+    private void Damage()
     {
 
     }
 
-    public void TakeDamage(float recivedDamage)
+    private void TakeDamage(float recivedDamage)
     {
         _health -= recivedDamage;
         if (_health <= 0)
@@ -49,7 +58,7 @@ public class Mob : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ItemPickUp()
+    private void ItemPickUp()
     {
 
     }
@@ -59,12 +68,12 @@ public class Mob : MonoBehaviour
 
     }
 
-    public void AplyStun()
+    private void AplyStun()
     {
 
     }
 
-    public void ReceiveStun()
+    private void ReceiveStun()
     {
        
     }

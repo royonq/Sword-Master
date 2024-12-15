@@ -1,44 +1,56 @@
+using UnityEngine;
+
 public class Player : Mob
 {
-    private int _level;
-    private int _moneyCount;
+    [SerializeField] PlayerStats _playerStats;
 
+    private float _moneyCount;
 
     private void Start()
     {
-
+        SetStats(_playerStats);
     }
-    public void LevelUp()
+
+    protected override void SetStats(MobStats mobStats)
+    {
+        _playerStats = mobStats as PlayerStats;
+
+        base.SetStats(_playerStats);
+
+        _moneyCount = _playerStats.MoneyCount;
+    }
+
+    private void LevelUp()
     {
 
     }
 
-    public void Interact()
+    private void Interact()
     {
 
     }
 
-    public void UpgradeAbility()
+    private void UpgradeAbility()
     {
 
     }
 
-    public void UseWorkBench()
+    private void UseWorkBench()
     {
 
     }
 
-    public void EarnXP()
+    private void EarnXP()
     {
 
     }
 
-    public void BuyItem()
+    private void BuyItem()
     {
 
     }
 
-    public void OpenInventory()
+    private void OpenInventory()
     {
 
     }

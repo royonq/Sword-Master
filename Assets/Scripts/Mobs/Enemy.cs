@@ -6,12 +6,10 @@ public class Enemy : Mob
     private float _killExpirience;
     private void Start()
     {
-        
+        SetStats(_enemyStats);
     }
     protected override void SetStats(MobStats mobStats)
     {
-        _enemyStats = mobStats as EnemyStats;
-
         base.SetStats(_enemyStats);
 
         _killExpirience = _enemyStats.KillExpirience;

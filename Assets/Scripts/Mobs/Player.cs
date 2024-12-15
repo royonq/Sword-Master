@@ -13,9 +13,7 @@ public class Player : Mob
 
     protected override void SetStats(MobStats mobStats)
     {
-        _playerStats = mobStats as PlayerStats;
-
-        base.SetStats(_playerStats);
+        base.SetStats(mobStats);
 
         _moneyCount = _playerStats.MoneyCount;
     }

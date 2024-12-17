@@ -1,5 +1,6 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "NewMob", menuName = "Mob")]
+
 public class MobStats : ScriptableObject
 {
     [SerializeField] protected float _health;

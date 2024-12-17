@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class Player : Mob
 {
-    [SerializeField] PlayerStats _playerStats;
+    [SerializeField] private MobStats _mobStats;
 
     private float _moneyCount;
 
     private void Start()
     {
-        SetStats(_playerStats);
+        SetStats(_mobStats);
     }
 
     protected override void SetStats(MobStats mobStats)
     {
         base.SetStats(mobStats);
 
-        _moneyCount = (mobStats as PlayerStats).MoneyCount;
+        PlayerStats playerStats = mobStats as PlayerStats;
+
+        _moneyCount = playerStats.MoneyCount;
     }
 
     private void LevelUp()

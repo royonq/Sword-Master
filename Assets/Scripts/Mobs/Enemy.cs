@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class Enemy : Mob
 {
-    [SerializeField] private EnemyStats _enemyStats;
+    [SerializeField] private MobStats _mobStats;
+
     private float _killExpirience;
     private void Start()
     {
-        SetStats(_enemyStats);
+        SetStats(_mobStats);
     }
     protected override void SetStats(MobStats mobStats)
     {
         base.SetStats(mobStats);
 
-        _killExpirience = (mobStats as EnemyStats).KillExpirience;
+        EnemyStats enemyStats = mobStats as EnemyStats;
+
+        _killExpirience = enemyStats.KillExpirience;
     }
 
     public void FindPlayer()

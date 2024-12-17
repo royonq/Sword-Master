@@ -15,7 +15,7 @@ public class Player : Mob
     {
         base.SetStats(mobStats);
 
-        _moneyCount = _playerStats.MoneyCount;
+        _moneyCount = (mobStats as PlayerStats).MoneyCount;
     }
 
     private void LevelUp()

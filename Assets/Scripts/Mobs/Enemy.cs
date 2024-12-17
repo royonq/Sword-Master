@@ -10,9 +10,9 @@ public class Enemy : Mob
     }
     protected override void SetStats(MobStats mobStats)
     {
-        base.SetStats(_enemyStats);
+        base.SetStats(mobStats);
 
-        _killExpirience = _enemyStats.KillExpirience;
+        _killExpirience = (mobStats as EnemyStats).KillExpirience;
     }
 
     public void FindPlayer()

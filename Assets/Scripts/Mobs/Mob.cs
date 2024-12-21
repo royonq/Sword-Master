@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Mob : MonoBehaviour
 {
+    [SerializeField] protected MobStats _mobStats;
+
     private float _health;
     private float _damage;
     private float _attackSpeed;
@@ -10,23 +12,25 @@ public class Mob : MonoBehaviour
     private float _movementSpeed;
     private Vector2 _movementDirection;
     public Vector2 MoveDirection { set { _movementDirection = value; } }
+
     
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        SetStats();
     }
     private void FixedUpdate()
     {
         Move();
     }
 
-    protected virtual void SetStats(MobStats mobStats)
+    protected virtual void SetStats()
     {
-        _health = mobStats.Health;
-        _movementSpeed = mobStats.MovementSpeed;
-        _attackSpeed = mobStats.AttackSpeed;
-        _damage = mobStats.Damage;
+        _health = _mobStats.Health;
+        _movementSpeed = _mobStats.MovementSpeed;
+        _attackSpeed = _mobStats.AttackSpeed;
+        _damage = _mobStats.Damage;
     }
 
     private void Move()

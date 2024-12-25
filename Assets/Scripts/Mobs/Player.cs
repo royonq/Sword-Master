@@ -1,44 +1,51 @@
+using UnityEngine;
+
 public class Player : Mob
 {
-    private int _level;
-    private int _moneyCount;
 
+    private float _moneyCount;
 
-    private void Start()
+    protected override void SetStats()
     {
 
-    }
-    public void LevelUp()
-    {
+        base.SetStats();
 
-    }
+        PlayerStats playerStats = _mobStats as PlayerStats;
 
-    public void Interact()
-    {
-
+        _moneyCount = playerStats.MoneyCount;
     }
 
-    public void UpgradeAbility()
+    private void LevelUp()
     {
 
     }
 
-    public void UseWorkBench()
+    private void Interact()
     {
 
     }
 
-    public void EarnXP()
+    private void UpgradeAbility()
     {
 
     }
 
-    public void BuyItem()
+    private void UseWorkBench()
     {
 
     }
 
-    public void OpenInventory()
+    private void EarnXP()
+    {
+
+    }
+
+    private void BuyItem()
+    {
+
+    }
+
+    private void OpenInventory()
     {
 
     }

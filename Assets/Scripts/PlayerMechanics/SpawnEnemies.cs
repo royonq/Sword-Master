@@ -19,8 +19,8 @@ public class SpawnEnemies : MonoBehaviour
             yield return new WaitForSeconds(_spawnRate);
             Vector3 _spawnOffset = new Vector2(Random.Range(-_spawnRadius, _spawnRadius), Random.Range(-_spawnRadius, _spawnRadius));
             GameObject newEnemy = Instantiate(_enemy, _playerPosition.position + _spawnOffset, _playerPosition.rotation);
-            FollowTarget _followTarget = newEnemy.GetComponent<FollowTarget>();
-            _followTarget.Target = _playerPosition;
+            Enemy enemy = newEnemy.GetComponent<Enemy>();
+            enemy.Target = _playerPosition;
         }
     }
 }

@@ -8,10 +8,9 @@ public class Mob : MonoBehaviour
     private float _damage;
     private float _attackSpeed;
 
-    private Rigidbody2D _rb;
-    private float _movementSpeed;
-    private Vector2 _movementDirection;
-    public Vector2 MoveDirection { set { _movementDirection = value; } }
+    protected Rigidbody2D _rb;
+    protected float _movementSpeed;
+
 
     
 
@@ -20,11 +19,6 @@ public class Mob : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         SetStats();
     }
-    private void FixedUpdate()
-    {
-        Move();
-    }
-
     protected virtual void SetStats()
     {
         _health = _mobStats.Health;
@@ -33,9 +27,9 @@ public class Mob : MonoBehaviour
         _damage = _mobStats.Damage;
     }
 
-    private void Move()
+    public void Move(Vector2 direction)
     {
-        _rb.velocity = _movementSpeed * _movementDirection;
+        _rb.velocity = _movementSpeed * direction;
     }
 
     private void Heal()

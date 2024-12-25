@@ -1,0 +1,12 @@
+diff a/Assets/Scripts/Mobs/Enemy.cs b/Assets/Scripts/Mobs/Enemy.cs	(rejected hunks)
+@@ -1,7 +1,10 @@
+ using UnityEngine;
++using static UnityEngine.GraphicsBuffer;
+ 
+ public class Enemy : Mob
+ {
++    private Transform _target;
++    public Transform Target { set { _target = value; } }
+ 
+     private float _killExpirience;
+     protected override void SetStats()

@@ -1,0 +1,15 @@
+diff a/Assets/Scripts/Mobs/Mob.cs b/Assets/Scripts/Mobs/Mob.cs	(rejected hunks)
+@@ -8,10 +8,9 @@
+     private float _damage;
+     private float _attackSpeed;
+ 
+-    private Rigidbody2D _rb;
+-    private float _movementSpeed;
+-    private Vector2 _movementDirection;
+-    public Vector2 MoveDirection { set { _movementDirection = value; } }
++    protected Rigidbody2D _rb;
++    protected float _movementSpeed;
++
+ 
+     
+ 

@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 6305043294565682012, guid: b7a153f877ccf0f4db788a3b7882db6f, type: 3}
-  _playerTransform: {fileID: 868551400}
+  _playerPosition: {fileID: 868551400}
   _spawnRadius: 10
   _spawnRate: 2
 --- !u!1 &519420028

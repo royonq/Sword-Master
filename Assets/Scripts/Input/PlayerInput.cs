@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _player.MoveDirection = context.ReadValue<Vector2>();
+        _player.Move(context.ReadValue<Vector2>().normalized);
     }
 
     public void OnUseAbility(InputAction.CallbackContext context)

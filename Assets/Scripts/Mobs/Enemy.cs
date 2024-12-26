@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Enemy : Mob
 {
-
+    private Transform _target;
+    public Transform Target { set { _target = value; } }
     private float _killExpirience;
     protected override void SetStats()
     {
@@ -12,7 +13,10 @@ public class Enemy : Mob
 
         _killExpirience = enemyStats.KillExpirience;
     }
-
+    private void FixedUpdate()
+    {
+        Move((_target.position - transform.position).normalized);
+    }
     public void FindPlayer()
     {
 

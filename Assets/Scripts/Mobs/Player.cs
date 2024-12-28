@@ -1,13 +1,13 @@
-using UnityEngine;
-
 public class Player : Mob
 {
-
+    private ThrowSwordAttack _throwSwordAttack;
     private float _moneyCount;
-
+    private void Start()
+    {
+       _throwSwordAttack = GetComponentInChildren<ThrowSwordAttack>();
+    }
     protected override void SetStats()
     {
-
         base.SetStats();
 
         PlayerStats playerStats = _mobStats as PlayerStats;
@@ -15,9 +15,9 @@ public class Player : Mob
         _moneyCount = playerStats.MoneyCount;
     }
 
-    public void ThrowSword()
+    public void Attack()
     {
-        GetComponentInChildren<ThrowSwordAttack>().Throw();
+        _throwSwordAttack.Throw();
     }
 
     private void LevelUp()

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 public class DeafultAttack : MonoBehaviour
 {
     [SerializeField] private GameObject _sword;

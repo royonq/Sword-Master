@@ -34,7 +34,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            _player.ThrowSword();
+            _player.Attack();
         }
     }
 

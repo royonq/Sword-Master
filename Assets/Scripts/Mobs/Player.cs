@@ -15,6 +15,11 @@ public class Player : Mob
         _moneyCount = playerStats.MoneyCount;
     }
 
+    public void ThrowSword()
+    {
+        GetComponentInChildren<ThrowSwordAttack>().Throw();
+    }
+
     private void LevelUp()
     {
 

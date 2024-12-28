@@ -6,23 +6,12 @@ public class SwordProjectile : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] float _speed;
 
-
-    public IEnumerator Throw(float lifeTime)
+    public void Move(float lifeTime)
     {
-        while (lifeTime > 0)
-        {
-            yield return null;
+        _rb = GetComponent<Rigidbody2D>();
 
-            Move(transform.right);
+        _rb.velocity = _speed * transform.right;
 
-            lifeTime--;
-
-            Destroy(gameObject);
-        }
-    }
-
-    public void Move(Vector2 direction)
-    {
-        _rb.velocity = _speed * direction;
+        Destroy(gameObject, lifeTime);
     }
 }

@@ -1,10 +1,10 @@
 public class Player : Mob
 {
-    private ThrowSwordAttack _throwSwordAttack;
+    private Ability _ability;
     private float _moneyCount;
     private void Start()
     {
-       _throwSwordAttack = GetComponentInChildren<ThrowSwordAttack>();
+       _ability = GetComponentInChildren<Ability>();
     }
     protected override void SetStats()
     {
@@ -17,7 +17,7 @@ public class Player : Mob
 
     public void Attack()
     {
-        _throwSwordAttack.Throw();
+        _ability.Use();
     }
 
     private void LevelUp()

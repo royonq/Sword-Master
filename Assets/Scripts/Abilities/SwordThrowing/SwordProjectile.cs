@@ -6,7 +6,7 @@ public class SwordProjectile : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] float _speed;
 
-    public void Move(float lifeTime)
+    public void Init(float lifeTime)
     {
         _rb = GetComponent<Rigidbody2D>();
 

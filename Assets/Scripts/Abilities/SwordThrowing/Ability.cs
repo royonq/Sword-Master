@@ -3,30 +3,15 @@ public class Ability : MonoBehaviour
 {
     [SerializeField] private GameObject _ability;
     [SerializeField] private Transform _spawnpoint;
-    [SerializeField] protected AbilityStats _stats;
-    protected float _damage;
-    protected float _lifetime;
-    protected float _speed;
-
-    private void Start()
-    {
-        SetAbilityStats();
-    }
+    [SerializeField] private AbilityStats _stats;
     public virtual void Use()
     {
         GameObject instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitAbility(instancedAbility);
+        InitAbility(instancedAbility,_stats);
     }
 
-    protected virtual void InitAbility(GameObject instancedAbility)
+    protected virtual void InitAbility(GameObject instancedAbility,AbilityStats stats)
     {
 
-    }
-    
-    protected virtual void SetAbilityStats()
-    {
-        _damage = _stats.Damage;
-        _lifetime = _stats.Lifetime;
-        _speed = _stats.Speed;
     }
 }

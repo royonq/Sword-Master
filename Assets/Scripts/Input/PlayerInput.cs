@@ -30,6 +30,14 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    public void OnSwordThrow(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _player.Attack();
+        }
+    }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -37,4 +45,5 @@ public class PlayerInput : MonoBehaviour
             _pausePannel.SetPanelActive();
         }
     }
+   
 }

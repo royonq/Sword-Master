@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ThrowSword",
+                    "type": "Button",
+                    "id": "89a8277d-e5bf-4233-a77b-54bf59aad885",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -110,6 +119,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c92e23ca-eb42-4dff-88c8-8a5faa54bdbe",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThrowSword",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

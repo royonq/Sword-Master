@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da26c77572aeb64696e6b995391713b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sword: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
+  _ability: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
   _spawnpoint: {fileID: 128655627}
-  _swordLifeTime: 2
+  _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
 --- !u!1 &136450163
 GameObject:
   m_ObjectHideFlags: 0

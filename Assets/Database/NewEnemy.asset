@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NewEnemy
   m_EditorClassIdentifier: 
   _health: 10
-  _movementSpeed: 5
+  _movementSpeed: 0
   _damage: 5
   _attackSpeed: 7
   _killExpirience: 1

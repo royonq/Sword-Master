@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Mob : MonoBehaviour
+public abstract class Mob : MonoBehaviour
 {
     [SerializeField] protected MobStats _mobStats;
 

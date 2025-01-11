@@ -1,6 +1,6 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "NewAbility", menuName = "Ability")]
-public class AbilityStats : ScriptableObject
+public abstract class AbilityStats : ScriptableObject
 {
     [SerializeField] private float _damage;
     public float Damage { get { return _damage; } }

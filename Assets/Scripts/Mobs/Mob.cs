@@ -44,7 +44,7 @@ public abstract class Mob : MonoBehaviour
 
     }
 
-    private void TakeDamage(float recivedDamage)
+    public void TakeDamage(float recivedDamage)
     {
         _health -= recivedDamage;
         if (_health <= 0)

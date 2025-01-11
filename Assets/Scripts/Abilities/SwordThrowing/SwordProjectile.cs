@@ -24,4 +24,14 @@ public class SwordProjectile : MonoBehaviour
 
         Destroy(gameObject, _lifeTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collision.GetComponent<Mob>().TakeDamage(_damage);
+
+            Destroy(gameObject);
+        }
+    }
 }

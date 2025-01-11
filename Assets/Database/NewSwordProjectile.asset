@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301db281ef7582e4f909523249b5e55f, type: 3}
   m_Name: NewSwordProjectile
   m_EditorClassIdentifier: 
-  _damage: 0
+  _damage: 3
   _lifetime: 2
   _speed: 5

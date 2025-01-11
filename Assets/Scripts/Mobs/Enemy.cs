@@ -17,6 +17,8 @@ public class Enemy : Mob
     {
         Move((_target.position - transform.position).normalized);
     }
+
+
     public void FindPlayer()
     {
 

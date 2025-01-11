@@ -29,7 +29,7 @@ public class SwordProjectile : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            collision.GetComponent<Enemy>().TakeDamage(_damage);
+            collision.GetComponent<Mob>().TakeDamage(_damage);
 
             Destroy(gameObject);
         }

@@ -10,4 +10,10 @@ public abstract class AbilityStats : ScriptableObject
 
     [SerializeField] private float _speed;
     public float Speed { get { return _speed; } }
+
+    [SerializeField] protected float _cooldown;
+    public float Cooldown { get { return _cooldown; } }
+
+    [SerializeField] private Sprite _abilityIcon;
+    public Sprite AbilityIcon { get { return _abilityIcon; } }
 }

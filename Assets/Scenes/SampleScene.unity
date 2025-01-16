@@ -167,7 +167,8 @@ MonoBehaviour:
   _ability: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
   _spawnpoint: {fileID: 128655627}
   _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
-  _cooldown: {fileID: 8955084330179472426}
+  _abilityColdownImage: {fileID: 4770416111288292416}
+  _abilityImage: {fileID: 4359617987926457860}
 --- !u!1 &136450163
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,10 +762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6ace9f022f69a468e1d11ce56bbf5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _abilitySateliteSword: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
-  _sword: {fileID: 2756192474105323788, guid: 597869fee4972234c9c95828d313ddf7, type: 3}
-  _playerTracker: {fileID: 1617316992}
-  _cooldown: {fileID: 8955084330179472426}
 --- !u!114 &868551409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,7 +1645,6 @@ GameObject:
   - component: {fileID: 2631865850163220917}
   - component: {fileID: 3271471748819357756}
   - component: {fileID: 4359617987926457860}
-  - component: {fileID: 8955084330179472426}
   m_Layer: 5
   m_Name: AbilityImg
   m_TagString: Untagged
@@ -1656,19 +1652,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8955084330179472426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8502105218633959040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160a2ce3f437adf41a634e574d292126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _abilityColdownImage: {fileID: 4770416111288292416}
 --- !u!1 &9141586700927599108
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class UseSatilateSword : MonoBehaviour
-{
+{/*
     [SerializeField] private AbilitySateliteSword _abilitySateliteSword;
     [SerializeField] private GameObject _sword;
     [SerializeField] private Transform _playerTracker;
@@ -18,6 +18,6 @@ public class UseSatilateSword : MonoBehaviour
             GameObject newSword = Instantiate(_sword, _playerTracker.position, _playerTracker.rotation, _playerTracker);
             newSword.GetComponent<SatelliteSword>().SetSwordStats(_abilitySateliteSword.Damage, _abilitySateliteSword.RotationSpeed);
         }
-    }
+    }*/
 
 }

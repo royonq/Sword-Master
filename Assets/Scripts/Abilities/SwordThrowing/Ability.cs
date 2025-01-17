@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public abstract class Ability : MonoBehaviour
@@ -19,7 +18,7 @@ public abstract class Ability : MonoBehaviour
         SetAbilityImage();
     }
 
-    protected void SetAbilityImage()
+    private void SetAbilityImage()
     {
         _abilityColdownImage.fillAmount = 0;
         _abilityImage.sprite = _stats.AbilityIcon;

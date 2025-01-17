@@ -14,12 +14,14 @@ public abstract class Ability : MonoBehaviour
     protected abstract void InitAbility(GameObject instancedAbility, AbilityStats stats);
     private void Start()
     {
-        _abilityColdownImage.fillAmount = 0;
+
+        SetAbilityImage();
     }
 
-    protected void SetAbilityImage(Sprite abilityIcon)
+    protected void SetAbilityImage()
     {
-        _abilityImage.sprite = abilityIcon;
+        _abilityColdownImage.fillAmount = 0;
+        _abilityImage.sprite = _stats.AbilityIcon;
     }
 
     private void StartCooldown(float cooldown)

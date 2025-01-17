@@ -6,6 +6,5 @@ public class ThrowSwordAttack : Ability
     {
         var swordProjectileStats = stats as SwordProjectileStats;
         instancedAbility.GetComponent<SwordProjectile>().Init(swordProjectileStats);
-        SetAbilityImage(swordProjectileStats.AbilityIcon);
     }
 }

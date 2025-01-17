@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public abstract class Ability : MonoBehaviour
@@ -24,11 +25,6 @@ public abstract class Ability : MonoBehaviour
         _abilityImage.sprite = _stats.AbilityIcon;
     }
 
-    private void StartCooldown(float cooldown)
-    {
-        StartCoroutine(Cooldown(cooldown));
-    }
-
     private IEnumerator Cooldown(float cooldown)
     {
         _isAbilityCooldown = true;
@@ -48,7 +44,7 @@ public abstract class Ability : MonoBehaviour
     {
         if (!_isAbilityCooldown)
         {
-            StartCooldown(_stats.Cooldown);
+            StartCoroutine(Cooldown(_stats.Cooldown));
             GameObject instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
             InitAbility(instancedAbility, _stats);
         }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SatelliteSword : MonoBehaviour
+public class SateliteSword : MonoBehaviour
 {
     [SerializeField] private Sword _sword;
     private float _rotationSpeed;

@@ -161,14 +161,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 128655626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da26c77572aeb64696e6b995391713b, type: 3}
+  m_Script: {fileID: 11500000, guid: f5b90022ef26e4340a26f95bedef7a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ability: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
-  _spawnpoint: {fileID: 128655627}
-  _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
+  _ability: {fileID: 2756192474105323788, guid: 597869fee4972234c9c95828d313ddf7, type: 3}
+  _spawnpoint: {fileID: 868551400}
+  _stats: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
   _abilityColdownImage: {fileID: 4770416111288292416}
   _abilityImage: {fileID: 4359617987926457860}
+  _playerPositionTracker: {fileID: 1617316992}
 --- !u!1 &136450163
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,17 +1,13 @@
 using UnityEngine;
 
-public class SwordProjectile : MonoBehaviour
+public class SwordProjectile : Sword
 {
     private Rigidbody2D _rb;
-    private float _damage;
-    private float _speed;
-    private float _lifeTime;
 
-    public void Init(SwordProjectileStats stats)
+    public override void Init(AbilityStats stats)
     {
-        _damage = stats.Damage;
-        _speed = stats.Speed;
-        _lifeTime = stats.Lifetime;
+        var _swordProjectileStats = stats as SwordProjectileStats;
+        base.Init(_swordProjectileStats);
 
         LaunchProjectile();
     }
@@ -19,7 +15,6 @@ public class SwordProjectile : MonoBehaviour
     private void LaunchProjectile()
     {
         _rb = GetComponent<Rigidbody2D>();
-
         _rb.velocity = _speed * transform.right;
 
         Destroy(gameObject, _lifeTime);

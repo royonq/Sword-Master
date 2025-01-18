@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SatelliteSword : MonoBehaviour
+public class SatelliteSword : Sword
 {
 
     [SerializeField] private Sword _sword;
     private float _rotationSpeed;
-    private float _damage;
-    private float _speed;
-    private float _lifeTime;
     private void FixedUpdate()
     {
         RotateAroundPlayer();
     }
-    public void Init(SateliteSwordStats stats)
+
+    public override void Init(AbilityStats stats)
     {
-        _damage = stats.Damage;
-        _speed = stats.Speed;
-        _lifeTime = stats.Lifetime;
-        _rotationSpeed = stats.RotationSpeed;
+        var _sateliteSwordStats = stats as SateliteSwordStats;
+        base.Init(_sateliteSwordStats);
+
+        _rotationSpeed = _sateliteSwordStats.RotationSpeed;
     }
 
     private void RotateAroundPlayer()

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class SwordProjectile : Sword
+public class SwordProjectile : Projectile
 {
     private Rigidbody2D _rb;
 
     public override void Init(AbilityStats stats)
     {
+        base.Init(stats);
         var _swordProjectileStats = stats as SwordProjectileStats;
-        base.Init(_swordProjectileStats);
 
         LaunchProjectile();
     }

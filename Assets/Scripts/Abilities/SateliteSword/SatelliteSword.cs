@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class SatelliteSword : Sword
+public class SatelliteSword : Projectile
 {
 
-    [SerializeField] private Sword _sword;
+    [SerializeField] private Projectile _sword;
     private float _rotationSpeed;
     private void FixedUpdate()
     {
@@ -12,8 +12,8 @@ public class SatelliteSword : Sword
 
     public override void Init(AbilityStats stats)
     {
+        base.Init(stats);
         var _sateliteSwordStats = stats as SateliteSwordStats;
-        base.Init(_sateliteSwordStats);
 
         _rotationSpeed = _sateliteSwordStats.RotationSpeed;
     }

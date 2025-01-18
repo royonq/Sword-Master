@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     protected float _damage;
     protected float _speed;

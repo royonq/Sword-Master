@@ -11,7 +11,10 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private Image _abilityImage;
     private bool _isAbilityCooldown;
 
-    protected abstract void InitAbility(GameObject instancedAbility, AbilityStats stats);
+    protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
+    {
+        instancedAbility.GetComponent<Projectile>().Init(stats);
+    }
     private void Start()
     {
 

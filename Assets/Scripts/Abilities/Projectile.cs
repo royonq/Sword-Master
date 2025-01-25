@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private float _damage;
     protected float _speed;
+    private float _damage;
     private float _lifeTime;
 
     public virtual void Init(AbilityStats stats)

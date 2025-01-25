@@ -16,4 +16,4 @@ MonoBehaviour:
   _lifetime: 2
   _speed: 5
   _cooldown: 2
-  _abilityIcon: {fileID: -7305847012044084315, guid: cb35e57c1d4253c49959825ee915b90b, type: 3}
+  _abilityIcon: {fileID: -5707046193352654740, guid: 000140d9e97b3c54b8a1e72e3bf5197e, type: 3}

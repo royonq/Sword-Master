@@ -22,15 +22,15 @@ public class PlayerInput : MonoBehaviour
         _movementDirection = context.ReadValue<Vector2>().normalized;
     }
 
-    public void OnUseAbility(InputAction.CallbackContext context)
+    public void OnUseUltimate(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            _player.UseAbility();
+            _player.UseUltimate();
         }
     }
 
-    public void OnSwordThrow(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {

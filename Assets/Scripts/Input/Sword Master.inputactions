@@ -45,17 +45,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9c0ae5af-27f2-4f3d-9fa2-99c75300a975",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UseAbility",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "aac01604-c456-43f5-b21b-56df7f75d942",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -128,6 +117,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ThrowSword",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea9e886d-1886-4ee3-810e-78a44c879535",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

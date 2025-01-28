@@ -1,11 +1,10 @@
+using UnityEngine;
+
 public class Player : Mob
 {
-    private Ability _ability;
+    [SerializeField] private Ability _deafultAttack;
+    [SerializeField] private Ability _ultimate;
     private float _moneyCount;
-    private void Start()
-    {
-       _ability = GetComponentInChildren<Ability>();
-    }
     protected override void SetStats()
     {
         base.SetStats();
@@ -17,7 +16,12 @@ public class Player : Mob
 
     public void Attack()
     {
-        _ability.Use();
+        _deafultAttack.Use();
+    }
+
+    public void UseUltimate()
+    {
+        _ultimate.Use();
     }
 
     private void LevelUp()

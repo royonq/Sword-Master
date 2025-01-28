@@ -17,7 +17,6 @@ public abstract class Ability : MonoBehaviour
     }
     private void Start()
     {
-
         SetAbilityImage();
     }
 

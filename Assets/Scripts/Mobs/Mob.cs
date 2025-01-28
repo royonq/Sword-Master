@@ -63,10 +63,6 @@ public abstract class Mob : MonoBehaviour
 
     }
 
-    public void UseAbility()
-    {
-
-    }
 
     private void AplyStun()
     {

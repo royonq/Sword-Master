@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 15
   _lifetime: 5
-  _speed: 5
-  _cooldown: 3
+  _speed: 50
+  _cooldown: 2
   _abilityIcon: {fileID: -7305847012044084315, guid: cb35e57c1d4253c49959825ee915b90b, type: 3}
-  _rotationSpeed: 280
+  _rotationSpeed: 0

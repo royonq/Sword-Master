@@ -1,12 +1,8 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "NewMob", menuName = "Mob")]
 
-public abstract class MobStats : ScriptableObject
+public abstract class MobStats : UnitStats
 {
-    [SerializeField] protected float _health;
-    public float Health { get { return _health; } }
-
-
     [SerializeField] protected float _movementSpeed;
     public float MovementSpeed { get { return _movementSpeed; } }
 

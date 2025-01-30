@@ -9,13 +9,26 @@ public class Enemy : Mob
     {
         base.SetStats();
 
-        EnemyStats enemyStats = _mobStats as EnemyStats;
+        EnemyStats enemyStats = _unitStats as EnemyStats;
 
         _killExpirience = enemyStats.KillExpirience;
     }
     private void FixedUpdate()
     {
         Move((_target.position - transform.position).normalized);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            collision.gameObject.GetComponent<Mob>().TakeDamage(_damage);
+        }
+    }
+
+    protected override void Die()
+    {
+        Destroy(gameObject);
     }
 
 

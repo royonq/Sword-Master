@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public abstract class Mob : MonoBehaviour
+public abstract class Mob : Unit
 {
-    [SerializeField] protected MobStats _mobStats;
-
     private float _health;
-    private float _damage;
+    protected float _damage;
     private float _attackSpeed;
 
     protected Rigidbody2D _rb;
@@ -21,12 +19,13 @@ public abstract class Mob : MonoBehaviour
         SetStats();
     }
 
-    protected virtual void SetStats()
+    protected override void SetStats()
     {
-        _health = _mobStats.Health;
-        _movementSpeed = _mobStats.MovementSpeed;
-        _attackSpeed = _mobStats.AttackSpeed;
-        _damage = _mobStats.Damage;
+        base.SetStats();
+        MobStats mobStats = _unitStats as MobStats;
+        _movementSpeed = mobStats.MovementSpeed;
+        _attackSpeed = mobStats.AttackSpeed;
+        _damage = mobStats.Damage;
     }
 
     public void Move(Vector2 direction)
@@ -44,19 +43,6 @@ public abstract class Mob : MonoBehaviour
 
     }
 
-    public void TakeDamage(float recivedDamage)
-    {
-        _health -= recivedDamage;
-        if (_health <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
 
     private void ItemPickUp()
     {

@@ -1279,7 +1279,8 @@ GameObject:
   - component: {fileID: 1200737251}
   - component: {fileID: 1200737250}
   - component: {fileID: 1200737249}
-  m_Layer: 0
+  - component: {fileID: 1200737252}
+  m_Layer: 10
   m_Name: Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1399,6 +1400,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200737252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200737248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ef6f595898dea439a0a40fd269f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitStats: {fileID: 11400000, guid: e2b8f69d82735da4bb97f5f4b9b363c1, type: 2}
+  _defeat: {fileID: 9842844}
 --- !u!1 &1617316991
 GameObject:
   m_ObjectHideFlags: 0

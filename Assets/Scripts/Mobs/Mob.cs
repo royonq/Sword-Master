@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public abstract class Mob : Unit
+public abstract class Mob : Damageable
 {
-    private float _health;
     protected float _damage;
     private float _attackSpeed;
 
@@ -23,6 +22,7 @@ public abstract class Mob : Unit
     {
         base.SetStats();
         MobStats mobStats = _unitStats as MobStats;
+
         _movementSpeed = mobStats.MovementSpeed;
         _attackSpeed = mobStats.AttackSpeed;
         _damage = mobStats.Damage;

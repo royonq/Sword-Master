@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public abstract class Unit : MonoBehaviour
+public abstract class Damageable : MonoBehaviour
 {
-    [SerializeField] protected UnitStats _unitStats;
+    [SerializeField] protected DamagebleStats _unitStats;
     private float _health;
 
     protected abstract void Die();
@@ -10,7 +10,7 @@ public abstract class Unit : MonoBehaviour
     {
         _health = _unitStats.Health;
     }
-
+    
     public void TakeDamage(float recivedDamage)
     {
         _health -= recivedDamage;

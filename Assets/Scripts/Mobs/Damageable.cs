@@ -2,16 +2,16 @@ using UnityEngine;
 
 public abstract class Damageable : MonoBehaviour
 {
-    [SerializeField] protected DamagebleStats _unitStats;
-    private float _health;
+    [SerializeField] protected DamagebleStats _damagableStats;
+    protected float _health;
 
     protected abstract void Die();
     protected virtual void SetStats()
     {
-        _health = _unitStats.Health;
+        _health = _damagableStats.Health;
     }
     
-    public void TakeDamage(float recivedDamage)
+    public virtual void TakeDamage(float recivedDamage)
     {
         _health -= recivedDamage;
         if (_health <= 0)

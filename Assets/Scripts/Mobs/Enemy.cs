@@ -9,7 +9,7 @@ public class Enemy : Mob
     {
         base.SetStats();
 
-        EnemyStats enemyStats = _unitStats as EnemyStats;
+        EnemyStats enemyStats = _damagableStats as EnemyStats;
 
         _killExpirience = enemyStats.KillExpirience;
     }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _movementSpeed: 2
-  _damage: 5
+  _damage: 15
   _attackSpeed: 7
   _killExpirience: 1

@@ -17,3 +17,4 @@ MonoBehaviour:
   _damage: 10
   _attackSpeed: 3
   _moneyCount: 4
+  _maxHealth: 100

@@ -7,6 +7,7 @@ public class Player : Mob
     [SerializeField] private Ability _ultimate;
     [SerializeField] private Defeat _defeat;
     private float _moneyCount;
+    private float _maxHelath;
     protected override void SetStats()
     {
         base.SetStats();
@@ -14,6 +15,7 @@ public class Player : Mob
         PlayerStats playerStats = _damagableStats as PlayerStats;
 
         _moneyCount = playerStats.MoneyCount;
+        _maxHelath = playerStats.MaxHealth;
     }
 
     public void Attack()
@@ -34,7 +36,7 @@ public class Player : Mob
     public override void TakeDamage(float recivedDamage)
     {
         base.TakeDamage(recivedDamage);
-        _playerBars.ChangeValue(_health, _damagableStats.Health);
+        _playerBars.ChangeValue(_health, _maxHelath);
     }
 
     private void LevelUp()

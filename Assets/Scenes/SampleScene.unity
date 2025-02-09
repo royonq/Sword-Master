@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ef6f595898dea439a0a40fd269f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagableStats: {fileID: 0}
+  _damagableStats: {fileID: 11400000, guid: e2b8f69d82735da4bb97f5f4b9b363c1, type: 2}
   _defeat: {fileID: 9842844}
 --- !u!1 &1617316991
 GameObject:

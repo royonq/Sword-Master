@@ -2,6 +2,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewDamadeble", menuName = "Damageble")]
 public class DamagebleStats : ScriptableObject
 {
-    [SerializeField] protected float _health;
-    public float Health { get { return _health; } }
+    [SerializeField] protected float _maxHealth;
+    public float MaxHealth { get { return _maxHealth; } }
 }

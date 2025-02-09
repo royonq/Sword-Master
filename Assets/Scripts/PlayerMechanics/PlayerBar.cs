@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerBars : MonoBehaviour
+public class PlayerBar : MonoBehaviour
 {
     [SerializeField] private Image _healthbar;
     private float _maxHealth;

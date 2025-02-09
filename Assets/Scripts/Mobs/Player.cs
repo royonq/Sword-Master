@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : Mob
 {
-    [SerializeField] private PlayerBars _playerBars;
+    [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
     [SerializeField] private Defeat _defeat;

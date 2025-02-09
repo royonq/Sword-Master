@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0843717a7515a4889523ccf2b2fe99, type: 3}
-  m_Name: NewEnemy
+  m_Script: {fileID: 11500000, guid: 301db281ef7582e4f909523249b5e55f, type: 3}
+  m_Name: SwordProjectile
   m_EditorClassIdentifier: 
-  _health: 10
-  _movementSpeed: 2
-  _damage: 15
-  _attackSpeed: 7
-  _killExpirience: 1
+  _damage: 3
+  _lifetime: 2
+  _speed: 5
+  _cooldown: 2
+  _abilityIcon: {fileID: -5707046193352654740, guid: 000140d9e97b3c54b8a1e72e3bf5197e, type: 3}

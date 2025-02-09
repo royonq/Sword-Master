@@ -21,7 +21,7 @@ public abstract class Mob : Damageable
     protected override void SetStats()
     {
         base.SetStats();
-        MobStats mobStats = _unitStats as MobStats;
+        MobStats mobStats = _damagableStats as MobStats;
 
         _movementSpeed = mobStats.MovementSpeed;
         _attackSpeed = mobStats.AttackSpeed;

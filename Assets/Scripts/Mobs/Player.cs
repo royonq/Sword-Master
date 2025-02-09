@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : Mob
 {
+    [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
     [SerializeField] private Defeat _defeat;
@@ -10,9 +11,12 @@ public class Player : Mob
     {
         base.SetStats();
 
-        PlayerStats playerStats = _unitStats as PlayerStats;
+        PlayerStats playerStats = _damagableStats as PlayerStats;
 
         _moneyCount = playerStats.MoneyCount;
+
+        _playerBars.SetMaxHealth(playerStats.MaxHealth);
+
     }
 
     public void Attack()
@@ -28,6 +32,13 @@ public class Player : Mob
     protected override void Die()
     {
         _defeat.GameOver();
+    }
+
+    public override void TakeDamage(float recivedDamage)
+    {
+        base.TakeDamage(recivedDamage);
+
+        _playerBars.ChangeValue(_currentHealth);
     }
 
     private void LevelUp()

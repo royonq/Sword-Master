@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8ff0bf33e330f44baf38bef5826a06, type: 3}
-  m_Name: NewPlayer
+  m_Script: {fileID: 11500000, guid: fd0843717a7515a4889523ccf2b2fe99, type: 3}
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  _health: 10
-  _movementSpeed: 15
-  _damage: 10
-  _attackSpeed: 3
-  _moneyCount: 4
+  _maxHealth: 30
+  _movementSpeed: 2
+  _damage: 15
+  _attackSpeed: 7
+  _killExpirience: 1

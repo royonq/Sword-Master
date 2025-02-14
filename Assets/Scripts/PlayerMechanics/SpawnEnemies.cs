@@ -4,9 +4,9 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     [SerializeField] private GameObject _enemy;
-    [SerializeField] private Transform _playerTransform;
-    [SerializeField] private float _spawnRadius;
-    [SerializeField] private float _spawnRate;
+    [SerializeField] private Transform _gatePosition;
+
+    [SerializeField] private SpawnerData _spawnerData;
 
     private void Start()
     {
@@ -16,11 +16,11 @@ public class SpawnEnemies : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_spawnRate);
-            Vector3 _spawnOffset = new Vector2(Random.Range(-_spawnRadius, _spawnRadius), Random.Range(-_spawnRadius, _spawnRadius));
-            GameObject newEnemy = Instantiate(_enemy, _playerTransform.position + _spawnOffset, _playerTransform.rotation);
+            yield return new WaitForSeconds(_spawnerData.SpawnRate);
+            Vector3 _spawnOffset = new Vector2(Random.Range(_spawnerData.SpawnXmin, _spawnerData.SpawnXmax), Random.Range(-_spawnerData.SpawnY, _spawnerData.SpawnY));
+            GameObject newEnemy = Instantiate(_enemy, _gatePosition.position + _spawnOffset, _gatePosition.rotation);
             Enemy enemy = newEnemy.GetComponent<Enemy>();
-            enemy.Target = _playerTransform;
+            enemy.Target = _gatePosition;
         }
     }
 }

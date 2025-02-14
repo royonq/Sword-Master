@@ -1,5 +1,4 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "NewAbility", menuName = "Ability")]
 public abstract class AbilityStats : ScriptableObject
 {
     [SerializeField] private float _damage;

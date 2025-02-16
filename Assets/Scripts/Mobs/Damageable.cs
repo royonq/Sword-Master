@@ -6,6 +6,11 @@ public abstract class Damageable : MonoBehaviour
     protected float _maxHealth;
     protected float _currentHealth;
 
+    private void Start()
+    {
+        SetStats();
+    }
+
     protected abstract void Die();
     protected virtual void SetStats()
     {

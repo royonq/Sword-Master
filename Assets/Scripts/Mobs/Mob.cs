@@ -10,12 +10,10 @@ public abstract class Mob : Damageable
     private Vector2 _movementDirection;
     public Vector2 MoveDirection { set { _movementDirection = value; } }
 
-    
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        SetStats();
     }
 
     protected override void SetStats()

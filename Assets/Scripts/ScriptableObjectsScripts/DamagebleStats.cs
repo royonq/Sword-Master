@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "NewDamadeble", menuName = "Damageble")]
+[CreateAssetMenu(fileName = "NewDamadeble", menuName = "Data/Damageble/Damageble")]
 public class DamagebleStats : ScriptableObject
 {
     [SerializeField] protected float _maxHealth;

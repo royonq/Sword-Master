@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: c09e49cb086284b419a2da9fabefcf2a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -43650373379930767
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_0
+  - first:
+      213: 3093590441882232278
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_1
+  - first:
+      213: -8865728267204366489
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_2
+  - first:
+      213: 1962705647352211226
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_3
+  - first:
+      213: -3706733773980221666
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_4
+  - first:
+      213: -4653909454093291974
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_5
+  - first:
+      213: -2526148198568413660
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_6
+  - first:
+      213: 6824949040857351757
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_7
+  - first:
+      213: -9138106464991465706
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_8
+  - first:
+      213: 7972308087346128982
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_9
+  - first:
+      213: 6655382131027242202
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_10
+  - first:
+      213: 4656954562300747630
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_11
+  - first:
+      213: -7366968905975123382
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_12
+  - first:
+      213: -2266773111919688499
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_13
+  - first:
+      213: -5763784716056398001
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_14
+  - first:
+      213: -413327998446642575
+    second: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_15
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1754068773ce46ff0800000000000000
+      internalID: -43650373379930767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 378
+        width: 123
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d52fe8cd14aeea20800000000000000
+      internalID: 3093590441882232278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 378
+        width: 124
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fe4261d1b96f480800000000000000
+      internalID: -8865728267204366489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 378
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17e41d236eec3b10800000000000000
+      internalID: 1962705647352211226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 121
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f37fc85490f8cc0800000000000000
+      internalID: -3706733773980221666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 251
+        width: 122
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3eefeb420ef96fb0800000000000000
+      internalID: -4653909454093291974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 251
+        width: 122
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4263656f89151fcd0800000000000000
+      internalID: -2526148198568413660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 251
+        width: 121
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4602761ef617be50800000000000000
+      internalID: 6824949040857351757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 121
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fab7af59cee2180800000000000000
+      internalID: -9138106464991465706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 125
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6586d3267f353ae60800000000000000
+      internalID: 7972308087346128982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 126
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc6c5459caac5c50800000000000000
+      internalID: 6655382131027242202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 126
+        width: 121
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f12153083d0a040800000000000000
+      internalID: 4656954562300747630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a423108dfc443c990800000000000000
+      internalID: -7366968905975123382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 122
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4ce955dddca80e0800000000000000
+      internalID: -2266773111919688499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 122
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47f1ada65ce200b0800000000000000
+      internalID: -5763784716056398001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1672864243_grizly-club-p-tekstura-dlya-yuniti-2d-19-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 0
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a5dd41060934af0800000000000000
+      internalID: -413327998446642575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

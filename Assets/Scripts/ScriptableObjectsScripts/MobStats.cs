@@ -1,5 +1,4 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "NewMob", menuName = "Mob")]
 
 public abstract class MobStats : DamagebleStats
 {

@@ -8,11 +8,12 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] private SpawnerData _spawnerData;
 
-    private void Start()
+    public void StartWave()
     {
-        StartCoroutine(SpawnRate());
+        StartCoroutine(SpawnEnemy());
     }
-    private IEnumerator SpawnRate()
+
+    public IEnumerator SpawnEnemy()
     {
         while (true)
         {

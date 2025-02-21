@@ -7,6 +7,7 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private Transform _gatePosition;
 
     [SerializeField] private SpawnerData _spawnerData;
+    [SerializeField] private int _enemycount;
 
     public void StartWave()
     {
@@ -15,7 +16,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public IEnumerator SpawnEnemy()
     {
-        while (true)
+        for (int i = 0; i < _enemycount; i++)
         {
             yield return new WaitForSeconds(_spawnerData.SpawnRate);
             Vector3 _spawnOffset = new Vector2(Random.Range(_spawnerData.SpawnXmin, _spawnerData.SpawnXmax), Random.Range(-_spawnerData.SpawnY, _spawnerData.SpawnY));
@@ -23,5 +24,6 @@ public class SpawnEnemies : MonoBehaviour
             Enemy enemy = newEnemy.GetComponent<Enemy>();
             enemy.Target = _gatePosition;
         }
+
     }
 }

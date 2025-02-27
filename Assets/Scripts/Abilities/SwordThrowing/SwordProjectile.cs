@@ -7,9 +7,7 @@ public class SwordProjectile : ProjectileRotate
     public override void Init(AbilityStats stats)
     {
         base.Init(stats);
-        RotateTowardsCrosshair();
         LaunchProjectile();
-
     }
 
     private void LaunchProjectile()

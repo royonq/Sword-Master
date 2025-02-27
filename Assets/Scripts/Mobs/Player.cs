@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Player : Mob
 {
+    public static event Action OnPlayerDeath;
+
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
@@ -31,7 +34,7 @@ public class Player : Mob
 
     protected override void Die()
     {
-        _defeat.GameOver();
+        OnPlayerDeath?.Invoke();
     }
 
     public override void TakeDamage(float recivedDamage)

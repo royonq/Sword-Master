@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Gate : Damageable
 {
-    [SerializeField] private Defeat _defeat;
+    public static event Action OnBrokenGate;
 
     protected override void Die()
     {      
-        _defeat.GameOver();
+        OnBrokenGate?.Invoke();
         Destroy(gameObject);
     }
 }

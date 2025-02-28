@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private PausePanel _pausePannel;
+    public static event Action OnPannelSetActive;
 
     private Vector2 _movementDirection;
 
     private Player _player;
+
     private void Start()
     {
         _player = GetComponent<Player>();
@@ -42,7 +44,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            _pausePannel.SetPanelActive();
+            OnPannelSetActive?.Invoke();
         }
     }
    

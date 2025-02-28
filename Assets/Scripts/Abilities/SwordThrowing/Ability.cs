@@ -43,11 +43,13 @@ public abstract class Ability : MonoBehaviour
 
     public void Use()
     {
-        if (!_isAbilityCooldown)
+        if (_isAbilityCooldown)
         {
-            StartCoroutine(Cooldown(_stats.Cooldown));
-            GameObject instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-            InitAbility(instancedAbility, _stats);
-        }
+            return;
+        } 
+        
+        StartCoroutine(Cooldown(_stats.Cooldown));
+        var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
+        InitAbility(instancedAbility, _stats);
     }
 }

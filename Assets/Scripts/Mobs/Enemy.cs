@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Enemy : Mob
 {
+    public static event Action OnCountChange;
     private Transform _target;
     public Transform Target { set { _target = value; } }
     private float _killExpirience;
@@ -9,7 +11,7 @@ public class Enemy : Mob
     {
         base.SetStats();
 
-        EnemyStats enemyStats = _damagableStats as EnemyStats;
+        var enemyStats = _damagableStats as EnemyStats;
 
         _killExpirience = enemyStats.KillExpirience;
     }
@@ -28,6 +30,7 @@ public class Enemy : Mob
 
     protected override void Die()
     {
+        OnCountChange?.Invoke();
         Destroy(gameObject);
     }
 

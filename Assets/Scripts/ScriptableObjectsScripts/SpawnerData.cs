@@ -17,4 +17,8 @@ public class SpawnerData : ScriptableObject
 
     [SerializeField] private float _spawnRate;
     public float SpawnRate { get { return _spawnRate; } }
+    
+    [SerializeField] private int _enemycount;
+    public int Enemycount { get { return _enemycount; } }
+
 }

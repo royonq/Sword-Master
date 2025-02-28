@@ -5,8 +5,8 @@ public abstract class Mob : Damageable
     protected float _damage;
     private float _attackSpeed;
 
-    protected Rigidbody2D _rb;
-    protected float _movementSpeed;
+    private Rigidbody2D _rb;
+    private float _movementSpeed;
     private Vector2 _movementDirection;
     public Vector2 MoveDirection { set { _movementDirection = value; } }
 
@@ -19,9 +19,9 @@ public abstract class Mob : Damageable
     protected override void SetStats()
     {
         base.SetStats();
-        MobStats mobStats = _damagableStats as MobStats;
+        var mobStats = _damagableStats as MobStats;
 
-        _movementSpeed = mobStats.MovementSpeed;
+        _movementSpeed = mobStats!.MovementSpeed;
         _attackSpeed = mobStats.AttackSpeed;
         _damage = mobStats.Damage;
     }

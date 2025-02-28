@@ -20857,7 +20857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59adf0fe8388871448e07d1220e210bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpawner: {fileID: 294332784}
+  _spawnEnemies: {fileID: 294332784}
   _gate: {fileID: 1200737248}
   _spawnerData: {fileID: 11400000, guid: a7f4d532bafbeea4488e2348a55cd8ff, type: 2}
 --- !u!61 &2112555238

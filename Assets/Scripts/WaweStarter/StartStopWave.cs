@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class WaveStartStop : MonoBehaviour
+public class StartStopWave : MonoBehaviour
 {
-    public static event Action OnGameWin; 
+    public static event Action OnGameWin;
     [SerializeField] private SpawnEnemies _spawnEnemies;
     [SerializeField] private GameObject _gate;
     [SerializeField] private SpawnerData _spawnerData;

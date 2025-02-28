@@ -7,15 +7,15 @@ public class Winn : MonoBehaviour
 {
     private void OnEnable()
     {
-        WaweSystem.OnGameWinn += TheWinn;
+        StartStopWave.OnGameWin += GameWinn;
     }
 
     private void OnDisable()
     {
-        WaweSystem.OnGameWinn -= TheWinn;
+        StartStopWave.OnGameWin -= GameWinn;
     }
 
-    private void TheWinn()
+    private void GameWinn()
     {
         Debug.Log("The Winn");  
     }

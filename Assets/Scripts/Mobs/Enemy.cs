@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : Mob
 {
-    public static event Action OnCountChange;
+    public static event Action OnDeath;
     private Transform _target;
     public Transform Target { set { _target = value; } }
     private float _killExpirience;
@@ -30,7 +30,7 @@ public class Enemy : Mob
 
     protected override void Die()
     {
-        OnCountChange?.Invoke();
+        OnDeath?.Invoke();
         Destroy(gameObject);
     }
 

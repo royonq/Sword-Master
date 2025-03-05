@@ -16,6 +16,7 @@ public class Player : Mob
 
         var playerStats = _damagableStats as PlayerStats;
 
+
         _moneyCount = playerStats.MoneyCount;
 
         _playerBars.SetMaxHealth(playerStats.MaxHealth);

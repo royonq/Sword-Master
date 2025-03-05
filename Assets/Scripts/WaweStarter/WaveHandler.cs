@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class StartStopWave : MonoBehaviour
+public class WaveHandler : MonoBehaviour
 {
     public static event Action OnGameWin;
     [SerializeField] private SpawnEnemies _spawnEnemies;
@@ -13,16 +13,14 @@ public class StartStopWave : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            return;
+            _enemyPerWaveCount = _spawnerData.Enemycount;
+            _spawnEnemies.StartWave();
+            Enemy.OnDeath += UpdateEnemyCount;
+            _gate.SetActive(true); //change to animation
+            gameObject.SetActive(false);
         }
-
-        _enemyPerWaveCount = _spawnerData.Enemycount;
-        _spawnEnemies.StartWave();
-        Enemy.OnCountChange += UpdateEnemyCount;
-        _gate.SetActive(true); //change to animation
-        gameObject.SetActive(false);
     }
 
 
@@ -33,7 +31,7 @@ public class StartStopWave : MonoBehaviour
         if (_enemyPerWaveCount == 0)
         {
             OnGameWin?.Invoke();
-            Enemy.OnCountChange -= UpdateEnemyCount;
+            Enemy.OnDeath -= UpdateEnemyCount;
             _gate.SetActive(false);
         }
     }

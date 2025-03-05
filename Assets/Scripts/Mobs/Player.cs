@@ -8,7 +8,6 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-    [SerializeField] private Defeat _defeat;
     private float _moneyCount;
 
     protected override void SetStats()
@@ -16,6 +15,7 @@ public class Player : Mob
         base.SetStats();
 
         var playerStats = _damagableStats as PlayerStats;
+
 
         _moneyCount = playerStats.MoneyCount;
 

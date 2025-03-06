@@ -16,4 +16,4 @@ MonoBehaviour:
   _spawnXmin: 40
   _spawnY: 10
   _spawnRate: 2
-  _enemycount: 3
+  _enemyWave: 050000000a0000000f000000

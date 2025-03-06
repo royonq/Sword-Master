@@ -13,6 +13,7 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private Transform _gatePosition;
 
     [SerializeField] private SpawnerData _spawnerData;
+    
     private int _enemyCounter;
     private int _enemyTotal;
 

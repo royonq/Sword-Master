@@ -3,6 +3,7 @@ using UnityEngine;
 public class Win : MonoBehaviour
 {
     [SerializeField] private GameObject _waveHandler;
+    
     private void OnEnable()
     {
         SpawnEnemies.OnGameWin += GameWin;

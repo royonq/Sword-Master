@@ -7,7 +7,6 @@ public class WaveHandler : MonoBehaviour
     [SerializeField] private SpawnEnemies _spawnEnemies;
     [SerializeField] private GameObject _startWaveButton;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -7,6 +7,7 @@ public class SpawnEnemies : MonoBehaviour
 {
     public static event Action OnGameWin;
     
+    [SerializeField] private GameObject _waveHandler;
     [SerializeField] private GameObject _gate;
     [SerializeField] private GameObject _enemy;
     [SerializeField] private Transform _gatePosition;
@@ -57,7 +58,7 @@ public class SpawnEnemies : MonoBehaviour
         if (_enemyTotal <= 0)
         {
             OnGameWin?.Invoke();
-           
+            _waveHandler.SetActive(true);
             _gate.SetActive(false);
         }
     }

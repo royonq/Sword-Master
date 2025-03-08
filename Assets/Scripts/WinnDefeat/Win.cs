@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    [SerializeField] private GameObject _waveHandler;
     
     private void OnEnable()
     {
@@ -16,7 +15,6 @@ public class Win : MonoBehaviour
 
     private void GameWin()
     {
-        _waveHandler.SetActive(true);
         Debug.Log("The Winn");  
     }
 }

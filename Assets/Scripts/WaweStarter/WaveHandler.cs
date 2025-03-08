@@ -1,15 +1,27 @@
+
 using UnityEngine;
+
 
 public class WaveHandler : MonoBehaviour
 {
     [SerializeField] private SpawnEnemies _spawnEnemies;
-    [SerializeField] private GameObject _startWaveButton;
+    private bool _isPlayerInZone;
+
+    private void Start()
+    {
+        PlayerInput.OnTryStartTheWave += StartWaveButton;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnTryStartTheWave -= StartWaveButton;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _startWaveButton.SetActive(true);
+            _isPlayerInZone = true;
         }
     }
 
@@ -17,14 +29,16 @@ public class WaveHandler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _startWaveButton.SetActive(false);
+            _isPlayerInZone = false;
         }
     }
 
-    public void StartWaveButton()
+    private void StartWaveButton()
     {
-        _spawnEnemies.StartWave();
-        _startWaveButton.SetActive(false);
-        gameObject.SetActive(false);
+        if (_isPlayerInZone)
+        {
+            _spawnEnemies.StartWave();
+            gameObject.SetActive(false);
+        }
     } 
 }

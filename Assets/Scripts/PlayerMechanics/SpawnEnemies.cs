@@ -35,7 +35,7 @@ public class SpawnEnemies : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        for (var i = 0; i < _spawnerData.EnemyWave[_enemyCounter]; i++) //todo enemyCount
+        for (var i = 0; i < _spawnerData.EnemyWave[_enemyCounter]; i++)
         {
             
             yield return new WaitForSeconds(_spawnerData.SpawnRate);

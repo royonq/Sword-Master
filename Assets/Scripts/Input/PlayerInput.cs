@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     public static event Action OnPannelSetActive;
+    public static event Action OnTryStartTheWave;
 
     private Vector2 _movementDirection;
 
@@ -45,6 +46,14 @@ public class PlayerInput : MonoBehaviour
         if (context.performed)
         {
             OnPannelSetActive?.Invoke();
+        }
+    }
+
+    public void OnTryStartWave(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnTryStartTheWave?.Invoke();
         }
     }
    

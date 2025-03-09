@@ -4,9 +4,11 @@ using UnityEngine;
 public class Enemy : Mob
 {
     public static event Action OnDeath;
+    public static event Action<int> OnDropMoney;
     private Transform _target;
     public Transform Target { set { _target = value; } }
     private float _killExpirience;
+    private int _dropMoney;
     protected override void SetStats()
     {
         base.SetStats();
@@ -14,6 +16,7 @@ public class Enemy : Mob
         var enemyStats = _damagableStats as EnemyStats;
 
         _killExpirience = enemyStats.KillExpirience;
+        _dropMoney =  enemyStats.MoneyToDrop;
     }
     private void FixedUpdate()
     {
@@ -30,6 +33,7 @@ public class Enemy : Mob
 
     protected override void Die()
     {
+        OnDropMoney?.Invoke(_dropMoney);
         OnDeath?.Invoke();
         Destroy(gameObject);
     }

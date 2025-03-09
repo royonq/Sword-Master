@@ -1,14 +1,21 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class Player : Mob
 {
     public static event Action OnPlayerDeath;
-
+    
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
+    [SerializeField] private TextMeshProUGUI _Moneytext;
     private float _moneyCount;
+
+    private void OnEnable()
+    {
+        Enemy.OnDropMoney += EarnMoney;
+    }
 
     protected override void SetStats()
     {
@@ -18,6 +25,7 @@ public class Player : Mob
 
 
         _moneyCount = playerStats.MoneyCount;
+        _Moneytext.text = _moneyCount.ToString();
 
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
@@ -34,6 +42,7 @@ public class Player : Mob
 
     protected override void Die()
     {
+        Enemy.OnDropMoney -= EarnMoney;
         OnPlayerDeath?.Invoke();
     }
 
@@ -44,6 +53,11 @@ public class Player : Mob
         _playerBars.ChangeValue(_currentHealth);
     }
 
+    private void EarnMoney(int money)
+    {
+        _moneyCount += money;
+        _Moneytext.text = _moneyCount.ToString();
+    }
     private void LevelUp()
     {
     }

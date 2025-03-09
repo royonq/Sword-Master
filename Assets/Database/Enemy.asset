@@ -16,4 +16,5 @@ MonoBehaviour:
   _movementSpeed: 2
   _damage: 15
   _attackSpeed: 7
-  _killExpirience: 1
+  _moneyToDrop: 20
+  _killExpirience: 10

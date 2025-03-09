@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerWallet : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _moneytext;
+    [SerializeField] private TMP_Text _moneytext;
     private int _moneyCount;
     public int MoneyCount
     {

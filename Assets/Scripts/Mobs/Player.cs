@@ -8,7 +8,6 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-    [SerializeField] private PlayerWallet _playerWallet;
 
 
     protected override void SetStats()
@@ -17,7 +16,6 @@ public class Player : Mob
 
         var playerStats = _damagableStats as PlayerStats;
 
-        _playerWallet.SetStartMoney(playerStats.StartMoney);
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
 
@@ -69,9 +67,5 @@ public class Player : Mob
     private void OpenInventory()
     {
     }
-
-    public void MoneyPickUp(int pickedMoney)
-    {
-        _playerWallet.MoneyCount += pickedMoney;
-    }
+    
 }

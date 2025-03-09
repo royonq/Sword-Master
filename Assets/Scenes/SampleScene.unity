@@ -509,8 +509,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1813667093
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.95194054, g: 1, b: 0, a: 1}
@@ -17830,6 +17830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneytext: {fileID: 763395399}
+  _moneyCount: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -18806,7 +18807,6 @@ MonoBehaviour:
   _playerBars: {fileID: 910200871}
   _deafultAttack: {fileID: 128655628}
   _ultimate: {fileID: 128655629}
-  _playerWallet: {fileID: 426362938}
 --- !u!1 &882896951
 GameObject:
   m_ObjectHideFlags: 0
@@ -20901,8 +20901,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1813667093
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.95194054, g: 1, b: 0, a: 1}

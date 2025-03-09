@@ -1,29 +1,25 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerWallet : MonoBehaviour
+public class Wallet : MonoBehaviour
 {
     [SerializeField] private TMP_Text _moneytext;
-    private int _moneyCount;
-    public int MoneyCount
-    {
-        get => _moneyCount;
-        set => _moneyCount = value;
-    }
+    [SerializeField] private int _moneyCount;
 
-    public void SetStartMoney(int startMoney)
+    private void Start()
     {
-        _moneyCount = startMoney;
         _moneytext.text = _moneyCount.ToString();
     }
-    
+
     private void OnEnable()
     {
+        PickUpItems.OnPickUp += EarnMoney;
         Enemy.OnDropMoney += EarnMoney;
     }
 
     private void OnDisable()
     {
+        PickUpItems.OnPickUp -= EarnMoney;
         Enemy.OnDropMoney -= EarnMoney;
     }
 
@@ -31,9 +27,5 @@ public class PlayerWallet : MonoBehaviour
     {
         _moneyCount += money;
         _moneytext.text = _moneyCount.ToString();
-    }
-    public void MoneyPickUp(int pickedMoney)
-    {
-        _moneyCount += pickedMoney;
     }
 }

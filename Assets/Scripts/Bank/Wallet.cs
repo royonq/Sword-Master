@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _moneytext;
-    [SerializeField] private int _moneyCount;
+    [SerializeField] private WalletDatabase _walletData;
+    [SerializeField] private TMP_Text _moneytext; 
+    private int _moneyCount;
 
     private void Start()
     {
+        _moneyCount = _walletData.MoneyCount;
         _moneytext.text = _moneyCount.ToString();
     }
 
     private void OnEnable()
     {
-        PickUpItems.OnPickUp += EarnMoney;
         Enemy.OnDropMoney += EarnMoney;
     }
 
     private void OnDisable()
     {
-        PickUpItems.OnPickUp -= EarnMoney;
         Enemy.OnDropMoney -= EarnMoney;
     }
 

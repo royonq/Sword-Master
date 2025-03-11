@@ -8,7 +8,7 @@ public abstract class Mob : Damageable
     private Rigidbody2D _rb;
     private float _movementSpeed;
     private Vector2 _movementDirection;
-    public Vector2 MoveDirection { set { _movementDirection = value; } }
+    public Vector2 MoveDirection { set => _movementDirection = value; }
 
 
     private void Awake()
@@ -21,12 +21,12 @@ public abstract class Mob : Damageable
         base.SetStats();
         var mobStats = _damagableStats as MobStats;
 
-        _movementSpeed = mobStats!.MovementSpeed;
+        _movementSpeed = mobStats.MovementSpeed;
         _attackSpeed = mobStats.AttackSpeed;
         _damage = mobStats.Damage;
     }
 
-    public void Move(Vector2 direction)
+    public virtual void Move(Vector2 direction)
     {
         _rb.velocity = _movementSpeed * direction;
     }

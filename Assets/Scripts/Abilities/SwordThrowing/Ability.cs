@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 public abstract class Ability : MonoBehaviour
@@ -10,6 +11,8 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
     private bool _isAbilityCooldown;
+    private Animator _animator;
+    private string _animationName;
 
     protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
     {
@@ -26,19 +29,28 @@ public abstract class Ability : MonoBehaviour
         _abilityImage.sprite = _stats.AbilityIcon;
     }
 
+    public void SetAnimation(Animator animator,string animationName)
+    {
+        _animator = animator;
+        _animationName = animationName;
+    }
+
     private IEnumerator Cooldown(float cooldown)
     {
         _isAbilityCooldown = true;
+        
         _abilityColdownImage.fillAmount = 1;
 
         while (_abilityColdownImage.fillAmount > 0)
         {
             _abilityColdownImage.fillAmount -= 1 / cooldown * Time.deltaTime;
             yield return null;
+            _animator?.SetBool(_animationName, false);
         }
-
+        
         _abilityColdownImage.fillAmount = 0;
         _isAbilityCooldown = false;
+        
     }
 
     public void Use()
@@ -47,7 +59,7 @@ public abstract class Ability : MonoBehaviour
         {
             return;
         } 
-        
+        _animator?.SetBool(_animationName, true);
         StartCoroutine(Cooldown(_stats.Cooldown));
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
         InitAbility(instancedAbility, _stats);

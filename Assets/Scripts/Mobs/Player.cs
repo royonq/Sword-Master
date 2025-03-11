@@ -8,6 +8,9 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
+    [SerializeField] private PlayerAnimations _playerAnimations;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 
 
     protected override void SetStats()
@@ -17,7 +20,20 @@ public class Player : Mob
         var playerStats = _damagableStats as PlayerStats;
 
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
+        GetAnimationComponents();
     }
+
+    private void GetAnimationComponents()
+    {
+        _playerAnimations = GetComponent<PlayerAnimations>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        _deafultAttack.SetAnimation(_animator,"IsAttack");
+        _ultimate.SetAnimation(_animator,"IsUltimate");
+    }
+
+    
 
     public void Attack()
     {
@@ -40,6 +56,13 @@ public class Player : Mob
 
         _playerBars.ChangeValue(_currentHealth);
     }
+
+    public override void Move(Vector2 direction)
+    {
+        base.Move(direction);
+        _playerAnimations.MoveIdleAnimation(direction,_animator,_spriteRenderer);
+    }
+
     private void LevelUp()
     {
     }

@@ -54,18 +54,28 @@ public abstract class Ability : MonoBehaviour
             return;
         }
 
-        
 
         StartCoroutine(this is UltimateAttack
-            ? _playerAnimations.PlayerAbilityAnimation(true,this)
-            : _playerAnimations.PlayerAbilityAnimation(false,this));
-            
-        StartCoroutine(Cooldown(_stats.Cooldown));
+            ? _playerAnimations.PlayerAbilityAnimation(true)
+            : _playerAnimations.PlayerAbilityAnimation(false));
+
+        StartCoroutine(WaitForAnimationToEnd());
     }
 
-    public void InitInstanceAbility()
+    private IEnumerator WaitForAnimationToEnd()
+    {
+        while (_playerAnimations.IsAnimationPlay)
+        {
+            yield return null;
+        }
+
+        InitInstanceAbility();
+    }
+
+    private void InitInstanceAbility()
     {
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
         InitAbility(instancedAbility, _stats); 
+        StartCoroutine(Cooldown(_stats.Cooldown));
     }
 }

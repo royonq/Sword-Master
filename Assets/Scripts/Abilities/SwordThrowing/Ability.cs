@@ -11,7 +11,7 @@ public abstract class Ability : MonoBehaviour
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
-    private bool _isAbilityCooldown;
+    private bool _isAbilityUsing;
 
     protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
     {
@@ -33,7 +33,7 @@ public abstract class Ability : MonoBehaviour
     
     private IEnumerator Cooldown(float cooldown)
     {
-        _isAbilityCooldown = true;
+        
         
         _abilityColdownImage.fillAmount = 1;
 
@@ -44,31 +44,26 @@ public abstract class Ability : MonoBehaviour
             
         }
         _abilityColdownImage.fillAmount = 0;
-        _isAbilityCooldown = false;
+        _isAbilityUsing = false;
     }
 
     public void Use()
     {
-        if (_isAbilityCooldown)
+        if (_isAbilityUsing)
         {
             return;
         }
 
-
-        StartCoroutine(this is UltimateAttack
-            ? _playerAnimations.PlayerAbilityAnimation(true)
-            : _playerAnimations.PlayerAbilityAnimation(false));
-
-        StartCoroutine(WaitForAnimationToEnd());
+        StartCoroutine(UseAbilityAfterAnimation());
     }
 
-    private IEnumerator WaitForAnimationToEnd()
+    private IEnumerator UseAbilityAfterAnimation()
     {
-        while (_playerAnimations.IsAnimationPlay)
-        {
-            yield return null;
-        }
-
+        _isAbilityUsing = true;
+        yield return StartCoroutine(this is UltimateAttack
+            ? _playerAnimations.PlayerAbilityAnimation(true)
+            : _playerAnimations.PlayerAbilityAnimation(false));
+        
         InitInstanceAbility();
     }
 

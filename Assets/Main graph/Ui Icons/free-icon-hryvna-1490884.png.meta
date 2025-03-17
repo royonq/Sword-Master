@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      free-icon-hryvna-1490884_0: -1165058728214598549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

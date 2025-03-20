@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class EnemyMobAnimations : MobAnimations
 {
     private readonly string _isAttack = "IsAttack";

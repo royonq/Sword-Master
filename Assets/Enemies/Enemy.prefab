@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damagableStats: {fileID: 11400000, guid: 8d49e1fd58893b64597e241d592cfddd, type: 2}
-  _mobAnimations: {fileID: -2536704418952054711}
   _enemyMobAnimations: {fileID: -2536704418952054711}
 --- !u!95 &7309542431796244340
 Animator:
@@ -211,5 +210,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a3dc895bdf4484e941ee0503ffa277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7309542431796244340}
-  _spriteRenderer: {fileID: 6615553068476550009}

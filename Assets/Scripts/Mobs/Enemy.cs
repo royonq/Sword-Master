@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Enemy : Mob
 {
     public static event Action OnDeath;
-    public static event Action<int> OnDropMoney;
-    [FormerlySerializedAs("_enemyAnimations")] [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
+    public static event Action<int> OnDropMoney; 
+    
+    [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
+    
     private Transform _target;
     public Transform Target { set => _target = value; }
     private float _killExpirience;

@@ -28,21 +28,17 @@ public abstract class Ability : MonoBehaviour
         _abilityColdownImage.fillAmount = 0;
         _abilityImage.sprite = _stats.AbilityIcon;
     }
-    
-    
-    
+
     private IEnumerator Cooldown(float cooldown)
     {
-        
-        
         _abilityColdownImage.fillAmount = 1;
 
         while (_abilityColdownImage.fillAmount > 0)
         {
             _abilityColdownImage.fillAmount -= 1 / cooldown * Time.deltaTime;
             yield return null;
-            
         }
+
         _abilityColdownImage.fillAmount = 0;
         _isAbilityUsing = false;
     }
@@ -63,14 +59,14 @@ public abstract class Ability : MonoBehaviour
         yield return StartCoroutine(this is UltimateAttack
             ? _playerMobAnimations.PlayerAbilityAnimation(true)
             : _playerMobAnimations.PlayerAbilityAnimation(false));
-        
+
         InitInstanceAbility();
     }
 
     private void InitInstanceAbility()
     {
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitAbility(instancedAbility, _stats); 
+        InitAbility(instancedAbility, _stats);
         StartCoroutine(Cooldown(_stats.Cooldown));
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyAnimations : Animations
+public class EnemyMobAnimations : MobAnimations
 {
     private readonly string _isAttack = "IsAttack";
     private bool _isAttackAnimationPlay;

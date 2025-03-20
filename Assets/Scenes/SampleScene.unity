@@ -461,7 +461,7 @@ MonoBehaviour:
   _ability: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
   _spawnpoint: {fileID: 128655627}
   _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
-  _playerAnimations: {fileID: 868551414}
+  _playerMobAnimations: {fileID: 868551414}
   _abilityColdownImage: {fileID: 4770416111288292416}
   _abilityImage: {fileID: 4359617987926457860}
 --- !u!114 &128655629
@@ -479,7 +479,7 @@ MonoBehaviour:
   _ability: {fileID: 2756192474105323788, guid: 597869fee4972234c9c95828d313ddf7, type: 3}
   _spawnpoint: {fileID: 868551400}
   _stats: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
-  _playerAnimations: {fileID: 868551414}
+  _playerMobAnimations: {fileID: 868551414}
   _abilityColdownImage: {fileID: 729356896}
   _abilityImage: {fileID: 599050992}
   _playerPositionTracker: {fileID: 1617316992}
@@ -18854,7 +18854,7 @@ MonoBehaviour:
   _playerBars: {fileID: 910200871}
   _deafultAttack: {fileID: 128655628}
   _ultimate: {fileID: 128655629}
-  _playerAnimations: {fileID: 868551414}
+  _playerMobAnimations: {fileID: 868551414}
 --- !u!95 &868551413
 Animator:
   serializedVersion: 7
@@ -18889,9 +18889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e516b5d8efd194e9aed035c63c07fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 868551413}
-  _spriteRenderer: {fileID: 868551399}
-  isAnimationPlay: 0
 --- !u!1 &882896951
 GameObject:
   m_ObjectHideFlags: 0

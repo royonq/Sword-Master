@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : Mob
 {
@@ -8,7 +9,7 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-    [SerializeField] private PlayerAnimations _playerAnimations;
+    [FormerlySerializedAs("_playerAnimations")] [SerializeField] private PlayerMobAnimations _playerMobAnimations;
 
 
     protected override void SetStats()
@@ -40,12 +41,6 @@ public class Player : Mob
         base.TakeDamage(recivedDamage);
 
         _playerBars.ChangeValue(_currentHealth);
-    }
-
-    public override void Move(Vector2 direction)
-    {
-        base.Move(direction);
-        _playerAnimations.MoveIdleAnimation(direction);
     }
 
     private void LevelUp()

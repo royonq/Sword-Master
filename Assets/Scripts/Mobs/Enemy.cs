@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : Mob
 {
     public static event Action OnDeath;
     public static event Action<int> OnDropMoney;
-    [SerializeField] private EnemyAnimations _enemyAnimations;
+    [FormerlySerializedAs("_enemyAnimations")] [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
     private Transform _target;
-    public Transform Target { set { _target = value; } }
+    public Transform Target { set => _target = value; }
     private float _killExpirience;
     private int _dropMoney;
     protected override void SetStats()
@@ -23,7 +24,6 @@ public class Enemy : Mob
     {
         Vector2 direction = _target.position - transform.position;
         Move(direction.normalized);
-        _enemyAnimations.MoveIdleAnimation(direction.normalized);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

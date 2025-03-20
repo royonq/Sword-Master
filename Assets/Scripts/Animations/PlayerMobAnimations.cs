@@ -1,16 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAnimations : Animations
+public class PlayerMobAnimations : MobAnimations
 {
     private readonly string _deafultAttackAnimation = "IsAttack";
     private readonly string _ultimaAttackAnimation = "IsUltimate";
-    public bool isAnimationPlay;
-    public bool IsAnimationPlay => isAnimationPlay;
+    private bool _isAbilityAnimationPlay;
 
     public IEnumerator PlayerAbilityAnimation(bool isUltimate)
     {
-        isAnimationPlay = true;
+        _isAbilityAnimationPlay = true;
         var attackAnimation = isUltimate ? _ultimaAttackAnimation : _deafultAttackAnimation;
 
         _animator.SetBool(attackAnimation, true);
@@ -18,7 +17,7 @@ public class PlayerAnimations : Animations
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         
         _animator.SetBool(attackAnimation, false);
-        isAnimationPlay = false;
+        _isAbilityAnimationPlay = false;
     }
     
 }

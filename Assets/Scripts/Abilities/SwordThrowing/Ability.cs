@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public abstract class Ability : MonoBehaviour
@@ -7,7 +8,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private GameObject _ability;
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private AbilityStats _stats;
-    [SerializeField] private PlayerAnimations _playerAnimations;
+    [FormerlySerializedAs("_playerAnimations")] [SerializeField] private PlayerMobAnimations _playerMobAnimations;
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
@@ -61,8 +62,8 @@ public abstract class Ability : MonoBehaviour
     {
         _isAbilityUsing = true;
         yield return StartCoroutine(this is UltimateAttack
-            ? _playerAnimations.PlayerAbilityAnimation(true)
-            : _playerAnimations.PlayerAbilityAnimation(false));
+            ? _playerMobAnimations.PlayerAbilityAnimation(true)
+            : _playerMobAnimations.PlayerAbilityAnimation(false));
         
         InitInstanceAbility();
     }

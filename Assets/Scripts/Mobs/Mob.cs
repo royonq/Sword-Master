@@ -1,19 +1,19 @@
 using UnityEngine;
 
 public abstract class Mob : Damageable
-{
+{ 
+    private MobAnimations _mobAnimations;
+    
     protected float _damage;
     private float _attackSpeed;
 
     private Rigidbody2D _rb;
     private float _movementSpeed;
-    private Vector2 _movementDirection;
-    public Vector2 MoveDirection { set { _movementDirection = value; } }
-
-
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _mobAnimations = GetComponentInChildren<MobAnimations>();
     }
 
     protected override void SetStats()
@@ -21,7 +21,7 @@ public abstract class Mob : Damageable
         base.SetStats();
         var mobStats = _damagableStats as MobStats;
 
-        _movementSpeed = mobStats!.MovementSpeed;
+        _movementSpeed = mobStats.MovementSpeed;
         _attackSpeed = mobStats.AttackSpeed;
         _damage = mobStats.Damage;
     }
@@ -29,6 +29,7 @@ public abstract class Mob : Damageable
     public void Move(Vector2 direction)
     {
         _rb.velocity = _movementSpeed * direction;
+        _mobAnimations.MoveIdleAnimation(direction);
     }
 
     private void Heal()

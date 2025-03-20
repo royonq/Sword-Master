@@ -18,7 +18,7 @@ public class Player : Mob
 
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
-
+    
     public void Attack()
     {
         _deafultAttack.Use();
@@ -40,6 +40,7 @@ public class Player : Mob
 
         _playerBars.ChangeValue(_currentHealth);
     }
+
     private void LevelUp()
     {
     }

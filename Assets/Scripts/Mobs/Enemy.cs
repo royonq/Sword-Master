@@ -4,9 +4,12 @@ using UnityEngine;
 public class Enemy : Mob
 {
     public static event Action OnDeath;
-    public static event Action<int> OnDropMoney;
+    public static event Action<int> OnDropMoney; 
+    
+    [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
+    
     private Transform _target;
-    public Transform Target { set { _target = value; } }
+    public Transform Target { set => _target = value; }
     private float _killExpirience;
     private int _dropMoney;
     protected override void SetStats()
@@ -20,7 +23,8 @@ public class Enemy : Mob
     }
     private void FixedUpdate()
     {
-        Move((_target.position - transform.position).normalized);
+        Vector2 direction = _target.position - transform.position;
+        Move(direction.normalized);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

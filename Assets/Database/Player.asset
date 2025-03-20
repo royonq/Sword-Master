@@ -16,4 +16,3 @@ MonoBehaviour:
   _movementSpeed: 15
   _damage: 10
   _attackSpeed: 3
-  _startMoney: 10

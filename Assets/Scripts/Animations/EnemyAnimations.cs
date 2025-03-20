@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimations : MonoBehaviour
+public class EnemyAnimations : Animations
 {
-    // Start is called before the first frame update
-    void Start()
+    private readonly string _isAttack = "IsAttack";
+    private bool _isAttackAnimationPlay;
+    private void EnemyAttackAnimation()
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _animator.SetBool(_isAttack,_isAttackAnimationPlay);
     }
 }

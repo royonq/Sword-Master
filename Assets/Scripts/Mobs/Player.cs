@@ -9,7 +9,6 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-    [FormerlySerializedAs("_playerAnimations")] [SerializeField] private PlayerMobAnimations _playerMobAnimations;
 
 
     protected override void SetStats()

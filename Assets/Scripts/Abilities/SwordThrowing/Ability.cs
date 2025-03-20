@@ -8,7 +8,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private GameObject _ability;
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private AbilityStats _stats;
-    [FormerlySerializedAs("_playerAnimations")] [SerializeField] private PlayerMobAnimations _playerMobAnimations;
+    [SerializeField] private PlayerMobAnimations _playerMobAnimations;
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;

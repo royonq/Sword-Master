@@ -3,5 +3,5 @@ using UnityEngine;
 public class DamagebleStats : ScriptableObject
 {
     [SerializeField] protected float _maxHealth;
-    public float MaxHealth { get { return _maxHealth; } }
+    public float MaxHealth => _maxHealth;
 }

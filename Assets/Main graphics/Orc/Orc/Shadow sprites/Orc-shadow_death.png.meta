@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: e216b04f5c4a78a4f907e1150a8456c0
+guid: b7f37d3ad56368a499ce956b15a1e1e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7593954805504680956
-    second: Orc-attack02_Effect_0
+      213: -5771478684454141434
+    second: Orc-shadow_death_0
   - first:
-      213: -2671378827300738900
-    second: Orc-attack02_Effect_1
+      213: -1324071862299577995
+    second: Orc-shadow_death_1
+  - first:
+      213: -1580776445174962102
+    second: Orc-shadow_death_2
+  - first:
+      213: 6097641245615169911
+    second: Orc-shadow_death_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orc-attack02_Effect_0
+      name: Orc-shadow_death_0
       rect:
         serializedVersion: 2
-        x: 352
-        y: 33
-        width: 23
-        height: 32
+        x: 42
+        y: 39
+        width: 17
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40cd581c65adc9690800000000000000
-      internalID: -7593954805504680956
+      spriteID: 6024f5017b697efa0800000000000000
+      internalID: -5771478684454141434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Orc-attack02_Effect_1
+      name: Orc-shadow_death_1
       rect:
         serializedVersion: 2
-        x: 452
-        y: 33
-        width: 16
-        height: 16
+        x: 141
+        y: 39
+        width: 15
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +142,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca86d323c1b5dead0800000000000000
-      internalID: -2671378827300738900
+      spriteID: 5713b8e08a3ff9de0800000000000000
+      internalID: -1324071862299577995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc-shadow_death_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 39
+        width: 27
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48aa0cc234ff0ae0800000000000000
+      internalID: -1580776445174962102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc-shadow_death_3
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 39
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771a9acf76c2f9450800000000000000
+      internalID: 6097641245615169911
       vertices: []
       indices: 
       edges: []
@@ -152,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orc-shadow_death_0: -5771478684454141434
+      Orc-shadow_death_1: -1324071862299577995
+      Orc-shadow_death_2: -1580776445174962102
+      Orc-shadow_death_3: 6097641245615169911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

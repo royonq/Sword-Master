@@ -8,7 +8,9 @@ public class EnemyStats : MobStats
     public int MoneyToDrop => _moneyToDrop;
 
     [SerializeField] private float _killExpirience;
-    public float KillExpirience { get { return _killExpirience; } }
-    
-    
+
+    public float KillExpirience => _killExpirience;
+
+    [SerializeField] private float _attackDistance;
+    public float AttackDistance => _attackDistance;
 }

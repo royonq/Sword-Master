@@ -5,7 +5,6 @@ public abstract class Mob : Damageable
     private MobAnimations _mobAnimations;
     
     protected float _damage;
-    private float _attackSpeed;
 
     private Rigidbody2D _rb;
     private float _movementSpeed;
@@ -22,7 +21,6 @@ public abstract class Mob : Damageable
         var mobStats = _damagableStats as MobStats;
 
         _movementSpeed = mobStats.MovementSpeed;
-        _attackSpeed = mobStats.AttackSpeed;
         _damage = mobStats.Damage;
     }
 

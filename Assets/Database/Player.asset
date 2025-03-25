@@ -15,4 +15,3 @@ MonoBehaviour:
   _maxHealth: 100
   _movementSpeed: 15
   _damage: 10
-  _attackSpeed: 3

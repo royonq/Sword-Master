@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : Mob
@@ -10,29 +11,48 @@ public class Enemy : Mob
     
     private Transform _target;
     public Transform Target { set => _target = value; }
+    private Vector2 _direction;
     private float _killExpirience;
     private int _dropMoney;
+    private bool _isAttacking;
+    private float _stopDistance;
+
     protected override void SetStats()
     {
         base.SetStats();
 
         var enemyStats = _damagableStats as EnemyStats;
-
+        _stopDistance = enemyStats.AttackDistance;
         _killExpirience = enemyStats.KillExpirience;
-        _dropMoney =  enemyStats.MoneyToDrop;
+        _dropMoney = enemyStats.MoneyToDrop;
     }
+
     private void FixedUpdate()
     {
-        Vector2 direction = _target.position - transform.position;
-        Move(direction.normalized);
+        _direction = _target.position - transform.position;
+        if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
+        {
+            Move(_direction.normalized);
+        }
+        else
+        {
+            if (!_isAttacking)
+            {
+                Move(Vector2.zero);
+                StartCoroutine(Attack(_target.gameObject));
+            }
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator Attack(GameObject target)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") || collision.gameObject.layer == LayerMask.NameToLayer("Gate"))
-        {
-            collision.gameObject.GetComponent<Damageable>().TakeDamage(_damage);
-        }
+        _isAttacking = true;
+        
+        yield return StartCoroutine(_enemyMobAnimations.EnemyAttackAnimation());
+
+        target.GetComponent<Damageable>().TakeDamage(_damage);
+
+        _isAttacking = false;
     }
 
     protected override void Die()

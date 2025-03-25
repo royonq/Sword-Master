@@ -8,7 +8,7 @@ public abstract class Mob : Damageable
     private float _attackSpeed;
 
     private Rigidbody2D _rb;
-    private float _movementSpeed;
+    protected float _movementSpeed;
     
     private void Awake()
     {

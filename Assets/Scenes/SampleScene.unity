@@ -18854,7 +18854,6 @@ MonoBehaviour:
   _playerBars: {fileID: 910200871}
   _deafultAttack: {fileID: 128655628}
   _ultimate: {fileID: 128655629}
-  _playerMobAnimations: {fileID: 868551414}
 --- !u!95 &868551413
 Animator:
   serializedVersion: 7

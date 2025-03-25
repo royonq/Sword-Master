@@ -1,10 +1,17 @@
+using System.Collections;
+using UnityEngine;
+
 public class EnemyMobAnimations : MobAnimations
 {
-    private readonly string _isAttack = "IsAttack";
-    private bool _isAttackAnimationPlay;
-    private void EnemyAttackAnimation()
+    private readonly string _enemyAttackAnimation = "IsAttack";
+    private float _playAnimationSpeed;
+
+    public IEnumerator EnemyAttackAnimation()
     {
+        _animator.SetBool(_enemyAttackAnimation, true);
+
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         
-        _animator.SetBool(_isAttack,_isAttackAnimationPlay);
+        _animator.SetBool(_enemyAttackAnimation, false);
     }
 }

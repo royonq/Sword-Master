@@ -15,12 +15,14 @@ public class Enemy : Mob
     private float _killExpirience;
     private int _dropMoney;
     private bool _isAttacking;
+    private float _stopDistance;
+
     protected override void SetStats()
     {
         base.SetStats();
 
         var enemyStats = _damagableStats as EnemyStats;
-
+        _stopDistance = enemyStats.AttackDistance;
         _killExpirience = enemyStats.KillExpirience;
         _dropMoney = enemyStats.MoneyToDrop;
     }
@@ -28,7 +30,7 @@ public class Enemy : Mob
     private void FixedUpdate()
     {
         _direction = _target.position - transform.position;
-        if (Vector2.Distance(transform.position, _target.position) > 2)
+        if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
         {
             Move(_direction.normalized);
         }

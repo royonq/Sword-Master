@@ -17,4 +17,4 @@ MonoBehaviour:
   _damage: 1
   _moneyToDrop: 20
   _killExpirience: 10
-  _targetAttackDistance: 0
+  _attackDistance: 2

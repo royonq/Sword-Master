@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewEnemy", menuName = "Data/Damageble/Enemy")]
 
@@ -11,5 +12,6 @@ public class EnemyStats : MobStats
 
     public float KillExpirience => _killExpirience;
 
-    [SerializeField] private float _targetAttackDistance;
+    [SerializeField] private float _attackDistance;
+    public float AttackDistance => _attackDistance;
 }

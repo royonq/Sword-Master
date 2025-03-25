@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemyMobAnimations : MobAnimations
 {
     private readonly string _enemyAttackAnimation = "IsAttack";
-    private float _playAnimationSpeed;
 
     public IEnumerator EnemyAttackAnimation()
     {

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   _maxHealth: 5
-  _movementSpeed: 2
+  _movementSpeed: 8
   _damage: 1
-  _attackSpeed: 7
   _moneyToDrop: 20
   _killExpirience: 10
+  _targetAttackDistance: 0

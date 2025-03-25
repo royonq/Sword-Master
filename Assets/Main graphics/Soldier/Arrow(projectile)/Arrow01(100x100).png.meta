@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3dbd31b73a244fe4caedd2f3158155f7
+guid: 88bf956d45d2b1b4a9492966c5ecc5ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6860611473662190531
-    second: Soldier-Shadow_0
+      213: 1158201469468389350
+    second: Arrow01(100x100)_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soldier-Shadow_0
+      name: Arrow01(100x100)_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 39
-        width: 17
-        height: 7
+        x: 40
+        y: 45
+        width: 21
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3c556ab6363ac0a0800000000000000
-      internalID: -6860611473662190531
+      spriteID: 6efaffd9912c21010800000000000000
+      internalID: 1158201469468389350
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Arrow01(100x100)_0: 1158201469468389350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

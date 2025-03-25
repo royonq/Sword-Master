@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewEnemy", menuName = "Data/Damageble/Enemy")]
 

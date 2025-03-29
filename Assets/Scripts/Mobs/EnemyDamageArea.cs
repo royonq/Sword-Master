@@ -30,14 +30,4 @@ public class EnemyDamageArea : MonoBehaviour
         yield return null;
         _collider2D.enabled = false;
     }
-
-    public void FlipDamageArea(SpriteRenderer spriteRenderer)
-    {
-
-        transform.localPosition = spriteRenderer.flipX
-            ? new Vector3(-Mathf.Abs(transform.localPosition.x), transform.localPosition.y,
-                transform.localPosition.z)
-            : new Vector3(Mathf.Abs(transform.localPosition.x), transform.localPosition.y,
-                transform.localPosition.z);
-    }
 }

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public abstract class MobAnimations : MonoBehaviour
 {
+    
     protected Animator _animator;
-    private SpriteRenderer _spriteRenderer;
+    protected SpriteRenderer _spriteRenderer;
     private readonly string _transitionTomovement = "MoveSpeed";
 
     private void Start()
@@ -12,10 +13,9 @@ public abstract class MobAnimations : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void MoveIdleAnimation(Vector2 direction)
+    public virtual void MoveIdleAnimation(Vector2 direction)
     {
         _animator.SetFloat(_transitionTomovement, direction.magnitude);
-
         _spriteRenderer.flipX = direction.x switch
         {
             < 0 => true,

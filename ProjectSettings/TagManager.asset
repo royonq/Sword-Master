@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Money
   - Enemy
+  - Gate
   layers:
   - Default
   - TransparentFX

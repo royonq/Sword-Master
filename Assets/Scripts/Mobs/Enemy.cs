@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : Mob
+public  class Enemy : Mob
 {
     public static event Action OnDeath;
     public static event Action<int> OnDropMoney;
@@ -27,11 +27,16 @@ public class Enemy : Mob
         base.SetStats();
 
         _enemyStats = _damagableStats as EnemyStats;
-        _stopDistance = _enemyStats.AttackDistance;
-        _killExpirience = _enemyStats.KillExpirience;
-        _dropMoney = _enemyStats.MoneyToDrop;
+        InitEnemy(_enemyStats);
+    }
+
+    private void InitEnemy(EnemyStats stats)
+    {
+        _stopDistance = stats.AttackDistance;
+        _killExpirience = stats.KillExpirience;
+        _dropMoney = stats.MoneyToDrop;
         _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
-        _enemyDamageArea.Damage = _enemyStats.Damage;
+        _enemyDamageArea.Damage = stats.Damage;
     }
 
     private void FixedUpdate()
@@ -43,11 +48,9 @@ public class Enemy : Mob
         }
         else
         {
-            if (!_isAttacking)
-            {
-                Move(Vector2.zero);
-                StartCoroutine(Attack(_target.gameObject));
-            }
+            if (_isAttacking) return;
+            Move(Vector2.zero);
+            StartCoroutine(Attack(_target.gameObject));
         }
     }
 

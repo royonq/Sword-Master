@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class MobAnimations : MonoBehaviour
 {
     protected Animator _animator;
-    private const string _transitionTomovement = "MoveSpeed";
+    private readonly string _transitionTomovement = "MoveSpeed";
 
     private void Start()
     {
@@ -14,11 +14,9 @@ public abstract class MobAnimations : MonoBehaviour
     {
         _animator.SetFloat(_transitionTomovement, direction.magnitude);
 
-        transform.localScale = direction.x switch
+        if ((direction.x < 0 && transform.localScale.x > 0) || (direction.x > 0 && transform.localScale.x < 0))
         {
-            < 0 => new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z),
-            > 0 => new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z),
-            _ => transform.localScale
-        };
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class SpawnEnemies : MonoBehaviour
@@ -46,7 +45,7 @@ public class SpawnEnemies : MonoBehaviour
             var newEnemy = Instantiate(_enemy, _target.position + _spawnOffset, _target.rotation);
             var enemy = newEnemy.GetComponent<Enemy>();
            
-            enemy.Target = _target;
+            enemy.InitTarget(_target);
         }
 
         _enemyCounter++;

@@ -11,10 +11,6 @@ public  class Enemy : Mob
     private EnemyDamageArea _enemyDamageArea;
     private Transform _target;
     private EnemyStats _enemyStats;
-    public Transform Target
-    {
-        set => _target = value;
-    }
 
     private Vector2 _direction;
     private float _killExpirience;
@@ -27,18 +23,20 @@ public  class Enemy : Mob
         base.SetStats();
 
         _enemyStats = _damagableStats as EnemyStats;
-        InitEnemy(_enemyStats);
-    }
-
-    private void InitEnemy(EnemyStats stats)
-    {
-        _stopDistance = stats.AttackDistance;
-        _killExpirience = stats.KillExpirience;
-        _dropMoney = stats.MoneyToDrop;
+        
+        _stopDistance = _enemyStats.AttackDistance;
+        _killExpirience = _enemyStats.KillExpirience;
+        _dropMoney = _enemyStats.MoneyToDrop;
+        
         _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
-        _enemyDamageArea.Damage = stats.Damage;
+        _enemyDamageArea.InitDamage(_enemyStats.AttackDamage);
     }
 
+    public void InitTarget(Transform target)
+    {
+        _target = target;
+    }
+    
     private void FixedUpdate()
     {
         _direction = _target.position - transform.position;

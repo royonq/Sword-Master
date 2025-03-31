@@ -6,14 +6,14 @@ public class EnemyDamageArea : MonoBehaviour
     private Collider2D _collider2D;
     private float _damage;
 
-    public float Damage
-    {
-        set => _damage = value;
-    }
-
     private void Start()
     {
         _collider2D = GetComponent<Collider2D>();
+    }
+
+    public void InitDamage(float damage)
+    {
+        _damage = damage;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

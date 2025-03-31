@@ -39,7 +39,7 @@ public  class Enemy : Mob
     
     private void FixedUpdate()
     {
-        _direction = _target.position - transform.position;
+        _direction = (_target.position - transform.position).normalized;
         if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
         {
             Move(_direction.normalized);

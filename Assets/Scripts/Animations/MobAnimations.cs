@@ -7,16 +7,18 @@ public abstract class MobAnimations : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     public void MoveIdleAnimation(Vector2 direction)
     {
         _animator.SetFloat(_transitionTomovement, direction.magnitude);
-
-        if (direction.x * transform.localScale.x < 0)
+        if (direction.x == 0)
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            return;
         }
+
+        float directionX = direction.x > 0 ? 1 : -1;
+        transform.localScale = new Vector3(directionX, transform.localScale.y, transform.localScale.z);
     }
 }

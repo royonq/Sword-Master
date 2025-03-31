@@ -46,7 +46,10 @@ public  class Enemy : Mob
         }
         else
         {
-            if (_isAttacking) return;
+            if (_isAttacking)
+            {
+                return;
+            }
             Move(Vector2.zero);
             StartCoroutine(Attack(_target.gameObject));
         }

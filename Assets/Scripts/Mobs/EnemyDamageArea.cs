@@ -11,7 +11,7 @@ public class EnemyDamageArea : MonoBehaviour
         _collider2D = GetComponent<Collider2D>();
     }
 
-    public void InitDamage(float damage)
+    public void Init(float damage)
     {
         _damage = damage;
     }

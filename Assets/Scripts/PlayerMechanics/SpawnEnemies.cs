@@ -45,7 +45,7 @@ public class SpawnEnemies : MonoBehaviour
             var newEnemy = Instantiate(_enemy, _target.position + _spawnOffset, _target.rotation);
             var enemy = newEnemy.GetComponent<Enemy>();
            
-            enemy.InitTarget(_target);
+            enemy.SetTarget(_target);
         }
 
         _enemyCounter++;

@@ -302,4 +302,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a3dc895bdf4484e941ee0503ffa277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponCollider: {fileID: 4264612403728949264}

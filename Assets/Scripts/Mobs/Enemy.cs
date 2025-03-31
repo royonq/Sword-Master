@@ -29,10 +29,10 @@ public  class Enemy : Mob
         _dropMoney = _enemyStats.MoneyToDrop;
         
         _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
-        _enemyDamageArea.InitDamage(_enemyStats.AttackDamage);
+        _enemyDamageArea.Init(_enemyStats.AttackDamage);
     }
 
-    public void InitTarget(Transform target)
+    public void SetTarget(Transform target)
     {
         _target = target;
     }

@@ -3,24 +3,22 @@ using UnityEngine;
 public abstract class MobAnimations : MonoBehaviour
 {
     protected Animator _animator;
-    private SpriteRenderer _spriteRenderer;
     private readonly string _transitionTomovement = "MoveSpeed";
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     public void MoveIdleAnimation(Vector2 direction)
     {
         _animator.SetFloat(_transitionTomovement, direction.magnitude);
-
-        _spriteRenderer.flipX = direction.x switch
+        if (direction.x == 0)
         {
-            < 0 => true,
-            > 0 => false,
-            _ => _spriteRenderer.flipX
-        };
+            return;
+        }
+
+        float directionX = direction.x > 0 ? 1 : -1;
+        transform.localScale = new Vector3(directionX, transform.localScale.y, transform.localScale.z);
     }
 }

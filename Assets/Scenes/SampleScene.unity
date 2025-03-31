@@ -749,7 +749,7 @@ MonoBehaviour:
   _waveHandler: {fileID: 2112555235}
   _gate: {fileID: 1200737248}
   _enemy: {fileID: 6305043294565682012, guid: b7a153f877ccf0f4db788a3b7882db6f, type: 3}
-  _gatePosition: {fileID: 868551400}
+  _target: {fileID: 868551400}
   _spawnerData: {fileID: 11400000, guid: a7f4d532bafbeea4488e2348a55cd8ff, type: 2}
 --- !u!1 &302298514
 GameObject:

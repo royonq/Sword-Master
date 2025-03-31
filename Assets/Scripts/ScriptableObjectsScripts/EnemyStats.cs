@@ -13,4 +13,7 @@ public class EnemyStats : MobStats
 
     [SerializeField] private float _attackDistance;
     public float AttackDistance => _attackDistance;
+    
+   [SerializeField] private float _attackDamage;
+    public float AttackDamage => _attackDamage;
 }

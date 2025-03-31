@@ -8,7 +8,6 @@ public abstract class Mob : Damageable
 
     private Rigidbody2D _rb;
     private float _movementSpeed;
-    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();

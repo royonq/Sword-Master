@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : Mob
+public  class Enemy : Mob
 {
     public static event Action OnDeath;
-    public static event Action<int> OnDropMoney; 
-    
+    public static event Action<int> OnDropMoney;
+
     [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
-    
+    private EnemyDamageArea _enemyDamageArea;
     private Transform _target;
-    public Transform Target { set => _target = value; }
+    private EnemyStats _enemyStats;
+
     private Vector2 _direction;
     private float _killExpirience;
     private int _dropMoney;
@@ -21,12 +22,21 @@ public class Enemy : Mob
     {
         base.SetStats();
 
-        var enemyStats = _damagableStats as EnemyStats;
-        _stopDistance = enemyStats.AttackDistance;
-        _killExpirience = enemyStats.KillExpirience;
-        _dropMoney = enemyStats.MoneyToDrop;
+        _enemyStats = _damagableStats as EnemyStats;
+        
+        _stopDistance = _enemyStats.AttackDistance;
+        _killExpirience = _enemyStats.KillExpirience;
+        _dropMoney = _enemyStats.MoneyToDrop;
+        
+        _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
+        _enemyDamageArea.Init(_enemyStats.AttackDamage);
     }
 
+    public void SetTarget(Transform target)
+    {
+        _target = target;
+    }
+    
     private void FixedUpdate()
     {
         _direction = _target.position - transform.position;
@@ -36,22 +46,21 @@ public class Enemy : Mob
         }
         else
         {
-            if (!_isAttacking)
+            if (_isAttacking)
             {
-                Move(Vector2.zero);
-                StartCoroutine(Attack(_target.gameObject));
+                return;
             }
+            Move(Vector2.zero);
+            StartCoroutine(Attack(_target.gameObject));
         }
     }
 
     private IEnumerator Attack(GameObject target)
     {
         _isAttacking = true;
-        
+
         yield return StartCoroutine(_enemyMobAnimations.EnemyAttackAnimation());
-
-        target.GetComponent<Damageable>().TakeDamage(_damage);
-
+        yield return StartCoroutine(_enemyDamageArea.Attack());
         _isAttacking = false;
     }
 

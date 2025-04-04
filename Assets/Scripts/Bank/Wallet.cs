@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    [SerializeField] private WalletDatabase _walletData;
+    [SerializeField] private StartMoneyData _walletData;
     [SerializeField] private TMP_Text _moneytext; 
     private int _moneyCount;
 
     private void Start()
     {
-        _moneyCount = _walletData.MoneyCount;
+        _moneyCount = _walletData.StartMoneyCount;
         _moneytext.text = _moneyCount.ToString();
     }
 

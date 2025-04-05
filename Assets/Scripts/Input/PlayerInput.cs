@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     public static event Action OnPannelSetActive;
+    public static event Action OnTradePannelSetActive;
     public static event Action OnTryStartTheWave;
 
     private Vector2 _movementDirection;
@@ -38,6 +39,14 @@ public class PlayerInput : MonoBehaviour
         if (context.performed)
         {
             _player.Attack();
+        }
+    }
+
+    public void OnOpenTradePannel(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnTradePannelSetActive?.Invoke();
         }
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
-    public static event Action OnPannelSetActive;
+    public static event Action OnPausePannelSetActive;
     public static event Action OnTradePannelSetActive;
     public static event Action OnTryStartTheWave;
 
@@ -54,7 +54,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            OnPannelSetActive?.Invoke();
+            OnPausePannelSetActive?.Invoke();
         }
     }
 

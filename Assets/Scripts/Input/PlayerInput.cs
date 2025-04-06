@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
-    public static event Action OnPannelSetActive;
+    public static event Action OnPauseEnable;
+    public static event Action OnPlayerInteract;
     public static event Action OnTryStartTheWave;
 
     private Vector2 _movementDirection;
@@ -41,11 +42,19 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnPlayerInteract?.Invoke();
+        }
+    }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            OnPannelSetActive?.Invoke();
+            OnPauseEnable?.Invoke();
         }
     }
 

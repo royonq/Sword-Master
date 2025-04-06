@@ -7,13 +7,13 @@ public class PausePanel : MonoBehaviour
     [SerializeField] private PauseController _pauseController;
     private void Start()
     {
-        PlayerInput.OnPannelSetActive += SetPanelActive;
+        PlayerInput.OnPauseEnable += SetPanelActive;
         gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        PlayerInput.OnPannelSetActive -= SetPanelActive;
+        PlayerInput.OnPauseEnable -= SetPanelActive;
     }
 
     private void OnEnable()

@@ -18,7 +18,6 @@ public class InteractableHandler : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            Debug.Log("InZone");
             _interactable = other.GetComponent<Trader>();
         }
     }

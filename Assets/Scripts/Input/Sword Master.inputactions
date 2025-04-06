@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UseTradePannel",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "ef8e5422-cf52-4d6c-9ae9-62321ed98ff6",
                     "expectedControlType": "Button",
@@ -167,7 +167,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UseTradePannel",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

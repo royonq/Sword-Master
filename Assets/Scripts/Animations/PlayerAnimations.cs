@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerMobAnimations : MobAnimations
+public class PlayerAnimations : MobAnimations
 {
     private readonly string _deafultAttackAnimation = "IsAttack";
     private readonly string _ultimaAttackAnimation = "IsUltimate";

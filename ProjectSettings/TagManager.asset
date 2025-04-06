@@ -7,6 +7,7 @@ TagManager:
   - Money
   - Enemy
   - Gate
+  - Interactable
   layers:
   - Default
   - TransparentFX

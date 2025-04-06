@@ -461,7 +461,7 @@ MonoBehaviour:
   _ability: {fileID: 6213419874689058171, guid: 0af2c122ed89f6f40a3afe3c5fb1bf1b, type: 3}
   _spawnpoint: {fileID: 128655627}
   _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
-  _playerMobAnimations: {fileID: 868551414}
+  _playerAnimations: {fileID: 868551416}
   _abilityColdownImage: {fileID: 4770416111288292416}
   _abilityImage: {fileID: 4359617987926457860}
 --- !u!114 &128655629
@@ -479,7 +479,7 @@ MonoBehaviour:
   _ability: {fileID: 2756192474105323788, guid: 597869fee4972234c9c95828d313ddf7, type: 3}
   _spawnpoint: {fileID: 868551400}
   _stats: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
-  _playerMobAnimations: {fileID: 868551414}
+  _playerAnimations: {fileID: 868551416}
   _abilityColdownImage: {fileID: 729356896}
   _abilityImage: {fileID: 599050992}
   _playerPositionTracker: {fileID: 1617316992}
@@ -18849,8 +18849,8 @@ GameObject:
   - component: {fileID: 868551409}
   - component: {fileID: 868551412}
   - component: {fileID: 868551410}
-  - component: {fileID: 868551414}
   - component: {fileID: 868551415}
+  - component: {fileID: 868551416}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -19058,7 +19058,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 868551410}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: OnOpenTradePannel
+        m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19103,18 +19103,6 @@ MonoBehaviour:
   _playerBars: {fileID: 910200871}
   _deafultAttack: {fileID: 128655628}
   _ultimate: {fileID: 128655629}
---- !u!114 &868551414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868551398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e516b5d8efd194e9aed035c63c07fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &868551415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19125,6 +19113,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 832314106493477449b827f0b003a7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &868551416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868551398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72aa3b9fddd82478a48a7e7bf09466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &882896951
@@ -19248,7 +19248,7 @@ GameObject:
   - component: {fileID: 894908429}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20998,7 +20998,7 @@ GameObject:
   - component: {fileID: 1274957668}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

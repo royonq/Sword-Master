@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
-    public static event Action OnPausePannelSetActive;
-    public static event Action OnTradePannelSetActive;
+    public static event Action OnPauseEnable;
+    public static event Action OnPlayerInteract;
     public static event Action OnTryStartTheWave;
 
     private Vector2 _movementDirection;
@@ -42,11 +42,11 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    public void OnOpenTradePannel(InputAction.CallbackContext context)
+    public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            OnTradePannelSetActive?.Invoke();
+            OnPlayerInteract?.Invoke();
         }
     }
 
@@ -54,7 +54,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            OnPausePannelSetActive?.Invoke();
+            OnPauseEnable?.Invoke();
         }
     }
 

@@ -5,7 +5,6 @@ public class TradeZoneHandler : MonoBehaviour
     private GameObject _currentTradePannel;
     
     private bool _isPlayerOnTradeZone;
-    private bool _isTradePannelOpen;
     
     
     public void EnterToTradeZone(GameObject tradePannel)
@@ -33,8 +32,7 @@ public class TradeZoneHandler : MonoBehaviour
     {
         if (_isPlayerOnTradeZone)
         {
-            _isTradePannelOpen = !_isTradePannelOpen;
-            _currentTradePannel.SetActive(_isTradePannelOpen);
+            _currentTradePannel.SetActive(!_currentTradePannel.activeSelf);
         }
     }
 }

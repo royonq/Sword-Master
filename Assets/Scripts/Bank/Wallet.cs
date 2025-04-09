@@ -10,22 +10,42 @@ public class Wallet : MonoBehaviour
     private void Start()
     {
         _moneyCount = _walletData.StartMoneyCount;
-        _moneytext.text = _moneyCount.ToString();
+        UpdateDisplayMoney();
     }
 
     private void OnEnable()
     {
+        ShopBuyButton.OnMoneyCheck += GetMoneyCount;
+        ShopBuyButton.OnBuy += SpendMoney;
         Enemy.OnDropMoney += EarnMoney;
     }
 
     private void OnDisable()
     {
+        ShopBuyButton.OnMoneyCheck -= GetMoneyCount;
+        ShopBuyButton.OnBuy -= SpendMoney;
         Enemy.OnDropMoney -= EarnMoney;
     }
 
     private void EarnMoney(int money)
     {
         _moneyCount += money;
+        UpdateDisplayMoney();
+    }
+
+    private int GetMoneyCount()
+    {
+        return _moneyCount;
+    }
+
+    private void SpendMoney(int money)
+    {
+        _moneyCount -= money;
+        UpdateDisplayMoney();
+    }
+
+    private void UpdateDisplayMoney()
+    {
         _moneytext.text = _moneyCount.ToString();
     }
 }

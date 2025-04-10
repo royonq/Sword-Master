@@ -5,15 +5,21 @@ public class ShopBuyButton : MonoBehaviour
 {
     public static event Action<int> OnBuy;
     public static Func<int> OnMoneyCheck;
+    private int _buyItemCost;
+
+    private void Start()
+    {
+        _buyItemCost = GetComponentInParent<TradebleItem>().GetItemCost();
+    }
 
     public void Buy()
     {
-        if (OnMoneyCheck?.Invoke() < 5)//item cost
+        if (OnMoneyCheck?.Invoke() < _buyItemCost)
         {
-            Debug.Log("No money");   
+            Debug.Log("No money");
             return;
         }
 
-        OnBuy?.Invoke(5);
+        OnBuy?.Invoke(_buyItemCost);
     }
 }

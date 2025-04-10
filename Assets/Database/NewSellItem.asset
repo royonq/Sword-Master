@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7929b7b74452438f5638d81b2e023, type: 3}
   m_Name: NewSellItem
   m_EditorClassIdentifier: 
-  _itemCost: 0
+  _itemCost: 5

@@ -5,11 +5,12 @@ public class ShopBuyButton : MonoBehaviour
 {
     public static event Action<int> OnBuy;
     public static Func<int> OnMoneyCheck;
+
     private int _buyItemCost;
 
-    private void Start()
+    public void InitItemCost(int itemCost)
     {
-        _buyItemCost = GetComponentInParent<TradebleItem>().GetItemCost();
+        _buyItemCost = itemCost;
     }
 
     public void Buy()

@@ -1,17 +1,17 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemHandler : MonoBehaviour
 {
-    [SerializeField] private List<TradebleItem> _items = new();
-
-    [SerializeField] private List<ShopBuyButton> _buyButtons = new List<ShopBuyButton>();
+    [SerializeField] private Transform _itemsParent;
+    [SerializeField] private Transform _buttonsParent;
 
     private void Start()
     {
-        for (int i = 0; i < _items.Count; i++)
+        for (var i = 0; i < _itemsParent.childCount; i++)
         {
-            _buyButtons[i].InitItemCost(_items[i].GetItemCost());
+            var item = _itemsParent.GetChild(i).GetComponent<TradebleItem>();
+            var button = _buttonsParent.GetChild(i).GetComponent<ShopBuyButton>();
+            button.InitItemCost(item.GetItemCost());
         }
     }
 }

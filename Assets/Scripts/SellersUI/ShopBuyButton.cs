@@ -5,15 +5,20 @@ public class ShopBuyButton : MonoBehaviour
 {
     public static event Action<int> OnBuy;
     public static Func<int> OnMoneyCheck;
+    public static Func<ItemTypes,int> OnTryBuyItem;
+
+    [SerializeField] private ItemTypes _itemType;
 
     public void Buy()
     {
-        if (OnMoneyCheck?.Invoke() < 5)//item cost
+        int itemCost = (int)OnTryBuyItem?.Invoke(_itemType);
+
+        if (OnMoneyCheck?.Invoke() < OnTryBuyItem?.Invoke(_itemType))
         {
-            Debug.Log("No money");   
+            Debug.Log("No money");
             return;
         }
 
-        OnBuy?.Invoke(5);
+        OnBuy?.Invoke(itemCost);
     }
 }

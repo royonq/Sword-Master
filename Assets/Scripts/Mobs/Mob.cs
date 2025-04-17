@@ -7,7 +7,8 @@ public abstract class Mob : Damageable
     protected float _damage;
 
     private Rigidbody2D _rb;
-    private float _movementSpeed;
+    private float _deafultMovementSpeed;
+    protected virtual float ModifireSpeed => _deafultMovementSpeed;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -19,13 +20,13 @@ public abstract class Mob : Damageable
         base.SetStats();
         var mobStats = _damagableStats as MobStats;
 
-        _movementSpeed = mobStats.MovementSpeed;
+        _deafultMovementSpeed = mobStats.MovementSpeed;
         _damage = mobStats.Damage;
     }
 
-    public void Move(Vector2 direction)
+    public  void Move(Vector2 direction)
     {
-        _rb.velocity = _movementSpeed * direction;
+        _rb.velocity = ModifireSpeed * direction;
         _mobAnimations.MoveIdleAnimation(direction);
     }
 

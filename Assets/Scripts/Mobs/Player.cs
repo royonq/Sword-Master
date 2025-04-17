@@ -8,7 +8,9 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-
+    
+    private PlayerModifires _playerModifires;
+    protected override float ModifireSpeed => base.ModifireSpeed * _playerModifires.SpeedModifire;
 
     protected override void SetStats()
     {
@@ -17,6 +19,15 @@ public class Player : Mob
         var playerStats = _damagableStats as PlayerStats;
 
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
+
+        _playerModifires = GetComponent<PlayerModifires>();
+
+        Item.OnModifire += GetPlayerModifires;
+    }
+
+    private PlayerModifires GetPlayerModifires()
+    {
+        return _playerModifires;
     }
     
     public void Attack()
@@ -32,6 +43,7 @@ public class Player : Mob
     protected override void Die()
     {
         OnPlayerDeath?.Invoke();
+        Item.OnModifire -= GetPlayerModifires;
     }
 
     public override void TakeDamage(float recivedDamage)

@@ -6,6 +6,7 @@ public class ShopBuyButton : MonoBehaviour
     public static event Action<int> OnBuy;
     public static Func<int> OnMoneyCheck;
     public static Func<ItemTypes,int> OnTryBuyItem;
+    public static event Action OnApplyItem;
 
     [SerializeField] private ItemTypes _itemType;
 
@@ -20,5 +21,6 @@ public class ShopBuyButton : MonoBehaviour
         }
 
         OnBuy?.Invoke(itemCost);
+        OnApplyItem?.Invoke();
     }
 }

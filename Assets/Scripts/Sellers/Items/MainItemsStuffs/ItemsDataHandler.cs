@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemsDataHandler : MonoBehaviour
 {
     [SerializedDictionary("ItemType", "Item")] [SerializeField]
-    private SerializedDictionary<ItemTypes, ItemsData> _items;
+    private SerializedDictionary<ItemTypes, Item> _items;
 
     private void OnEnable()
     {
@@ -18,6 +18,6 @@ public class ItemsDataHandler : MonoBehaviour
 
     private int GetItemCost(ItemTypes itemType)
     {
-        return _items[itemType].ItemCost;
+        return _items[itemType].ItemsData.ItemCost;
     }
 }

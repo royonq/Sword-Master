@@ -1,23 +1,23 @@
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 public class ItemsDataHandler : MonoBehaviour
 {
-   [SerializeField] private ItemsData[] _items;
+    [SerializedDictionary("ItemType", "Item")] [SerializeField]
+    private SerializedDictionary<ItemTypes, ItemsData> _items;
 
-   private void OnEnable()
-   {
-      ShopBuyButton.OnTryBuyItem += GetItemCost;
-   }
+    private void OnEnable()
+    {
+        ShopBuyButton.OnTryBuyItem += GetItemCost;
+    }
 
-   private void OnDisable()
-   {
-      ShopBuyButton.OnTryBuyItem -= GetItemCost;
-   }
-   
-   private int GetItemCost(ItemTypes itemType)
-   {
-      return 10;
-      //return _items[itemType].GetItemCost();
-   }
-    
+    private void OnDisable()
+    {
+        ShopBuyButton.OnTryBuyItem -= GetItemCost;
+    }
+
+    private int GetItemCost(ItemTypes itemType)
+    {
+        return _items[itemType].ItemCost;
+    }
 }

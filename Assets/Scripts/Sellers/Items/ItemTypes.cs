@@ -1,8 +1,10 @@
 public enum ItemTypes
 {
-    HPbottle = 1,
+    HpBottle = 1,
     DamageBottle = 2,
     SpeedBottle = 3,
 }
+
+
 
 

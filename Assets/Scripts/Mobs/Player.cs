@@ -22,10 +22,10 @@ public class Player : Mob
 
         _playerModifires = GetComponent<PlayerModifires>();
 
-        Item.OnModifire += GetPlayerModifires;
+        Item.OnModifier += GetPlayerModifiers;
     }
 
-    private PlayerModifires GetPlayerModifires()
+    private PlayerModifires GetPlayerModifiers()
     {
         return _playerModifires;
     }
@@ -43,7 +43,7 @@ public class Player : Mob
     protected override void Die()
     {
         OnPlayerDeath?.Invoke();
-        Item.OnModifire -= GetPlayerModifires;
+        Item.OnModifier -= GetPlayerModifiers;
     }
 
     public override void TakeDamage(float recivedDamage)

@@ -9,6 +9,7 @@ public abstract class Mob : Damageable
     private Rigidbody2D _rb;
     private float _deafultMovementSpeed;
     protected virtual float ModifireSpeed => _deafultMovementSpeed;
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();

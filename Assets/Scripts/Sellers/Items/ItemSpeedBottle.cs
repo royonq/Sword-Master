@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class ItemSpeedBottle : Item
 {
     protected override void ApplyItem()

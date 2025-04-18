@@ -13,8 +13,8 @@ public class ShopBuyButton : MonoBehaviour
     public void Buy()
     {
         int itemCost = (int)OnTryBuyItem?.Invoke(_itemType);
-
-        if (OnMoneyCheck?.Invoke() < OnTryBuyItem?.Invoke(_itemType))
+        
+        if (OnMoneyCheck?.Invoke() < itemCost)
         {
             Debug.Log("No money");
             return;

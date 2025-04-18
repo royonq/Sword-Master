@@ -5,5 +5,5 @@ using UnityEngine;
 public class SpeedBottleData : ItemsData
 {
     [SerializeField] private float _upgradeSpeed;
-    public float UpgradeSpeed => _upgradeSpeed;
+    public float UpgradeSpeed => _upgradeSpeed / 100;
 }

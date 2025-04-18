@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    public static event Func<PlayerModifires> OnModifire;
+    public static event Func<PlayerModifires> OnModifier;
     
     [SerializeField] protected ItemsData _itemsData;
     public ItemsData ItemsData => _itemsData;
@@ -20,7 +20,7 @@ public abstract class Item : MonoBehaviour
 
     protected PlayerModifires  GetModifier()
     {
-       return OnModifire?.Invoke();
+       return OnModifier?.Invoke();
     }
 
     protected abstract void ApplyItem();

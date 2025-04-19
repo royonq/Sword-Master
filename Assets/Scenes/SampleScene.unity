@@ -19109,10 +19109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
     _serializedList:
-    - Key: 1
-      Value: {fileID: 11400000, guid: 4cdff8bb028106943a1085138be5ac91, type: 2}
-    - Key: 2
-      Value: {fileID: 11400000, guid: 0d331bb4dcc0ac540a68f28b0bd105d8, type: 2}
     - Key: 3
       Value: {fileID: 11400000, guid: 031a310f1e6c3054c96f12573f8cacd1, type: 2}
 --- !u!1 &763395397
@@ -19403,6 +19399,7 @@ GameObject:
   - component: {fileID: 868551410}
   - component: {fileID: 868551415}
   - component: {fileID: 868551416}
+  - component: {fileID: 868551417}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -19677,6 +19674,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd72aa3b9fddd82478a48a7e7bf09466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &868551417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868551398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9a801e8fb2b2e4caa8b0fd569ae3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &882896951
@@ -21857,7 +21866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9186538b36d7ea64d99515bd7dee5f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 2
+  _itemType: 3
 --- !u!114 &1275542492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22004,7 +22013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9186538b36d7ea64d99515bd7dee5f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 1
+  _itemType: 3
 --- !u!114 &1445001895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22882,6 +22891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 741466948}
   - {fileID: 2100311802}
   - {fileID: 1617316992}
   - {fileID: 294332783}
@@ -22889,7 +22899,6 @@ Transform:
   - {fileID: 2112555236}
   - {fileID: 1949007328}
   - {fileID: 426362937}
-  - {fileID: 741466948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938602042

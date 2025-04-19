@@ -10,12 +10,12 @@ public class PlayerModifiers : MonoBehaviour
     
     public float SpeedModifire => _speedModifire;
     
-    private void Awake()
+    private void OnEnable()
     {
         ItemsDataHandler.OnModifier += GetPlayerModifiers;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         ItemsDataHandler.OnModifier -= GetPlayerModifiers;
     }

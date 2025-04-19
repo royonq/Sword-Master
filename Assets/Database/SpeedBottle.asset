@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SpeedBottle
   m_EditorClassIdentifier: 
   _itemCost: 5
-  _upgradeSpeed: 10
+  _upgradeSpeed: 20

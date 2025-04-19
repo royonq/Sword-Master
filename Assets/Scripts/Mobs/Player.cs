@@ -12,6 +12,17 @@ public class Player : Mob
     private PlayerModifires _playerModifires;
     protected override float ModifireSpeed => base.ModifireSpeed * _playerModifires.SpeedModifire;
 
+
+    private void OnEnable()
+    {
+        Item.OnModifier += GetPlayerModifiers;
+    }
+
+    private void OnDisable()
+    {
+        Item.OnModifier -= GetPlayerModifiers;
+    }
+
     protected override void SetStats()
     {
         base.SetStats();
@@ -21,13 +32,6 @@ public class Player : Mob
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
 
         _playerModifires = GetComponent<PlayerModifires>();
-
-        Item.OnModifier += GetPlayerModifiers;
-    }
-
-    private PlayerModifires GetPlayerModifiers()
-    {
-        return _playerModifires;
     }
     
     public void Attack()
@@ -43,7 +47,6 @@ public class Player : Mob
     protected override void Die()
     {
         OnPlayerDeath?.Invoke();
-        Item.OnModifier -= GetPlayerModifiers;
     }
 
     public override void TakeDamage(float recivedDamage)

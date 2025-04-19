@@ -10,4 +10,19 @@ public class PlayerModifires : MonoBehaviour
     
     public float SpeedModifire => _speedModifire;
     
+    private void OnEnable()
+    {
+        Item.OnModifier += GetPlayerModifiers;
+    }
+
+    private void OnDisable()
+    {
+        Item.OnModifier -= GetPlayerModifiers;
+    }
+    
+    private PlayerModifires GetPlayerModifiers()
+    {
+        return this;
+    }
+
 }

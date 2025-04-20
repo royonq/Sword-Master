@@ -15,13 +15,11 @@ public class PlayerModifiers : MonoBehaviour
     private void OnEnable()
     {
         ItemsDataHandler.OnModifier += GetPlayerModifiers;
-        Projectile.OnModifier += GetPlayerModifiers;
     }
 
     private void OnDisable()
     {
         ItemsDataHandler.OnModifier -= GetPlayerModifiers;
-        Projectile.OnModifier -= GetPlayerModifiers;
     }
     
     private PlayerModifiers GetPlayerModifiers()

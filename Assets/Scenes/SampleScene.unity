@@ -609,6 +609,7 @@ MonoBehaviour:
   _spawnpoint: {fileID: 128655627}
   _stats: {fileID: 11400000, guid: a85a5aaf1bbe03a4a8d8d41afa9807ac, type: 2}
   _playerAnimations: {fileID: 868551416}
+  _playerModifiers: {fileID: 868551417}
   _abilityColdownImage: {fileID: 4770416111288292416}
   _abilityImage: {fileID: 4359617987926457860}
 --- !u!114 &128655629
@@ -627,6 +628,7 @@ MonoBehaviour:
   _spawnpoint: {fileID: 868551400}
   _stats: {fileID: 11400000, guid: 1ae59d846b036354e94479da67130fd8, type: 2}
   _playerAnimations: {fileID: 868551416}
+  _playerModifiers: {fileID: 868551417}
   _abilityColdownImage: {fileID: 729356896}
   _abilityImage: {fileID: 599050992}
   _playerPositionTracker: {fileID: 1617316992}

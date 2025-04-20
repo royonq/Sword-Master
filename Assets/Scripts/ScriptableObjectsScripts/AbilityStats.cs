@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
+
 public abstract class AbilityStats : ScriptableObject
 {
     [SerializeField] private float _damage;
+
     public float Damage => _damage;
 
     [SerializeField] private float _lifetime;

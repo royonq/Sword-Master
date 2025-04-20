@@ -3,9 +3,10 @@ using UnityEngine;
 public class SwordProjectile : ProjectileRotate
 {
     private Rigidbody2D _rb;
-    public override void Init(AbilityStats stats)
+
+    public override void Init(AbilityStats stats, PlayerModifiers modifiers)
     {
-        base.Init(stats);
+        base.Init(stats, modifiers);
         LaunchProjectile();
     }
 

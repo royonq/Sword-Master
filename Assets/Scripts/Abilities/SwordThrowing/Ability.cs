@@ -7,16 +7,16 @@ public abstract class Ability : MonoBehaviour
 {
     [SerializeField] private GameObject _ability;
     [SerializeField] private Transform _spawnpoint;
-    [SerializeField] private AbilityStats _stats; 
+    [SerializeField] private AbilityStats _stats;
     [SerializeField] private PlayerAnimations _playerAnimations;
+    [SerializeField] private PlayerModifiers _playerModifiers;
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
     private bool _isAbilityUsing;
-
     protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
     {
-        instancedAbility.GetComponent<Projectile>().Init(stats);
+        instancedAbility.GetComponent<Projectile>().Init(stats, _playerModifiers);
     }
 
     private void Start()

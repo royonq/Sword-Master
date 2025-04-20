@@ -25,7 +25,7 @@ public abstract class Mob : Damageable
         _damage = mobStats.Damage;
     }
 
-    public  void Move(Vector2 direction)
+    public void Move(Vector2 direction)
     {
         _rb.velocity = ModifireSpeed * direction;
         _mobAnimations.MoveIdleAnimation(direction);

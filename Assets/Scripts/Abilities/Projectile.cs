@@ -1,14 +1,19 @@
+using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public static event Func<PlayerModifiers> OnModifier;
+    
     protected float _speed;
-    private float _damage;
+    private float _deafultDamage;
     private float _lifeTime;
-
+    
+    private float ModifierDamage => (float)(_deafultDamage * OnModifier?.Invoke().DamageModifire);
+    
     public virtual void Init(AbilityStats stats)
     {
-        _damage = stats.Damage;
+        _deafultDamage = stats.Damage;
         _speed = stats.Speed;
         _lifeTime = stats.Lifetime;
 
@@ -19,8 +24,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            collision.GetComponent<Mob>().TakeDamage(_damage);
-
+            collision.GetComponent<Mob>().TakeDamage(ModifierDamage);
+           
             Destroy(gameObject);
         }
     }

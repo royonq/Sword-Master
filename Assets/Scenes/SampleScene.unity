@@ -19111,6 +19111,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 3
       Value: {fileID: 11400000, guid: 031a310f1e6c3054c96f12573f8cacd1, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: c749fc1b4639836429437933f516da40, type: 2}
 --- !u!1 &763395397
 GameObject:
   m_ObjectHideFlags: 0
@@ -21866,7 +21868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9186538b36d7ea64d99515bd7dee5f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 3
+  _itemType: 2
 --- !u!114 &1275542492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22891,7 +22893,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 741466948}
   - {fileID: 2100311802}
   - {fileID: 1617316992}
   - {fileID: 294332783}
@@ -22899,6 +22900,7 @@ Transform:
   - {fileID: 2112555236}
   - {fileID: 1949007328}
   - {fileID: 426362937}
+  - {fileID: 741466948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938602042

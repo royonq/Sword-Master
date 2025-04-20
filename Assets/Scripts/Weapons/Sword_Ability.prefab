@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8590913112061379611}
   - component: {fileID: 129093887940713784}
-  - component: {fileID: 121389918708181872}
-  m_Layer: 0
+  - component: {fileID: 7166830784564996121}
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.15620838, w: 0.9877241}
   m_LocalPosition: {x: 2.0525253, y: 1.0887294, z: 0}
-  m_LocalScale: {x: 0.94481826, y: 0.71663606, z: 0.97348}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2243342923232474894}
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &121389918708181872
-PolygonCollider2D:
+--- !u!61 &7166830784564996121
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,7 +119,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0037033856, y: -0.40000013}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49158323, y: 0.70618564}
@@ -129,26 +129,8 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.22, y: -0.45999998}
-      - {x: 0.22, y: -0.26999998}
-      - {x: 0.17999999, y: -0.26999998}
-      - {x: 0.17, y: 0.94}
-      - {x: 0.089999996, y: 0.96999997}
-      - {x: -0.089999996, y: 0.96999997}
-      - {x: -0.17, y: 0.78}
-      - {x: -0.17, y: -0.28}
-      - {x: -0.22, y: -0.26}
-      - {x: -0.22, y: -0.47}
-      - {x: -0.14, y: -0.52}
-      - {x: -0.19, y: -0.90999997}
-      - {x: -0.12, y: -0.96999997}
-      - {x: 0.12, y: -0.96999997}
-      - {x: 0.17, y: -0.93}
-      - {x: 0.17999999, y: -0.77}
-      - {x: 0.14999999, y: -0.72999996}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 0.44, y: 1.94}
+  m_EdgeRadius: 0
 --- !u!1 &2756192474105323788
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +140,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2243342923232474894}
-  - component: {fileID: 1988438371465418127}
-  m_Layer: 0
+  - component: {fileID: 3321300323017591948}
+  - component: {fileID: 4175093554220880449}
+  m_Layer: 8
   m_Name: Sword_Ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +165,7 @@ Transform:
   - {fileID: 8590913112061379611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1988438371465418127
+--- !u!114 &3321300323017591948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,3 +177,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82c459ab312fde4382bb6991fe67ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &4175093554220880449
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756192474105323788}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -6,9 +7,9 @@ public class Projectile : MonoBehaviour
     private float _damage;
     private float _lifeTime;
 
-    public virtual void Init(AbilityStats stats)
+    public virtual void Init(AbilityStats stats, PlayerModifiers modifiers)
     {
-        _damage = stats.Damage;
+        _damage = stats.Damage * modifiers.DamageModifire;
         _speed = stats.Speed;
         _lifeTime = stats.Lifetime;
 

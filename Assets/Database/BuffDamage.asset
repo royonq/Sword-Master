@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 330d65a7c7c13404d827efdb3a420332, type: 3}
-  m_Name: SpeedBottle
+  m_Script: {fileID: 11500000, guid: 15a3c04ac21e9dd4f86c862d625e6b9b, type: 3}
+  m_Name: BuffDamage
   m_EditorClassIdentifier: 
-  _itemCost: 5
-  _upgradeSpeed: 1.5
+  _itemCost: 4
+  _upgradeDamage: 1.5

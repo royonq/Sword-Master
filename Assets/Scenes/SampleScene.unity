@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9186538b36d7ea64d99515bd7dee5f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: 3
+  _itemType: 1
 --- !u!114 &88935432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19115,6 +19115,8 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 031a310f1e6c3054c96f12573f8cacd1, type: 2}
     - Key: 2
       Value: {fileID: 11400000, guid: c749fc1b4639836429437933f516da40, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: dc394ff6b8151594cb53f77575a43108, type: 2}
 --- !u!1 &763395397
 GameObject:
   m_ObjectHideFlags: 0
@@ -19958,7 +19960,7 @@ GameObject:
   - component: {fileID: 910200869}
   - component: {fileID: 910200871}
   m_Layer: 5
-  m_Name: HealthBackground
+  m_Name: PlayerHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

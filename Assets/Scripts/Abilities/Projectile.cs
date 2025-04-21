@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 
     public virtual void Init(AbilityStats stats, PlayerModifiers modifiers)
     {
-        _damage = stats.Damage * modifiers.DamageModifire;
+        _damage = stats.Damage * modifiers.DamageModifier;
         _speed = stats.Speed;
         _lifeTime = stats.Lifetime;
 

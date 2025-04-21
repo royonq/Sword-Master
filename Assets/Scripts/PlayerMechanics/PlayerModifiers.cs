@@ -15,13 +15,10 @@ public class PlayerModifiers : MonoBehaviour
     
     
     private float _healthModifier = 1;
+
     public float HealthUpgrade
     {
-        set
-        {
-            _healthModifier += value;
-            _player.UpgradeMaxHealth(_healthModifier); 
-        }
+        set { _healthModifier += value; _player.UpgradeMaxHealth(_healthModifier); }
     }
 
     private void Start()

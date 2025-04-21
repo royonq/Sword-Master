@@ -10,18 +10,14 @@ public class Player : Mob
     [SerializeField] private Ability _ultimate;
 
     private PlayerModifiers playerModifiers;
-    protected override float ModifireSpeed => base.ModifireSpeed * playerModifiers.SpeedModifire;
-
+    protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
 
     protected override void SetStats()
     {
-        base.SetStats();
-
-        var playerStats = _damagableStats as PlayerStats;
-
-        _playerBars.SetMaxHealth(playerStats.MaxHealth);
-
         playerModifiers = GetComponent<PlayerModifiers>();
+        base.SetStats();
+        var playerStats = _damagableStats as PlayerStats;
+        _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
 
     public void Attack()
@@ -46,11 +42,15 @@ public class Player : Mob
         _playerBars.ChangeValue(_currentHealth);
     }
 
-    private void LevelUp()
+    public void UpgradeMaxHealth(float upgradeHealth)
     {
+        _maxHealth *= upgradeHealth;
+        _currentHealth *= upgradeHealth;
+
+        _playerBars.SetMaxHealth(_maxHealth);
     }
 
-    private void Interact()
+    private void LevelUp()
     {
     }
 
@@ -63,10 +63,6 @@ public class Player : Mob
     }
 
     private void EarnXp()
-    {
-    }
-
-    private void BuyItem()
     {
     }
 

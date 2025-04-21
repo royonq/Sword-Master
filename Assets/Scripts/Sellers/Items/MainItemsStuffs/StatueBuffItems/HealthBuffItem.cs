@@ -8,7 +8,5 @@ public class HealthBuffItem : ItemsData
     public override void ApplyItem(PlayerModifiers playerModifiers)
     {
         playerModifiers.HealthUpgrade = _upgradeHealth;
-        
-        playerModifiers.GetComponent<Player>().UpgradeMaxHealth(playerModifiers.HealthModifier);
     }
 }

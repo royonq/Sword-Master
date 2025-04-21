@@ -16,11 +16,6 @@ public class PlayerModifiers : MonoBehaviour
     public float HealthUpgrade{set => _healthModifier += value; }
     public float HealthModifier => _healthModifier;
     
-    public void ModifireHealth()
-    {
-        GetComponent<Player>().UpgradeMaxHealth(HealthModifier);
-    }
-    
     private void OnEnable()
     {
         ItemsDataHandler.OnModifier += GetPlayerModifiers;

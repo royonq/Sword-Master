@@ -20,6 +20,8 @@ public class PlayerModifiers : MonoBehaviour
     {
         set { _healthModifier += value; _player.UpgradeMaxHealth(_healthModifier); }
     }
+    
+    public float HealthModifier => _healthModifier;
 
     private void Start()
     {

@@ -11,6 +11,7 @@ public class Player : Mob
 
     private PlayerModifiers playerModifiers;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
+    protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;
 
     protected override void SetStats()
     {
@@ -44,10 +45,9 @@ public class Player : Mob
 
     public void UpgradeMaxHealth(float upgradeHealth)
     {
-        _maxHealth *= upgradeHealth;
         _currentHealth *= upgradeHealth;
 
-        _playerBars.SetMaxHealth(_maxHealth);
+        _playerBars.SetMaxHealth(ModifierHealth);
     }
 
     private void LevelUp()

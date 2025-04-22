@@ -3,7 +3,9 @@ using UnityEngine;
 public abstract class Damageable : MonoBehaviour
 {
     [SerializeField] protected DamagebleStats _damagableStats;
-    protected float _maxHealth;
+    private float _maxHealth;
+    protected virtual float ModifierHealth => _maxHealth;
+    
     protected float _currentHealth;
 
     private void Start()

@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class Familiar : MonoBehaviour
-{  
+{
     [SerializeField] private FamiliarStats _familiarStats;
-    private Transform _playerAnchor;
+    private Transform _target;
     private Rigidbody2D _rb;
     private Vector2 _direction;
 
@@ -15,19 +15,19 @@ public class Familiar : MonoBehaviour
         _speed = _familiarStats.FamiliarSpeed;
     }
 
-    public void SetChaseTarget(Transform target)
+    public void SetTarget(Transform target)
     {
-        _playerAnchor = target;
+        _target = target;
     }
 
-    private void ChasePlayer()
+    private void FollowPlayer()
     {
-        _direction = (_playerAnchor.position - transform.position).normalized;
+        _direction = (_target.position - transform.position).normalized;
         _rb.velocity = _speed * _direction;
     }
 
     private void FixedUpdate()
     {
-        ChasePlayer();
+        FollowPlayer();
     }
 }

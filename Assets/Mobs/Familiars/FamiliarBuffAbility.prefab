@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3990387124986585962}
   - component: {fileID: 6348622482797489807}
   m_Layer: 0
-  m_Name: Square
+  m_Name: FamiliarBuffAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,5 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e59789715f7b64798569be1926291e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _familiarData: {fileID: 11400000, guid: 8ea4a53e2a95cea44a895ed1cda49222, type: 2}
-  _playerTransform: {fileID: 0}
+  _familiarStats: {fileID: 11400000, guid: 24c4294453eaa9245b95d54025d0b5c0, type: 2}

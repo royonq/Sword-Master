@@ -2,14 +2,11 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewTradebleItem", menuName = "Data/SellersItems/Familiar")]
 public class FamiliarData : ItemsData
-{
-    [SerializeField] private GameObject familiarPrefab;
-    
-    [SerializeField] private float _familiarSpeed;
-    public float FamiliarSpeed => _familiarSpeed;
+{ 
+    [SerializeField] private GameObject _familiarPrefab;
 
     public override void ApplyItem(PlayerModifiers playerModifiers)
     {
-        playerModifiers.SpawnFamiliar(familiarPrefab);
+        playerModifiers.SpawnFamiliar(_familiarPrefab);
     }
 }

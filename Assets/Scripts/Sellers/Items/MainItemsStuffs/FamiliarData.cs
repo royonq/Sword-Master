@@ -7,6 +7,6 @@ public class FamiliarData : ItemsData
 
     public override void ApplyItem(PlayerModifiers playerModifiers)
     {
-        playerModifiers.SpawnFamiliar(_familiarPrefab);
+        playerModifiers.SummonFamiliar(_familiarPrefab);
     }
 }

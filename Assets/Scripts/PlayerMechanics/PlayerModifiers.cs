@@ -36,10 +36,10 @@ public class PlayerModifiers : MonoBehaviour
         ItemsDataHandler.OnModifier -= GetPlayerModifiers;
     }
 
-    public void SpawnFamiliar(GameObject familiarPrefab)
+    public void SummonFamiliar(GameObject familiarPrefab)
     {
         var familiar = Instantiate(familiarPrefab, _player.transform.position, _player.transform.rotation);
-        familiar.GetComponent<Familiar>().SetTarget(_player.transform);
+        familiar.GetComponent<Familiar>().SetChaseTarget(_player.transform);
     }
     
     private PlayerModifiers GetPlayerModifiers()

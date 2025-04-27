@@ -5,4 +5,10 @@ public class FamiliarStats : ScriptableObject
 {
     [SerializeField] private float _familiarSpeed;
     public float FamiliarSpeed => _familiarSpeed;
+    
+    [SerializeField] private float _stopDistance;
+    public float StopDistance => _stopDistance;
+
+    [SerializeField] private float _stopSpeed;
+    public float StopSpeed => _stopSpeed;
 }

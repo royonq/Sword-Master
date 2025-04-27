@@ -8,11 +8,20 @@ public class Familiar : MonoBehaviour
     private Vector2 _direction;
 
     private float _speed;
+    private float _stopDistance;
+    private float _stopSpeed;
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         _rb = GetComponent<Rigidbody2D>();
         _speed = _familiarStats.FamiliarSpeed;
+        _stopDistance = _familiarStats.StopDistance;
+        _stopSpeed = _familiarStats.StopSpeed;
     }
 
     public void SetTarget(Transform target)
@@ -22,12 +31,19 @@ public class Familiar : MonoBehaviour
 
     private void FollowPlayer()
     {
-        _direction = (_target.position - transform.position).normalized;
+        _direction = _target.position - transform.position;
         _rb.velocity = _speed * _direction;
     }
 
     private void FixedUpdate()
     {
-        FollowPlayer();
+        if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
+        {
+            FollowPlayer();
+        }
+        else
+        {
+            _rb.velocity = Vector2.Lerp(_rb.velocity, Vector2.zero, _stopSpeed * Time.fixedDeltaTime);
+        }
     }
 }

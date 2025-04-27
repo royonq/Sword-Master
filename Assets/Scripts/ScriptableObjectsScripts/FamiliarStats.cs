@@ -11,4 +11,7 @@ public class FamiliarStats : ScriptableObject
 
     [SerializeField] private float _stopSpeed;
     public float StopSpeed => _stopSpeed;
+
+    [SerializeField] private float _useAbilityRate;
+    public float UseAbilityRate => _useAbilityRate;
 }

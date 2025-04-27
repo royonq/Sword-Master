@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Familiar : MonoBehaviour
@@ -6,10 +8,23 @@ public class Familiar : MonoBehaviour
     private Transform _target;
     private Rigidbody2D _rb;
     private Vector2 _direction;
+    private IFamiliarAbility _familiarAbility;
 
     private float _speed;
     private float _stopDistance;
     private float _stopSpeed;
+    private float _useAbilityRate;
+
+    private void OnEnable()
+    {
+        
+        SpawnEnemies.OnFamiliarUseAbility += StartUseAbility;
+    }
+
+    private void OnDisable()
+    {
+        SpawnEnemies.OnFamiliarUseAbility -= StartUseAbility;
+    }
 
     private void Start()
     {
@@ -19,9 +34,24 @@ public class Familiar : MonoBehaviour
     private void Init()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _familiarAbility = GetComponent<IFamiliarAbility>();
+        
         _speed = _familiarStats.FamiliarSpeed;
         _stopDistance = _familiarStats.StopDistance;
         _stopSpeed = _familiarStats.StopSpeed;
+        _useAbilityRate = _familiarStats.UseAbilityRate;
+    }
+    
+    private void FixedUpdate()
+    {
+        if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
+        {
+            FollowPlayer();
+        }
+        else
+        {
+            _rb.velocity = Vector2.Lerp(_rb.velocity, Vector2.zero, _stopSpeed * Time.fixedDeltaTime);
+        }
     }
 
     public void SetTarget(Transform target)
@@ -35,15 +65,18 @@ public class Familiar : MonoBehaviour
         _rb.velocity = _speed * _direction;
     }
 
-    private void FixedUpdate()
+    private void StartUseAbility()
     {
-        if (Vector2.Distance(transform.position, _target.position) > _stopDistance)
+        StartCoroutine(UseAbility());
+    }
+
+    private IEnumerator UseAbility()
+    {
+        while (true)
         {
-            FollowPlayer();
-        }
-        else
-        {
-            _rb.velocity = Vector2.Lerp(_rb.velocity, Vector2.zero, _stopSpeed * Time.fixedDeltaTime);
+            _familiarAbility.Use();
+            yield return new WaitForSeconds(_useAbilityRate);
         }
     }
+   
 }

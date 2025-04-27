@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 public class SpawnEnemies : MonoBehaviour
 {
     public static event Action OnGameWin;
-    public static event Action OnFamiliarUseAbility;
 
     [SerializeField] private GameObject _waveHandler;
     [SerializeField] private GameObject _gate;
@@ -33,7 +32,6 @@ public class SpawnEnemies : MonoBehaviour
         _enemyTotal = _spawnerData.EnemyWave[_enemyCounter];
         StartCoroutine(SpawnEnemy());
         _gate.SetActive(true);
-        OnFamiliarUseAbility?.Invoke();
     }
 
     private IEnumerator SpawnEnemy()

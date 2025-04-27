@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2580219685303626608}
   - component: {fileID: 3990387124986585962}
   - component: {fileID: 6348622482797489807}
-  - component: {fileID: -5516788977703723040}
   m_Layer: 0
   m_Name: FamiliarBuffAbility
   m_TagString: Untagged
@@ -174,15 +173,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _familiarStats: {fileID: 11400000, guid: 24c4294453eaa9245b95d54025d0b5c0, type: 2}
---- !u!114 &-5516788977703723040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2279355822134000849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc310d84824e6e2449ba2649646af6df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -18,6 +18,7 @@ public class Familiar : MonoBehaviour
 
     private void Init()
     {
+        Debug.Log("Familiar");
         _rb = GetComponent<Rigidbody2D>();
         _speed = _familiarStats.FamiliarSpeed;
         _stopDistance = _familiarStats.StopDistance;

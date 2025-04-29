@@ -1,4 +1,0 @@
-interface IFamiliarAbility
-{
-    void Use();
-}

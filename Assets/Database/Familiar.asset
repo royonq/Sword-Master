@@ -15,3 +15,4 @@ MonoBehaviour:
   _familiarSpeed: 2
   _stopDistance: 3
   _stopSpeed: 5
+  _useAbilityRate: 2

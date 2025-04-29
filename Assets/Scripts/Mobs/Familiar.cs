@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,12 +17,12 @@ public class Familiar : MonoBehaviour
     private void OnEnable()
     {
         
-        SpawnEnemies.OnFamiliarUseAbility += StartUseAbility;
+        SpawnEnemies.OnStartWave += StartUseAbility;
     }
 
     private void OnDisable()
     {
-        SpawnEnemies.OnFamiliarUseAbility -= StartUseAbility;
+        SpawnEnemies.OnStartWave -= StartUseAbility;
     }
 
     private void Start()
@@ -39,7 +38,7 @@ public class Familiar : MonoBehaviour
         _speed = _familiarStats.FamiliarSpeed;
         _stopDistance = _familiarStats.StopDistance;
         _stopSpeed = _familiarStats.StopSpeed;
-        _useAbilityRate = _familiarStats.UseAbilityRate;
+        _useAbilityRate = _familiarStats.AbilityCooldown;
     }
     
     private void FixedUpdate()

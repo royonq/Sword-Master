@@ -1,4 +1,4 @@
-interface IFamiliarAbility
+public interface IFamiliarAbility
 {
     void Use();
 }

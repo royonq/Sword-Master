@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewFamiliar", menuName = "Data/Familiar")]
 public class FamiliarStats : ScriptableObject
@@ -11,4 +12,7 @@ public class FamiliarStats : ScriptableObject
 
     [SerializeField] private float _stopSpeed;
     public float StopSpeed => _stopSpeed;
+
+    [SerializeField] private float _abilityCooldown;
+    public float AbilityCooldown => _abilityCooldown;
 }

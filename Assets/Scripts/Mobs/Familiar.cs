@@ -16,7 +16,6 @@ public class Familiar : MonoBehaviour
 
     private void OnEnable()
     {
-        
         SpawnEnemies.OnStartWave += StartUseAbility;
     }
 

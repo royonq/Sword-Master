@@ -4,7 +4,7 @@ using UnityEngine;
 public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
 {
     [SerializeField] private float _damage;
-    private List<Enemy> _targetsInRange = new();
+    private readonly List<GameObject> _targetsInRange = new();
 
     public void Use()
     {
@@ -18,13 +18,9 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !_targetsInRange.Contains(other.gameObject))
         {
-            var enemy = other.GetComponent<Enemy>();
-            if (!_targetsInRange.Contains(enemy))
-            {
-                _targetsInRange.Add(enemy);
-            }
+            _targetsInRange.Add(other.gameObject);
         }
     }
 }

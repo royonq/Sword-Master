@@ -76,5 +76,4 @@ public class Familiar : MonoBehaviour
             yield return new WaitForSeconds(_useAbilityRate);
         }
     }
-   
 }

@@ -17,17 +17,7 @@ public  class Enemy : Mob
     private int _dropMoney;
     private bool _isAttacking;
     private float _stopDistance;
-
-    private void OnEnable()
-    {
-        FamiliarAutoAttack.OnUse += TakeDamage;
-    }
-
-    private void OnDisable()
-    {
-        FamiliarAutoAttack.OnUse -= TakeDamage;
-    }
-
+    
     protected override void SetStats()
     {
         base.SetStats();

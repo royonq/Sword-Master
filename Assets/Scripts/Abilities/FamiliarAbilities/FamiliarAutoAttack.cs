@@ -1,32 +1,30 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
 {
-   public static Action<float> OnUse;
-   [SerializeField] private float _damage;
-   private bool _isUsable;
-   public void Use()
-   {
-      if (_isUsable)
-      {
-         OnUse?.Invoke(_damage);
-      }
-   }
+    [SerializeField] private float _damage;
+    private List<Enemy> _targetsInRange = new();
 
-   private void OnTriggerEnter2D(Collider2D other)
-   {
-      if (other.CompareTag("Enemy"))
-      {
-         _isUsable = true;
-      }
-   }
+    public void Use()
+    {
+        _targetsInRange.RemoveAll(enemy => !enemy);
 
-   private void OnTriggerExit2D(Collider2D other)
-   {
-      if (other.CompareTag("Enemy"))
-      {
-         _isUsable = false;
-      }
-   }
+        foreach (var enemy in _targetsInRange)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(_damage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            var enemy = other.GetComponent<Enemy>();
+            if (!_targetsInRange.Contains(enemy))
+            {
+                _targetsInRange.Add(enemy);
+            }
+        }
+    }
 }

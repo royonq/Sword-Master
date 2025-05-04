@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewFamiliar", menuName = "Data/Familiar")]
 public class FamiliarStats : ScriptableObject

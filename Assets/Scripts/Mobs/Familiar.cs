@@ -16,7 +16,6 @@ public class Familiar : MonoBehaviour
 
     private void OnEnable()
     {
-        
         SpawnEnemies.OnStartWave += StartUseAbility;
     }
 
@@ -77,5 +76,4 @@ public class Familiar : MonoBehaviour
             yield return new WaitForSeconds(_useAbilityRate);
         }
     }
-   
 }

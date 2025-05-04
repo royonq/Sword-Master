@@ -17,7 +17,7 @@ public  class Enemy : Mob
     private int _dropMoney;
     private bool _isAttacking;
     private float _stopDistance;
-
+    
     protected override void SetStats()
     {
         base.SetStats();

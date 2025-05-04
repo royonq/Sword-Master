@@ -19,10 +19,7 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
         if (other.CompareTag("Enemy"))
         {
             var enemy = other.GetComponent<Enemy>();
-            if (!_targetsInRange.Contains(enemy))
-            {
-                _targetsInRange.Add(enemy);
-            }
+            _targetsInRange.Add(enemy);
         }
     }
 

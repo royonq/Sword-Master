@@ -32,7 +32,11 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
     {
         if (other.CompareTag("Enemy"))
         {
-            _targetsInRange.Remove(other.GetComponent<Enemy>());
+            var enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                _targetsInRange.Remove(enemy);
+            }
         }
     }
 }

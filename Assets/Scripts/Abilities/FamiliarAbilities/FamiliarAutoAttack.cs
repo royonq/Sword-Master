@@ -9,6 +9,7 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
     public void Use()
     {
         _targetsInRange.RemoveAll(enemy => !enemy);
+
         foreach (var enemy in _targetsInRange)
         {
             enemy.TakeDamage(_damage);
@@ -24,6 +25,14 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
             {
                 _targetsInRange.Add(enemy);
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            _targetsInRange.Remove(other.GetComponent<Enemy>());
         }
     }
 }

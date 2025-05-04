@@ -8,8 +8,6 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
     
     public void Use()
     {
-        _targetsInRange.RemoveAll(enemy => !enemy);
-
         foreach (var enemy in _targetsInRange)
         {
             enemy.TakeDamage(_damage);
@@ -33,10 +31,7 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
         if (other.CompareTag("Enemy"))
         {
             var enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                _targetsInRange.Remove(enemy);
-            }
+            _targetsInRange.Remove(enemy);
         }
     }
 }

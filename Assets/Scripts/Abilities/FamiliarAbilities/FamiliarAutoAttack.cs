@@ -6,7 +6,7 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
     [SerializeField] private FamiliarAutoatackData _familiarAutoatackData;
 
     private readonly List<Enemy> _targetsInRange = new();
-    private BoxCollider2D _boxCollider2D;
+    private CircleCollider2D _boxCollider2D;
 
     private float _damage;
     private float _abilityRadius;
@@ -19,9 +19,8 @@ public class FamiliarAutoAttack : MonoBehaviour, IFamiliarAbility
     private void Init()
     {
         _damage = _familiarAutoatackData.Damage;
-        _abilityRadius = _familiarAutoatackData.AbilityRadius;
-        _boxCollider2D = GetComponent<BoxCollider2D>();
-        _boxCollider2D.size = new Vector2(_abilityRadius, _abilityRadius);
+        _boxCollider2D = GetComponent<CircleCollider2D>();
+        _boxCollider2D.radius = _familiarAutoatackData.AbilityRadius;
     }
 
     public void Use()

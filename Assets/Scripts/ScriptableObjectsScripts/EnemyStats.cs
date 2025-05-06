@@ -1,7 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewEnemy", menuName = "Data/Damageble/Enemy")]
-
 public class EnemyStats : MobStats
 {
     [SerializeField] private int _moneyToDrop;

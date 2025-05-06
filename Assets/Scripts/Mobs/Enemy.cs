@@ -6,9 +6,10 @@ public  class Enemy : Mob
 {
     public static event Action OnDeath;
     public static event Action<int> OnDropMoney;
+    public static event Action<float> OnInitDamage;
 
     [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
-    private EnemyDamageArea _enemyDamageArea;
+    private IAttack _attack;
     private Transform _target;
     private EnemyStats _enemyStats;
 
@@ -28,15 +29,19 @@ public  class Enemy : Mob
         _killExpirience = _enemyStats.KillExpirience;
         _dropMoney = _enemyStats.MoneyToDrop;
         
-        _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
-        _enemyDamageArea.Init(_enemyStats.AttackDamage);
+        _attack = GetComponentInChildren<IAttack>();
+        OnInitDamage?.Invoke(_enemyStats.AttackDamage);
     }
 
     public void SetTarget(Transform target)
     {
         _target = target;
     }
-    
+
+    public Transform GetTarget()
+    {
+        return _target;
+    }
     private void FixedUpdate()
     {
         _direction = _target.position - transform.position;
@@ -60,7 +65,7 @@ public  class Enemy : Mob
         _isAttacking = true;
 
         yield return StartCoroutine(_enemyMobAnimations.EnemyAttackAnimation());
-        yield return StartCoroutine(_enemyDamageArea.Attack());
+        yield return StartCoroutine(_attack.Attack());
         _isAttacking = false;
     }
 

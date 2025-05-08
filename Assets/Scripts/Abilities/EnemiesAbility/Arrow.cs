@@ -2,21 +2,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    [SerializeField] private ArrowStats _arrowStats;
     private Rigidbody2D _rb;
     private float _speed;
     private float _damage;
     
-    private void Init()
+    public void Init(float speed, float damage, float timeToDestroy)
     {
-        _speed = _arrowStats.Speed;
-        _damage = _arrowStats.Damage;
-    }
-    public void LaunchArrow()
-    {
-        Init();
-        _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = _speed * transform.right;
+        _speed = speed;
+        _damage = damage;
+        GetComponent<Rigidbody2D>().velocity = _speed * transform.right;
+        Destroy(gameObject,timeToDestroy);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5c61eda07b70940960a81c06dc88b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagableStats: {fileID: 11400000, guid: 365992d0a24bd1445b0abf13e30e1607, type: 2}
+  _damagableStats: {fileID: 11400000, guid: 56c497873d2705249b87c2df07da31a6, type: 2}
   _enemyMobAnimations: {fileID: -2536704418952054711}
 --- !u!114 &4394986985808435034
 MonoBehaviour:
@@ -256,4 +256,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bowAttackStats: {fileID: 11400000, guid: f4a5c06c9aa68394586dd77bf038ad16, type: 2}
-  _arrow: {fileID: 6213419874689058171, guid: 7429f59aef33aca4ca5581f1f3d49203, type: 3}

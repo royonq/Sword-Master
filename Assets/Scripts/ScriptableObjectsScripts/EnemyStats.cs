@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyStats : MobStats
+public abstract class EnemyStats : MobStats
 {
     [SerializeField] private int _moneyToDrop;
     public int MoneyToDrop => _moneyToDrop;
@@ -11,7 +11,4 @@ public class EnemyStats : MobStats
 
     [SerializeField] private float _attackDistance;
     public float AttackDistance => _attackDistance;
-    
-   [SerializeField] private float _attackDamage;
-    public float AttackDamage => _attackDamage;
 }

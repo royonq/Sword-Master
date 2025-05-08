@@ -14,10 +14,12 @@ public  class Enemy : Mob
     private EnemyStats _enemyStats;
 
     private Vector2 _direction;
+    public Vector2 Direction => _direction;
     private float _killExpirience;
     private int _dropMoney;
     private bool _isAttacking;
     private float _stopDistance;
+    public float Damage => _damage;
     
     protected override void SetStats()
     {
@@ -30,18 +32,14 @@ public  class Enemy : Mob
         _dropMoney = _enemyStats.MoneyToDrop;
         
         _attack = GetComponentInChildren<IAttack>();
-        OnInitDamage?.Invoke(_enemyStats.AttackDamage);
+        OnInitDamage?.Invoke(_damage);
     }
 
     public void SetTarget(Transform target)
     {
         _target = target;
     }
-
-    public Transform GetTarget()
-    {
-        return _target;
-    }
+    
     private void FixedUpdate()
     {
         _direction = _target.position - transform.position;

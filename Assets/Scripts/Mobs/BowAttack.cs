@@ -4,8 +4,12 @@ using UnityEngine;
 public class BowAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private BowAttackStats _bowAttackStats;
-    private float cooldown;
-    private Transform _target;
+    private float _cooldown;
+    private float _arrowSpeed;
+    private float _arrowDamage;
+    private float _timeToDestroy;
+    private Vector2 _arrowDirection;
+
 
     private void Start()
     {
@@ -14,19 +18,21 @@ public class BowAttack : MonoBehaviour, IAttack
 
     private void SetStats()
     {
-        cooldown = _bowAttackStats.AttackCooldown;
-        _target = GetComponent<Enemy>().GetTarget();
+        _cooldown = _bowAttackStats.AttackCooldown;
+        _arrowSpeed = _bowAttackStats.Speed;
+        _timeToDestroy = _bowAttackStats.TimeToDestroy;
+        _arrowDamage = GetComponent<Enemy>().Damage;
     }
 
     public IEnumerator Attack()
     {
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(_cooldown);
 
-        Vector2 direction = _target.position - transform.position;
-        var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, Quaternion.identity);
+        Vector2 direction = GetComponent<Enemy>().Direction;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        arrow.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, rotation);
 
-        arrow.GetComponent<Arrow>().LaunchArrow();
+        arrow.GetComponent<Arrow>().Init(_arrowSpeed, _arrowDamage, _timeToDestroy);
     }
 }

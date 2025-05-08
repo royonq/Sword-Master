@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewDamageArea", menuName = "Data/DamageArea")]
 public class EnemyDamageAreaStats : ScriptableObject

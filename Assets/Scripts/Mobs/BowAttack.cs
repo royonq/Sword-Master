@@ -10,8 +10,7 @@ public class BowAttack : MonoBehaviour, IAttack
     private float _timeToDestroy;
     private float _damage;
     private Vector2 _arrowDirection;
-
-
+    
     private void Start()
     {
         SetStats();
@@ -35,10 +34,5 @@ public class BowAttack : MonoBehaviour, IAttack
         var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, rotation);
 
         arrow.GetComponent<Arrow>().Init(_arrowSpeed, _damage, _timeToDestroy);
-    }
-
-    public void InitDamage(float damage)
-    {
-        _damage = damage;
     }
 }

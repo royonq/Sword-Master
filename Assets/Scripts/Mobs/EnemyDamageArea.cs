@@ -3,29 +3,16 @@ using UnityEngine;
 
 public class EnemyDamageArea : MonoBehaviour , IAttack
 {
-    private Collider2D _collider2D;
+    [SerializeField]private EnemyDamageAreaStats _damageAreaStats;
+    private BoxCollider2D _collider2D;
     private float _damage;
-
-    private void OnEnable()
-    {
-        Enemy.OnInitDamage += Init;
-    }
-
-    private void OnDisable()
-    {
-        Enemy.OnInitDamage -= Init;
-    }
-
+    
     private void Start()
     {
-        _collider2D = GetComponent<Collider2D>();
+        _collider2D = GetComponent<BoxCollider2D>();
+        _collider2D.size = new Vector2(_damageAreaStats.ZoneArea, _damageAreaStats.ZoneArea);
     }
-
-    private void Init(float damage)
-    {
-        _damage = damage;
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Gate"))

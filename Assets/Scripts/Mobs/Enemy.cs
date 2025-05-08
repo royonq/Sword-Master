@@ -6,7 +6,6 @@ public  class Enemy : Mob
 {
     public static event Action OnDeath;
     public static event Action<int> OnDropMoney;
-    public static event Action<float> OnInitDamage;
 
     [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
     private IAttack _attack;
@@ -19,7 +18,6 @@ public  class Enemy : Mob
     private int _dropMoney;
     private bool _isAttacking;
     private float _stopDistance;
-    public float Damage => _damage;
     
     protected override void SetStats()
     {
@@ -32,7 +30,6 @@ public  class Enemy : Mob
         _dropMoney = _enemyStats.MoneyToDrop;
         
         _attack = GetComponentInChildren<IAttack>();
-        OnInitDamage?.Invoke(_damage);
     }
 
     public void SetTarget(Transform target)

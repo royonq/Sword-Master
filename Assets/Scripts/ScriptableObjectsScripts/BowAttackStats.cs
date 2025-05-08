@@ -14,4 +14,7 @@ public class BowAttackStats : ScriptableObject
     public float Speed => _speed;
     [SerializeField] private float _timeToDestroy;
     public float TimeToDestroy => _timeToDestroy;
+    
+    [SerializeField] private float _damage;
+    public float Damage => _damage;
 }

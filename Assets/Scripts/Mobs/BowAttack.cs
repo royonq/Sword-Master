@@ -8,6 +8,7 @@ public class BowAttack : MonoBehaviour, IAttack
     private float _arrowSpeed;
     private float _arrowDamage;
     private float _timeToDestroy;
+    private float _damage;
     private Vector2 _arrowDirection;
 
 
@@ -21,7 +22,7 @@ public class BowAttack : MonoBehaviour, IAttack
         _cooldown = _bowAttackStats.AttackCooldown;
         _arrowSpeed = _bowAttackStats.Speed;
         _timeToDestroy = _bowAttackStats.TimeToDestroy;
-        _arrowDamage = GetComponent<Enemy>().Damage;
+        _damage = _bowAttackStats.Damage;
     }
 
     public IEnumerator Attack()
@@ -33,6 +34,11 @@ public class BowAttack : MonoBehaviour, IAttack
         var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, rotation);
 
-        arrow.GetComponent<Arrow>().Init(_arrowSpeed, _arrowDamage, _timeToDestroy);
+        arrow.GetComponent<Arrow>().Init(_arrowSpeed, _damage, _timeToDestroy);
+    }
+
+    public void InitDamage(float damage)
+    {
+        _damage = damage;
     }
 }

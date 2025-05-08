@@ -19,7 +19,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            collision.GetComponent<Mob>().TakeDamage(_damage);
+            collision.GetComponent<Player>().TakeDamage(_damage);
 
             Destroy(gameObject);
         }

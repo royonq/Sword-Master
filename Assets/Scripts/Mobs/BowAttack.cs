@@ -4,7 +4,6 @@ using UnityEngine;
 public class BowAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private BowAttackStats _bowAttackStats;
-    private float _cooldown;
     private float _arrowSpeed;
     private float _arrowDamage;
     private float _timeToDestroy;
@@ -18,7 +17,6 @@ public class BowAttack : MonoBehaviour, IAttack
 
     private void SetStats()
     {
-        _cooldown = _bowAttackStats.AttackCooldown;
         _arrowSpeed = _bowAttackStats.Speed;
         _timeToDestroy = _bowAttackStats.TimeToDestroy;
         _damage = _bowAttackStats.Damage;
@@ -26,7 +24,7 @@ public class BowAttack : MonoBehaviour, IAttack
 
     public IEnumerator Attack()
     {
-        yield return new WaitForSeconds(_cooldown);
+        yield return null;
 
         Vector2 direction = GetComponent<Enemy>().Direction;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

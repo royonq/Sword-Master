@@ -5,7 +5,6 @@ public class BowAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private BowAttackStats _bowAttackStats;
     private float _arrowSpeed;
-    private float _arrowDamage;
     private float _timeToDestroy;
     private float _damage;
     private Vector2 _arrowDirection;

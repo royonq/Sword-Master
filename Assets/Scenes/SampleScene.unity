@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveHandler: {fileID: 2112555235}
   _gate: {fileID: 1200737248}
-  _enemy: {fileID: 6305043294565682012, guid: b7a153f877ccf0f4db788a3b7882db6f, type: 3}
+  _enemy: {fileID: 6305043294565682012, guid: 530ce3453a94df94296110571e165861, type: 3}
   _target: {fileID: 868551400}
   _spawnerData: {fileID: 11400000, guid: a7f4d532bafbeea4488e2348a55cd8ff, type: 2}
 --- !u!1 &302298514
@@ -19426,7 +19426,7 @@ Transform:
   m_GameObject: {fileID: 868551398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.0828, y: 0.0044, z: 0}
+  m_LocalPosition: {x: -5.81, y: 0.0044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

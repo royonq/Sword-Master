@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad254c962441b484e85e931754055078, type: 3}
-  m_Name: SpawnerData
+  m_Script: {fileID: 11500000, guid: 45f06d32738d5564abaeff249b169271, type: 3}
+  m_Name: DamageArea
   m_EditorClassIdentifier: 
-  _spawnXmax: 10
-  _spawnXmin: 40
-  _spawnY: 10
-  _spawnRate: 2
-  _enemyWave: 010000000400000006000000
+  _zoneArea: 3

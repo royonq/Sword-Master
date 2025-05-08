@@ -8,11 +8,12 @@ public  class Enemy : Mob
     public static event Action<int> OnDropMoney;
 
     [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
-    private EnemyDamageArea _enemyDamageArea;
+    private IAttack _attack;
     private Transform _target;
     private EnemyStats _enemyStats;
 
     private Vector2 _direction;
+    public Vector2 Direction => _direction;
     private float _killExpirience;
     private int _dropMoney;
     private bool _isAttacking;
@@ -28,8 +29,7 @@ public  class Enemy : Mob
         _killExpirience = _enemyStats.KillExpirience;
         _dropMoney = _enemyStats.MoneyToDrop;
         
-        _enemyDamageArea = GetComponentInChildren<EnemyDamageArea>();
-        _enemyDamageArea.Init(_enemyStats.AttackDamage);
+        _attack = GetComponentInChildren<IAttack>();
     }
 
     public void SetTarget(Transform target)
@@ -60,7 +60,7 @@ public  class Enemy : Mob
         _isAttacking = true;
 
         yield return StartCoroutine(_enemyMobAnimations.EnemyAttackAnimation());
-        yield return StartCoroutine(_enemyDamageArea.Attack());
+        yield return StartCoroutine(_attack.Attack());
         _isAttacking = false;
     }
 

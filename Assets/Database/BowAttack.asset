@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0843717a7515a4889523ccf2b2fe99, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: 24f07db45eac49644806d4c020154aea, type: 3}
+  m_Name: BowAttack
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _movementSpeed: 2
+  _bowArrow: {fileID: 6213419874689058171, guid: 7429f59aef33aca4ca5581f1f3d49203, type: 3}
+  _attackCooldown: 2
+  _speed: 5
+  _timeToDestroy: 3
   _damage: 5
-  _moneyToDrop: 20
-  _killExpirience: 10
-  _attackDistance: 2
-  _attackDamage: 5

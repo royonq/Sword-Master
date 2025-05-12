@@ -7,7 +7,6 @@ public class BowAttack : MonoBehaviour, IAttack
     private float _arrowSpeed;
     private float _timeToDestroy;
     private float _damage;
-    private Vector2 _arrowDirection;
     
     private void Start()
     {
@@ -25,7 +24,7 @@ public class BowAttack : MonoBehaviour, IAttack
     {
         yield return null;
 
-        Vector2 direction = GetComponent<Enemy>().Direction;
+        Vector2 direction = GetComponentInParent<Enemy>().Direction;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, rotation);

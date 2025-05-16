@@ -8,7 +8,8 @@ public abstract class MobStats : DamagebleStats
 
     [SerializeField] protected float _damage;
     public float Damage => _damage;
-
-    [SerializeField] private MobSound _mobSound;
-    public MobSound MobSound => _mobSound;
+    
+    
+    [SerializeField] private SoundType _takeDamageSound;
+    public SoundType TakeDamageSound => _takeDamageSound;
 }

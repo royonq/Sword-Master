@@ -17,4 +17,7 @@ public abstract class AbilityStats : ScriptableObject
 
     [SerializeField] private Sprite _abilityIcon;
     public Sprite AbilityIcon => _abilityIcon;
+    
+    [SerializeField] private SoundType _attackSound;
+    public SoundType AttackSound => _attackSound;
 }

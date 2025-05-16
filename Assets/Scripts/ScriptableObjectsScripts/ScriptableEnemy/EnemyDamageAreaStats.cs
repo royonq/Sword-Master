@@ -1,12 +1,8 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewDamageArea", menuName = "Data/DamageArea")]
-public class EnemyDamageAreaStats : ScriptableObject
+public class EnemyDamageAreaStats : EnemyAttackStats
 {
     [SerializeField] private float _zoneArea;
     public float ZoneArea => _zoneArea;
-
-    [SerializeField] private float _damage;
-    public float Damage => _damage;
-    
 }

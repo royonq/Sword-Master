@@ -248,7 +248,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Archer death -Sheet_0: -5589945751103746632
+      Archer death -Sheet_1: 8977475571275080526
+      Archer death -Sheet_2: -1317707608645005918
+      Archer death -Sheet_3: 2887553823418842363
+      Archer death -Sheet_4: 6062627846069737750
+      Archer death -Sheet_5: 3295636798344298894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

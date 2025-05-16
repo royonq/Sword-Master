@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   _maxHealth: 1000
+  _takeDamageSound: 3
   _movementSpeed: 15
   _damage: 10
-  _mobSound: {fileID: 11400000, guid: 8ead2fa35303ce84cb9879e5fc47da7e, type: 2}

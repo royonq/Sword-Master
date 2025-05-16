@@ -34,7 +34,6 @@ public class SpawnEnemies : MonoBehaviour
         StartCoroutine(SpawnEnemy());
         _gate.SetActive(true);
         OnStartWave?.Invoke();
-        SoundCaller.OnLoopSoundCall(_spawnerData.WaweMusic);
     }
 
     private IEnumerator SpawnEnemy()

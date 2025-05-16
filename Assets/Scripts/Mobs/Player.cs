@@ -8,7 +8,7 @@ public class Player : Mob
     [SerializeField] private PlayerBar _playerBars;
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
-
+    
     private PlayerModifiers playerModifiers;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;

@@ -152,7 +152,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Archer  Jump Sheet_0: -4109321754622187833
+      Archer  Jump Sheet_1: 3570108102550381289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

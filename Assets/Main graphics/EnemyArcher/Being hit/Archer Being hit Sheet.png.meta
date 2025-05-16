@@ -200,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Archer Being hit Sheet_0: 5950545875078150294
+      Archer Being hit Sheet_1: 4554442662489235808
+      Archer Being hit Sheet_2: 1815951100819418342
+      Archer Being hit Sheet_3: 8994652139577959431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

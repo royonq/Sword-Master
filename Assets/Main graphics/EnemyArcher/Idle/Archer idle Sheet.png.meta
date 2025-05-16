@@ -224,7 +224,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Archer idle Sheet_0: 6637971766346068512
+      Archer idle Sheet_1: -8971684922259257540
+      Archer idle Sheet_2: 5203273686966187159
+      Archer idle Sheet_3: 5304993492497973208
+      Archer idle Sheet_4: 2247074200324941167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

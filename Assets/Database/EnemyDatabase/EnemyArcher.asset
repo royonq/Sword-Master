@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EnemyArcher
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _takeDamageSound: 103
   _movementSpeed: 6
   _damage: 20
   _moneyToDrop: 10

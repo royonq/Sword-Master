@@ -7,7 +7,6 @@ public class SoundHandler : MonoBehaviour
     private SerializedDictionary<SoundType, AudioClip> _sounds;
 
     [SerializeField] private AudioSource _audioSource;
-    private AudioSource _sfxSource;
 
 
     private void Start()

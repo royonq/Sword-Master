@@ -19,8 +19,4 @@ public class SpawnerData : ScriptableObject
 
     [SerializeField] private int[] _enemyWave;
     public int[] EnemyWave => _enemyWave;
-    
-    
-    [SerializeField] private SoundType _waweMusic;
-    public SoundType WaweMusic => _waweMusic;
 }

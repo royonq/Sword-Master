@@ -17,8 +17,9 @@ public class Player : Mob
     {
         playerModifiers = GetComponent<PlayerModifiers>();
         base.SetStats();
-        var playerStats = _damagableStats as PlayerStats;
+        var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
+        OnTakeDamage = SoundCaller.PlaySoundOneShot;
     }
 
     public void Attack()
@@ -39,7 +40,6 @@ public class Player : Mob
     public override void TakeDamage(float recivedDamage)
     {
         base.TakeDamage(recivedDamage);
-
         _playerBars.ChangeValue(_currentHealth);
     }
 

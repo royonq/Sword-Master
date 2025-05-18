@@ -23,13 +23,15 @@ public  class Enemy : Mob
     {
         base.SetStats();
 
-        _enemyStats = _damagableStats as EnemyStats;
+        _enemyStats = _damageableStats as EnemyStats;
         
         _stopDistance = _enemyStats.AttackDistance;
         _killExpirience = _enemyStats.KillExpirience;
         _dropMoney = _enemyStats.MoneyToDrop;
         
         _attack = GetComponentInChildren<IAttack>();
+        
+        OnTakeDamage = SoundCaller.PlaySound;
     }
 
     public void SetTarget(Transform target)
@@ -69,6 +71,11 @@ public  class Enemy : Mob
         OnDropMoney?.Invoke(_dropMoney);
         OnDeath?.Invoke();
         Destroy(gameObject);
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
     }
 
 

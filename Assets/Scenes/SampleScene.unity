@@ -20753,6 +20753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
     _serializedList:
+    - Key: 2
+      Value: {fileID: 8300000, guid: c1c49b8507b7bd546a6436d7a42a424a, type: 3}
     - Key: 102
       Value: {fileID: 8300000, guid: f1f14af78cb3a2649bc897deed46bdde, type: 3}
     - Key: 103
@@ -20762,6 +20764,7 @@ MonoBehaviour:
     - Key: 1
       Value: {fileID: 8300000, guid: 8cf03ddb2117e444cb5fd2abeadd5758, type: 3}
   _audioSource: {fileID: 0}
+  _audioSourcePrefab: {fileID: 0}
 --- !u!82 &1222980975
 AudioSource:
   m_ObjectHideFlags: 0

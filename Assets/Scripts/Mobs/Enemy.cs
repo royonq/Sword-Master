@@ -70,13 +70,7 @@ public  class Enemy : Mob
         OnDeath?.Invoke();
         Destroy(gameObject);
     }
-
-    public override void TakeDamage(float damage)
-    {
-        base.TakeDamage(damage);
-    }
-
-
+    
     public void FindPlayer()
     {
 

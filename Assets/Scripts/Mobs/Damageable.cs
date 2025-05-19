@@ -8,7 +8,7 @@ public abstract class Damageable : MonoBehaviour
     protected virtual float ModifierHealth => _maxHealth;
 
     protected float _currentHealth;
-    protected bool _playOneShot;
+    protected virtual bool PlayOneShot => false;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public abstract class Damageable : MonoBehaviour
     public virtual void TakeDamage(float recivedDamage)
     {
         _currentHealth -= recivedDamage;
-        SoundCaller.PlaySound (_damageableStats.TakeDamageSound,_playOneShot);
+        SoundCaller.PlaySound (_damageableStats.TakeDamageSound,PlayOneShot);
         if (_currentHealth <= 0)
         {
             Die();

@@ -10,6 +10,8 @@ public class Player : Mob
     [SerializeField] private Ability _ultimate;
     
     private PlayerModifiers playerModifiers;
+
+    protected override bool PlayOneShot => true;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;
 
@@ -19,7 +21,6 @@ public class Player : Mob
         base.SetStats();
         var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
-        _playOneShot = true;
     }
 
     public void Attack()

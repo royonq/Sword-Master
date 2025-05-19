@@ -12,7 +12,7 @@ public class SoundHandler : MonoBehaviour
     [SerializeField] private GameObject _audioSourcePrefab;
 
     private AudioSource[] _audioSources;
-    private AudioSource _audioSource; 
+    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -22,16 +22,14 @@ public class SoundHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        SoundCaller.OnSoundCallOneShot += PlayOneShot;
         SoundCaller.OnSoundCall += PlaySound;
     }
 
     private void OnDisable()
     {
-        SoundCaller.OnSoundCallOneShot -= PlayOneShot;
         SoundCaller.OnSoundCall -= PlaySound;
     }
-    
+
     private void AddAudioSource()
     {
         _audioSources = new AudioSource[_audioSourceCount];
@@ -41,22 +39,23 @@ public class SoundHandler : MonoBehaviour
                 .GetComponent<AudioSource>();
         }
     }
-
-    private void PlayOneShot(SoundType soundType)
+    
+    private void PlaySound(SoundType soundType, bool useOneShot)
     {
-        _audioSource.PlayOneShot(_sounds[soundType]);
-    }
-
-    private void PlaySound(SoundType soundType)
-    {
-        foreach (var freeAudioSource in _audioSources)
+        if (useOneShot)
         {
-            if (freeAudioSource.isPlaying)
+            _audioSource.PlayOneShot(_sounds[soundType]);
+        }
+        else
+        {
+            foreach (var freeAudioSource in _audioSources)
             {
-                continue;
+                if (!freeAudioSource.isPlaying)
+                {
+                    freeAudioSource.PlayOneShot(_sounds[soundType]);
+                    break;
+                }
             }
-            freeAudioSource.PlayOneShot(_sounds[soundType]);
-            break;
         }
     }
 }

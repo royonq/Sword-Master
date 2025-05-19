@@ -39,6 +39,17 @@ public class SoundHandler : MonoBehaviour
                 .GetComponent<AudioSource>();
         }
     }
+    
+    private void PlaySound(SoundType soundType, bool useOneShot)
+    {
+        if (useOneShot)
+        {
+            PlayOneShot(soundType);
+            return;
+        }
+        PlayFromPool(soundType);
+    }
+    
     private void PlayOneShot(SoundType soundType)
     {
         _audioSource.PlayOneShot(_sounds[soundType]);
@@ -53,18 +64,6 @@ public class SoundHandler : MonoBehaviour
                 freeAudioSource.PlayOneShot(_sounds[soundType]);
                 break;
             }
-        }
-    }
-    
-    private void PlaySound(SoundType soundType, bool useOneShot)
-    {
-        if (useOneShot)
-        {
-            PlayOneShot(soundType);
-        }
-        else
-        {
-            PlayFromPool(soundType);
         }
     }
 }

@@ -2,10 +2,10 @@ using System;
 
 public static class SoundCaller
 {
-    public static Action<SoundType> OnSoundCall;
+    public static Action<SoundType,bool> OnSoundCall;
     
-    public static void PlaySound(SoundType soundType)
+    public static void PlaySound(SoundType soundType, bool useOneShot)
     {
-        OnSoundCall?.Invoke(soundType);
+        OnSoundCall?.Invoke(soundType, useOneShot);
     }
 }

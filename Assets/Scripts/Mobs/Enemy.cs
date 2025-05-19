@@ -23,7 +23,7 @@ public  class Enemy : Mob
     {
         base.SetStats();
 
-        _enemyStats = _damagableStats as EnemyStats;
+        _enemyStats = _damageableStats as EnemyStats;
         
         _stopDistance = _enemyStats.AttackDistance;
         _killExpirience = _enemyStats.KillExpirience;
@@ -70,8 +70,7 @@ public  class Enemy : Mob
         OnDeath?.Invoke();
         Destroy(gameObject);
     }
-
-
+    
     public void FindPlayer()
     {
 

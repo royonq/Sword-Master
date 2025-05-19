@@ -10,6 +10,8 @@ public class Player : Mob
     [SerializeField] private Ability _ultimate;
     
     private PlayerModifiers playerModifiers;
+
+    protected override bool PlayOneShot => true;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;
 
@@ -17,7 +19,7 @@ public class Player : Mob
     {
         playerModifiers = GetComponent<PlayerModifiers>();
         base.SetStats();
-        var playerStats = _damagableStats as PlayerStats;
+        var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
 
@@ -39,7 +41,6 @@ public class Player : Mob
     public override void TakeDamage(float recivedDamage)
     {
         base.TakeDamage(recivedDamage);
-
         _playerBars.ChangeValue(_currentHealth);
     }
 

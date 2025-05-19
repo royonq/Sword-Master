@@ -9,10 +9,10 @@ public class SoundHandler : MonoBehaviour
     private SerializedDictionary<SoundType, AudioClip> _sounds;
 
 
-    [SerializeField] private AudioSource _audioSource; 
     [SerializeField] private GameObject _audioSourcePrefab;
 
     private AudioSource[] _audioSources;
+    private AudioSource _audioSource; 
 
     private void Start()
     {

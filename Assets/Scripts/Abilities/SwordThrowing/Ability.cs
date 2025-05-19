@@ -51,7 +51,7 @@ public abstract class Ability : MonoBehaviour
         }
 
         StartCoroutine(UseAbilityAfterAnimation());
-        SoundCaller.PlaySoundOneShot(_stats.AttackSound);
+        SoundCaller.PlaySound(_stats.AttackSound,true);
     }
 
     private IEnumerator UseAbilityAfterAnimation()

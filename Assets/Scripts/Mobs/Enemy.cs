@@ -30,8 +30,6 @@ public  class Enemy : Mob
         _dropMoney = _enemyStats.MoneyToDrop;
         
         _attack = GetComponentInChildren<IAttack>();
-        
-        OnTakeDamage = SoundCaller.PlaySound;
     }
 
     public void SetTarget(Transform target)

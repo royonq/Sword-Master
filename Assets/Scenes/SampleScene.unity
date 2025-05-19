@@ -20024,7 +20024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ef6f595898dea439a0a40fd269f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageableStats: {fileID: 0}
+  _damageableStats: {fileID: 11400000, guid: e2b8f69d82735da4bb97f5f4b9b363c1, type: 2}
 --- !u!1001 &1206136759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20147,7 +20147,6 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: 383000760d96ea543bead48168ff145d, type: 3}
     - Key: 1
       Value: {fileID: 8300000, guid: 8cf03ddb2117e444cb5fd2abeadd5758, type: 3}
-  _audioSource: {fileID: 0}
   _audioSourcePrefab: {fileID: 2741819559463030672, guid: 9525246ff406eb54685b5c23f9e02a8e, type: 3}
 --- !u!82 &1222980975
 AudioSource:
@@ -23599,6 +23598,10 @@ PrefabInstance:
       propertyPath: _playerBars
       value: 
       objectReference: {fileID: 910200871}
+    - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: _damageableStats
+      value: 
+      objectReference: {fileID: 11400000, guid: ecd49b0475275f346abf4fa24341c572, type: 2}
     - target: {fileID: 5665756060595442235, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.81

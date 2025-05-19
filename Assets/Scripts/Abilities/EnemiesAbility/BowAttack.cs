@@ -30,7 +30,6 @@ public class BowAttack : MonoBehaviour, IAttack
         var arrow = Instantiate(_bowAttackStats.BowArrow, transform.position, rotation);
 
         arrow.GetComponent<Arrow>().Init(_arrowSpeed, _damage, _timeToDestroy);
-        SoundCaller.PlaySound(_bowAttackStats.AttackSound);
-
+        SoundCaller.PlaySound(_bowAttackStats.AttackSound,false);
     }
 }

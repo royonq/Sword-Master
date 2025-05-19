@@ -19,7 +19,7 @@ public class Player : Mob
         base.SetStats();
         var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
-        OnTakeDamage = SoundCaller.PlaySoundOneShot;
+        _playOneShot = true;
     }
 
     public void Attack()

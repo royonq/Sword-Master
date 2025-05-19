@@ -4,12 +4,16 @@ public static class SoundCaller
 {
     public static Action<SoundType> OnSoundCallOneShot;
     public static Action<SoundType> OnSoundCall;
-    public static void PlaySoundOneShot(SoundType soundType)
+    
+    public static void PlaySound(SoundType soundType, bool useOneShot)
     {
-        OnSoundCallOneShot?.Invoke(soundType);
-    }
-    public static void PlaySound(SoundType soundType)
-    {
-        OnSoundCall?.Invoke(soundType);
+        if (useOneShot)
+        {
+            OnSoundCallOneShot?.Invoke(soundType);
+        }
+        else
+        {
+            OnSoundCall?.Invoke(soundType);
+        }
     }
 }

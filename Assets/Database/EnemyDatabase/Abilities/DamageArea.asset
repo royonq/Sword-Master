@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f06d32738d5564abaeff249b169271, type: 3}
   m_Name: DamageArea
   m_EditorClassIdentifier: 
-  _zoneArea: 3
   _damage: 5
+  _attackSound: 101
+  _zoneArea: 3

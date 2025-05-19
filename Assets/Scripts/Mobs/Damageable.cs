@@ -3,12 +3,12 @@ using UnityEngine;
 
 public abstract class Damageable : MonoBehaviour
 {
-    protected Action<SoundType> OnTakeDamage;
     [SerializeField] protected DamagebleStats _damageableStats;
     private float _maxHealth;
     protected virtual float ModifierHealth => _maxHealth;
 
     protected float _currentHealth;
+    protected bool _playOneShot;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public abstract class Damageable : MonoBehaviour
     public virtual void TakeDamage(float recivedDamage)
     {
         _currentHealth -= recivedDamage;
-        OnTakeDamage?.Invoke(_damageableStats.TakeDamageSound);
+        SoundCaller.PlaySound (_damageableStats.TakeDamageSound,_playOneShot);
         if (_currentHealth <= 0)
         {
             Die();

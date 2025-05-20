@@ -20137,6 +20137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
     _serializedList:
+    - Key: 201
+      Value: {fileID: 8300000, guid: f34f0a58a21084a43a820ede68ce75d2, type: 3}
+    - Key: 200
+      Value: {fileID: 8300000, guid: 03ac5b8f2a1dd974080491d79f0594cb, type: 3}
     - Key: 2
       Value: {fileID: 8300000, guid: c1c49b8507b7bd546a6436d7a42a424a, type: 3}
     - Key: 102
@@ -20148,6 +20152,8 @@ MonoBehaviour:
     - Key: 1
       Value: {fileID: 8300000, guid: 8cf03ddb2117e444cb5fd2abeadd5758, type: 3}
   _audioSourcePrefab: {fileID: 2741819559463030672, guid: 9525246ff406eb54685b5c23f9e02a8e, type: 3}
+  _audioVolume: 1
+  _fadeTime: 2
 --- !u!82 &1222980975
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22931,6 +22937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264f06055baf4014aac5b5d9601e5eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _calmMusic: 201
 --- !u!1 &2015285796
 GameObject:
   m_ObjectHideFlags: 0
@@ -23205,6 +23212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnEnemies: {fileID: 294332784}
+  _battleMusic: 200
 --- !u!61 &2112555238
 BoxCollider2D:
   m_ObjectHideFlags: 0

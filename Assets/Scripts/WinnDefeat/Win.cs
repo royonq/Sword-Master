@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    
+    [SerializeField] private SoundType _calmMusic;
     private void OnEnable()
     {
         SpawnEnemies.OnGameWin += GameWin;
@@ -16,5 +16,6 @@ public class Win : MonoBehaviour
     private void GameWin()
     {
         Debug.Log("The Winn");  
+        SoundCaller.SwitchBackgroundMusic(_calmMusic);
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class WaveHandler : MonoBehaviour
 {
     [SerializeField] private SpawnEnemies _spawnEnemies;
-    [SerializeField] private SoundType _battleMusic;
     private bool _isPlayerInZone;
 
     private void Start()
@@ -38,7 +37,7 @@ public class WaveHandler : MonoBehaviour
         if (_isPlayerInZone)
         {
             _spawnEnemies.StartWave();
-            SoundCaller.SwitchBackgroundMusic(_battleMusic);
+            SoundCaller.SwitchBackgroundMusic(SoundType.battleBusic);
             gameObject.SetActive(false);
         }
     } 

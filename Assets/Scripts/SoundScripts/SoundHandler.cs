@@ -11,15 +11,18 @@ public class SoundHandler : MonoBehaviour
 
 
     [SerializeField] private GameObject _audioSourcePrefab;
-    [SerializeField] private float _audioVolume;
-    [SerializeField] private float _fadeTime;
-
+    
     private AudioSource[] _audioSources;
-    private AudioSource _audioSource;
+    private AudioSource _soundSource;
+    private AudioSource _musicSource;
+    
+    private readonly int _audioVolume = 1;
+    private readonly int _fadeTime = 1;
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _soundSource = GetComponent<AudioSource>();
+        _musicSource = gameObject.AddComponent<AudioSource>();
         AddAudioSource();
     }
 
@@ -58,7 +61,7 @@ public class SoundHandler : MonoBehaviour
 
     private void PlayOneShot(SoundType soundType)
     {
-        _audioSource.PlayOneShot(_sounds[soundType]);
+        _soundSource.PlayOneShot(_sounds[soundType]);
     }
 
     private void PlayFromPool(SoundType soundType)
@@ -81,26 +84,23 @@ public class SoundHandler : MonoBehaviour
 
     private IEnumerator FadeMusic(SoundType soundType)
     {
-        var newClip = _sounds[soundType];
         
-        yield return FadeVolume(_audioSource.volume, 0, _fadeTime);
+        yield return FadeVolume(_musicSource.volume, 0, _fadeTime);
 
-        _audioSource.clip = newClip;
-        _audioSource.loop = true;
-        _audioSource.Play();
+        _musicSource.clip = _sounds[soundType];
+        _musicSource.loop = true;
+        _musicSource.Play();
         
         yield return FadeVolume(0, _audioVolume, _fadeTime);
-
-        _audioSource.volume = _audioVolume;
     }
 
     private IEnumerator FadeVolume(float volumeFrom, float volumeTo, float duration)
     {
-        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.deltaTime)
+        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.fixedDeltaTime)
         {
-            _audioSource.volume = Mathf.Lerp(volumeFrom, volumeTo, elapsedTime / duration);
+            _musicSource.volume = Mathf.Lerp(volumeFrom, volumeTo, elapsedTime / duration);
             yield return null;
         }
-        _audioSource.volume = volumeTo;
+        _musicSource.volume = volumeTo;
     }
 }

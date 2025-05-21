@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    
     private void OnEnable()
     {
         SpawnEnemies.OnGameWin += GameWin;
@@ -16,5 +15,6 @@ public class Win : MonoBehaviour
     private void GameWin()
     {
         Debug.Log("The Winn");  
+        SoundCaller.SwitchBackgroundMusic(SoundType.calmMusic);
     }
 }

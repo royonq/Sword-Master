@@ -8,5 +8,6 @@ public enum SoundType
     enemyBowAttack = 102,
     enemyTakeDamage = 103,
     
-    fightMusic = 200,
+    battleBusic = 200,
+    calmMusic = 201,
 }

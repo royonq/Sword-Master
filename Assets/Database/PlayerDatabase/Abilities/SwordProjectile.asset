@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301db281ef7582e4f909523249b5e55f, type: 3}
   m_Name: SwordProjectile
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 30
   _lifetime: 2
   _speed: 20
   _cooldown: 1.2

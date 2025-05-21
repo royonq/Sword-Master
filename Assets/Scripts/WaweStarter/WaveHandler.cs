@@ -37,6 +37,7 @@ public class WaveHandler : MonoBehaviour
         if (_isPlayerInZone)
         {
             _spawnEnemies.StartWave();
+            SoundCaller.SwitchBackgroundMusic(SoundType.battleBusic);
             gameObject.SetActive(false);
         }
     } 

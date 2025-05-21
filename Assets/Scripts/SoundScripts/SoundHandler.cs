@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
+using UnityEngine.Serialization;
 
 public class SoundHandler : MonoBehaviour
 {
@@ -11,10 +12,10 @@ public class SoundHandler : MonoBehaviour
 
 
     [SerializeField] private GameObject _audioSourcePrefab;
-    
-    [SerializeField] private AudioSource _soundSource;
+
+    [SerializeField] private AudioSource _playerSource;
     [SerializeField] private AudioSource _musicSource;
-    
+
     private AudioSource[] _audioSources;
     private readonly int _audioVolume = 1;
     private readonly int _fadeTime = 1;
@@ -59,7 +60,7 @@ public class SoundHandler : MonoBehaviour
 
     private void PlayOneShot(SoundType soundType)
     {
-        _soundSource.PlayOneShot(_sounds[soundType]);
+        _playerSource.PlayOneShot(_sounds[soundType]);
     }
 
     private void PlayFromPool(SoundType soundType)
@@ -70,6 +71,7 @@ public class SoundHandler : MonoBehaviour
             {
                 continue;
             }
+
             freeAudioSource.PlayOneShot(_sounds[soundType]);
             break;
         }
@@ -82,22 +84,22 @@ public class SoundHandler : MonoBehaviour
 
     private IEnumerator FadeMusic(SoundType soundType)
     {
-        
         yield return FadeVolume(_musicSource.volume, 0, _fadeTime);
 
         _musicSource.clip = _sounds[soundType];
         _musicSource.Play();
-        
+
         yield return FadeVolume(0, _audioVolume, _fadeTime);
     }
 
     private IEnumerator FadeVolume(float volumeFrom, float volumeTo, float duration)
     {
-        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.deltaTime)
+        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.fixedDeltaTime)
         {
             _musicSource.volume = Mathf.Lerp(volumeFrom, volumeTo, elapsedTime / duration);
             yield return new WaitForFixedUpdate();
         }
+
         _musicSource.volume = volumeTo;
     }
 }

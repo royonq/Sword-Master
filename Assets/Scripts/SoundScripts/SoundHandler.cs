@@ -12,10 +12,10 @@ public class SoundHandler : MonoBehaviour
 
     [SerializeField] private GameObject _audioSourcePrefab;
     
-    private AudioSource[] _audioSources;
-    private AudioSource _soundSource;
-    private AudioSource _musicSource;
+    [SerializeField] private AudioSource _soundSource;
+    [SerializeField] private AudioSource _musicSource;
     
+    private AudioSource[] _audioSources;
     private readonly int _audioVolume = 1;
     private readonly int _fadeTime = 1;
 
@@ -88,7 +88,6 @@ public class SoundHandler : MonoBehaviour
         yield return FadeVolume(_musicSource.volume, 0, _fadeTime);
 
         _musicSource.clip = _sounds[soundType];
-        _musicSource.loop = true;
         _musicSource.Play();
         
         yield return FadeVolume(0, _audioVolume, _fadeTime);
@@ -96,10 +95,10 @@ public class SoundHandler : MonoBehaviour
 
     private IEnumerator FadeVolume(float volumeFrom, float volumeTo, float duration)
     {
-        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.fixedDeltaTime)
+        for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.deltaTime)
         {
             _musicSource.volume = Mathf.Lerp(volumeFrom, volumeTo, elapsedTime / duration);
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         _musicSource.volume = volumeTo;
     }

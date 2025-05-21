@@ -21,8 +21,6 @@ public class SoundHandler : MonoBehaviour
 
     private void Start()
     {
-        _soundSource = GetComponent<AudioSource>();
-        _musicSource = gameObject.AddComponent<AudioSource>();
         AddAudioSource();
     }
 

@@ -16,5 +16,4 @@ MonoBehaviour:
   _spawnXmin: 40
   _spawnY: 10
   _spawnRate: 2
-  _enemyWave: 010000000400000006000000
-  _waweMusic: 200
+  _enemyWave: 030000000400000006000000

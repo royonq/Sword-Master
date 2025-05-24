@@ -6,6 +6,7 @@ public  class Enemy : Mob
 {
     public static event Action OnDeath;
     public static event Action<int> OnDropMoney;
+    public static event Action<float,Vector2> OnTakeDamage;
 
     [SerializeField] private EnemyMobAnimations _enemyMobAnimations;
     private IAttack _attack;
@@ -64,6 +65,12 @@ public  class Enemy : Mob
         _isAttacking = false;
     }
 
+    public override void TakeDamage(float recivedDamage)
+    {
+        base.TakeDamage(recivedDamage);
+        OnTakeDamage?.Invoke(recivedDamage,transform.position);
+    }
+    
     protected override void Die()
     {
         OnDropMoney?.Invoke(_dropMoney);

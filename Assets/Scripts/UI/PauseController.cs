@@ -4,6 +4,6 @@ public class PauseController : MonoBehaviour
 {   
     public void SetTimeScale(int timeScale)
     {
-        Time.timeScale = timeScale;
+        Time.timeScale = timeScale; 
     }
 }

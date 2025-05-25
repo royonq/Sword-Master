@@ -67,8 +67,8 @@ public  class Enemy : Mob
 
     public override void TakeDamage(float recivedDamage)
     {
-        base.TakeDamage(recivedDamage);
         OnTakeDamage?.Invoke(recivedDamage,transform.position);
+        base.TakeDamage(recivedDamage);
     }
     
     protected override void Die()

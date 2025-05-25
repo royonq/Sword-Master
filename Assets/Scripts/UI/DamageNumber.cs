@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -26,10 +25,6 @@ public class DamageNumber : MonoBehaviour
     
     public void SetDamage(float damage)
     {
-        if (damage == 0)
-        {
-            throw new ArgumentException("Damage cannot be zero");
-        }
         _text.text = damage.ToString("0");
     }
 

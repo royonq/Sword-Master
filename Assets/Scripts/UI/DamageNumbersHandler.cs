@@ -5,7 +5,7 @@ public class DamageNumbersHandler: MonoBehaviour
     [SerializeField] private GameObject _damageNumberPrefab;
     
     [SerializeField] private float _offset;
-    private const float _offsetZ = -0.1f;
+    private readonly float _offsetZ = -0.1f;
 
     private void Awake()
     {

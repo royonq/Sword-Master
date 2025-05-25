@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
-using UnityEngine.Serialization;
 
 public class SoundHandler : MonoBehaviour
 {

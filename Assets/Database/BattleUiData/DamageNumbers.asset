@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad254c962441b484e85e931754055078, type: 3}
-  m_Name: SpawnerData
+  m_Script: {fileID: 11500000, guid: 9793139b37303ce419007a2bdf4d7b40, type: 3}
+  m_Name: DamageNumbers
   m_EditorClassIdentifier: 
-  _spawnXmax: 10
-  _spawnXmin: 40
-  _spawnY: 10
-  _spawnRate: 2
-  _enemyWave: 030000000400000006000000
+  _lifeTime: 3
+  _moveUpSpeed: 1

@@ -288,3 +288,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageableStats: {fileID: 11400000, guid: 56c497873d2705249b87c2df07da31a6, type: 2}
   _enemyMobAnimations: {fileID: -2536704418952054711}
+  _damageNumberPrefab: {fileID: 8201372496206828374, guid: 73cc3b6131d5c684594ed0232f4ebd79, type: 3}

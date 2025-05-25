@@ -32,6 +32,6 @@ public class DamageNumber : MonoBehaviour
             timeLeft -= Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
-        pool.AddToPool(this);
+        pool.ReturnToPool(this);
     }
 }

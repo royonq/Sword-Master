@@ -7,11 +7,11 @@ public class DamageNumbersHandler: MonoBehaviour
     [SerializeField] private float _offset;
     private readonly float _offsetZ = -0.1f;
 
-    private void Awake()
+    private void OnEnable()
     {
         Enemy.OnTakeDamage += ShowDamageNumber;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         Enemy.OnTakeDamage -= ShowDamageNumber;
     }

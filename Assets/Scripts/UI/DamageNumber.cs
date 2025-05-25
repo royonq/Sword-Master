@@ -9,7 +9,7 @@ public class DamageNumber : MonoBehaviour
     private  float _moveUpSpeed;
     private  float _lifeTime;
     
-    [SerializeField] private TextMeshPro _text;
+    private TextMeshPro _text;
 
     private void Awake()
     {
@@ -21,6 +21,8 @@ public class DamageNumber : MonoBehaviour
     {
         _lifeTime = _damageNumberStats.LifeTime;
         _moveUpSpeed = _damageNumberStats.MoveUpSpeed;
+        
+        _text = GetComponent<TextMeshPro>();
     }
     
     public void SetDamage(float damage)

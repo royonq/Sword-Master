@@ -15,24 +15,25 @@ public class DamageNumbersHandler : MonoBehaviour
     {
         _pool = new ObjectPool<DamageNumber>(
             createFunc: () => Instantiate(_damageNumberPrefab).GetComponent<DamageNumber>(),
-            actionOnGet: dn => dn.gameObject.SetActive(true),
-            actionOnRelease: dn => dn.gameObject.SetActive(false),
-            actionOnDestroy: dn => Destroy(dn.gameObject),
+            actionOnGet: damageNumber => damageNumber.gameObject.SetActive(true),
+            actionOnRelease: damageNumber => damageNumber.gameObject.SetActive(false),
+            actionOnDestroy: damageNumber => Destroy(damageNumber.gameObject),
             collectionCheck: false,
             defaultCapacity: _minPoolSize,
             maxSize: _maxPoolSize
         );
     }
-    
+
     private void OnEnable()
     {
         Enemy.OnTakeDamage += ShowDamageNumber;
     }
+
     private void OnDisable()
     {
         Enemy.OnTakeDamage -= ShowDamageNumber;
     }
-    
+
     public void AddToPool(DamageNumber damageNumber)
     {
         _pool.Release(damageNumber);
@@ -40,8 +41,8 @@ public class DamageNumbersHandler : MonoBehaviour
 
     private void ShowDamageNumber(float damage, Vector2 enemyPosition)
     {
-        float offsetX = Random.Range(-_offset, _offset);
-        Vector3 spawnPosition = new Vector3(enemyPosition.x + offsetX, enemyPosition.y, _offsetZ);
+        var offsetX = Random.Range(-_offset, _offset);
+        var spawnPosition = new Vector3(enemyPosition.x + offsetX, enemyPosition.y, _offsetZ);
 
         var damageNumber = _pool.Get();
         damageNumber.transform.position = spawnPosition;

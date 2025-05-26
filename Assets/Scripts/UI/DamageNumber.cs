@@ -10,19 +10,12 @@ public class DamageNumber : MonoBehaviour
     private float _lifeTime;
     private TextMeshPro _text;
 
-    private void Awake()
+    public void Init(DamageNumbersHandler handler)
     {
-        _text = GetComponent<TextMeshPro>();
-    }
-
-    public void Init(DamageNumbersHandler pool)
-    {
-        StopAllCoroutines();
-
         _lifeTime = _damageNumberStats.LifeTime;
         _moveUpSpeed = _damageNumberStats.MoveUpSpeed;
-        
-        StartCoroutine(MoveAndReturn(pool));
+        _text = GetComponent<TextMeshPro>();
+        StartCoroutine(MoveAndReturn(handler));
     }
 
     public void SetDamage(float damage)
@@ -32,13 +25,12 @@ public class DamageNumber : MonoBehaviour
 
     private IEnumerator MoveAndReturn(DamageNumbersHandler pool)
     {
-        var timeLeft = _lifeTime;
-        while (timeLeft > 0)
+        while (_lifeTime > 0)
         {
-            transform.position += Vector3.up * (_moveUpSpeed * Time.deltaTime);
-            timeLeft -= Time.deltaTime;
+            transform.position += Vector3.up * (_moveUpSpeed * Time.fixedDeltaTime);
+            _lifeTime -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
-        pool.ReturnToPool(this);
+        pool.AddToPool(this);
     }
 }

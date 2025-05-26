@@ -36,17 +36,17 @@ public class DamageNumbersHandler : MonoBehaviour
         return damageNumber;
     }
 
-    private void OnTakeFromPool(DamageNumber damageNumber)
+    private static void OnTakeFromPool(DamageNumber damageNumber)
     {
         damageNumber.gameObject.SetActive(true);
     }
 
-    private void OnReturnToPool(DamageNumber damageNumber)
+    private static void OnReturnToPool(DamageNumber damageNumber)
     {
         damageNumber.gameObject.SetActive(false);
     }
 
-    private void OnDestroyPoolObject(DamageNumber damageNumber)
+    private static void OnDestroyPoolObject(DamageNumber damageNumber)
     {
         Destroy(damageNumber.gameObject);
     }
@@ -58,12 +58,12 @@ public class DamageNumbersHandler : MonoBehaviour
 
     private void ShowDamageNumber(float damage, Vector2 enemyPosition)
     {
-        float offsetX = Random.Range(-_offset, _offset);
-        Vector3 spawnPosition = new Vector3(enemyPosition.x + offsetX, enemyPosition.y, _offsetZ);
+        var offsetX = Random.Range(-_offset, _offset);
+        var spawnPosition = new Vector3(enemyPosition.x + offsetX, enemyPosition.y, _offsetZ);
 
         var damageNumber = _pool.Get();
         damageNumber.transform.position = spawnPosition;
-        damageNumber.Init(this);
         damageNumber.SetDamage(damage);
+        damageNumber.Init(this);
     }
 }

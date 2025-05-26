@@ -10,11 +10,18 @@ public class DamageNumber : MonoBehaviour
     private float _lifeTime;
     private TextMeshPro _text;
 
+    private void Awake()
+    {
+        _text = GetComponent<TextMeshPro>();
+    }
+
     public void Init(DamageNumbersHandler pool)
     {
+        StopAllCoroutines();
+
         _lifeTime = _damageNumberStats.LifeTime;
         _moveUpSpeed = _damageNumberStats.MoveUpSpeed;
-        _text = GetComponent<TextMeshPro>();
+        
         StartCoroutine(MoveAndReturn(pool));
     }
 
@@ -25,7 +32,7 @@ public class DamageNumber : MonoBehaviour
 
     private IEnumerator MoveAndReturn(DamageNumbersHandler pool)
     {
-        float timeLeft = _lifeTime;
+        var timeLeft = _lifeTime;
         while (timeLeft > 0)
         {
             transform.position += Vector3.up * (_moveUpSpeed * Time.deltaTime);

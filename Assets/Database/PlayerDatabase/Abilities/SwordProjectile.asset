@@ -15,6 +15,6 @@ MonoBehaviour:
   _damage: 30
   _lifetime: 2
   _speed: 20
-  _cooldown: 1.2
+  _cooldown: 0.5
   _abilityIcon: {fileID: -5707046193352654740, guid: 000140d9e97b3c54b8a1e72e3bf5197e, type: 3}
   _attackSound: 1

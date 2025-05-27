@@ -19636,6 +19636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageNumberPrefab: {fileID: 8201372496206828374, guid: 73cc3b6131d5c684594ed0232f4ebd79, type: 3}
+  _damageNumberStats: {fileID: 11400000, guid: 9630bfbb000ab9a48ad8c68e44f4e73a, type: 2}
   _offset: 0.5
 --- !u!1 &996734114
 GameObject:

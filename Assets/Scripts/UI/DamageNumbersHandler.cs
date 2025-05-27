@@ -58,6 +58,6 @@ public class DamageNumbersHandler : MonoBehaviour
             lifetime -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
-        _pool.Release(gameObject);
+        _pool.Release(damageNumber);
     }
 }

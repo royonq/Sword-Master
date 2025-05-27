@@ -1,29 +1,29 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
 
 public class DamageNumber : MonoBehaviour
 {
+    public static event Action<DamageNumber> OnShowDamage;
     [SerializeField] private DamageNumberStats _damageNumberStats;
 
     private float _moveUpSpeed;
     private float _lifeTime;
     private TextMeshPro _text;
 
-    public void Init(DamageNumbersHandler handler)
+
+    public void Init(float damage, Vector3 position)
     {
         _lifeTime = _damageNumberStats.LifeTime;
         _moveUpSpeed = _damageNumberStats.MoveUpSpeed;
         _text = GetComponent<TextMeshPro>();
-        StartCoroutine(MoveAndReturn(handler));
-    }
-
-    public void SetDamage(float damage)
-    {
         _text.text = damage.ToString("0");
+        transform.position = position;
+        StartCoroutine(MoveAndReturn());
     }
 
-    private IEnumerator MoveAndReturn(DamageNumbersHandler pool)
+    private IEnumerator MoveAndReturn()
     {
         while (_lifeTime > 0)
         {
@@ -31,6 +31,7 @@ public class DamageNumber : MonoBehaviour
             _lifeTime -= Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
-        pool.AddToPool(this);
+
+        OnShowDamage?.Invoke(this);
     }
 }

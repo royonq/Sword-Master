@@ -13,9 +13,10 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
     private bool _isAbilityUsing;
-    protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
+    protected virtual void InitProjectileAbility(GameObject instancedAbility, AbilityStats stats)
     {
-        instancedAbility.GetComponent<Projectile>().Init(stats, _playerModifiers);
+        var physicalStats = stats as PhysicalAbilityStats;
+        instancedAbility.GetComponent<Projectile>().Init(physicalStats, _playerModifiers);
     }
 
     private void Start()
@@ -26,10 +27,10 @@ public abstract class Ability : MonoBehaviour
     private void SetAbilityImage()
     {
         _abilityColdownImage.fillAmount = 0;
-        _abilityImage.sprite = _stats.AbilityIcon;
+        _abilityImage.sprite = _stats.AbilityIcon; //todo походу нужно будет делать очередной базовый класс
     }
 
-    private IEnumerator Cooldown(float cooldown)
+    protected IEnumerator Cooldown(float cooldown)
     {
         _abilityColdownImage.fillAmount = 1;
 
@@ -64,10 +65,10 @@ public abstract class Ability : MonoBehaviour
         InitInstanceAbility();
     }
 
-    private void InitInstanceAbility()
+    protected virtual void InitInstanceAbility()
     {
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitAbility(instancedAbility, _stats);
+        InitProjectileAbility(instancedAbility, _stats);
         StartCoroutine(Cooldown(_stats.Cooldown));
     }
 }

@@ -4,7 +4,7 @@ public class SwordProjectile : ProjectileRotate
 {
     private Rigidbody2D _rb;
 
-    public override void Init(AbilityStats stats, PlayerModifiers modifiers)
+    public override void Init(PhysicalAbilityStats stats, PlayerModifiers modifiers)
     {
         base.Init(stats, modifiers);
         LaunchProjectile();

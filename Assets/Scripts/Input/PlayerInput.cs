@@ -42,6 +42,14 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _player.UseDash();
+        }
+    }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)

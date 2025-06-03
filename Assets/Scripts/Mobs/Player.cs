@@ -9,7 +9,6 @@ public class Player : Mob
     [SerializeField] private Ability _deafultAttack;
     [SerializeField] private Ability _ultimate;
     [SerializeField] private Ability _dash;
-    
     private PlayerModifiers playerModifiers;
 
     protected override bool PlayOneShot => true;

@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AbilityStats : ScriptableObject
 {
@@ -8,7 +9,7 @@ public class AbilityStats : ScriptableObject
 
     [SerializeField] private Sprite _abilityIcon;
     public Sprite AbilityIcon => _abilityIcon;
-    
-    [SerializeField] private SoundType _attackSound;
-    public SoundType AttackSound => _attackSound;
+
+    [SerializeField] private SoundType _abilitySound;
+    public SoundType AbilitySound => _abilitySound;
 }

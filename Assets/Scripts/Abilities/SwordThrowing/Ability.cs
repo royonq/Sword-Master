@@ -4,20 +4,15 @@ using UnityEngine.UI;
 
 public abstract class Ability : MonoBehaviour
 {
-    [SerializeField] private GameObject _ability;
-    [SerializeField] private Transform _spawnpoint;
-    [SerializeField] private AbilityStats _stats;
+
+    [SerializeField] protected AbilityStats _stats;
     [SerializeField] private PlayerAnimations _playerAnimations;
-    [SerializeField] private PlayerModifiers _playerModifiers;
+    [SerializeField] protected PlayerModifiers _playerModifiers;
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
     private bool _isAbilityUsing;
-    protected virtual void InitProjectileAbility(GameObject instancedAbility, AbilityStats stats)
-    {
-        var physicalStats = stats as PhysicalAbilityStats;
-        instancedAbility.GetComponent<Projectile>().Init(physicalStats, _playerModifiers);
-    }
+    
 
     private void Start()
     {
@@ -27,10 +22,10 @@ public abstract class Ability : MonoBehaviour
     private void SetAbilityImage()
     {
         _abilityColdownImage.fillAmount = 0;
-        _abilityImage.sprite = _stats.AbilityIcon; //todo походу нужно будет делать очередной базовый класс
+        _abilityImage.sprite = _stats.AbilityIcon;
     }
 
-    protected IEnumerator Cooldown(float cooldown)
+    private IEnumerator Cooldown(float cooldown)
     {
         _abilityColdownImage.fillAmount = 1;
 
@@ -50,9 +45,8 @@ public abstract class Ability : MonoBehaviour
         {
             return;
         }
-
         StartCoroutine(UseAbilityAfterAnimation());
-        SoundCaller.PlaySound(_stats.AttackSound,true);
+        SoundCaller.PlaySound(_stats.AbilitySound,true);
     }
 
     private IEnumerator UseAbilityAfterAnimation()
@@ -62,13 +56,11 @@ public abstract class Ability : MonoBehaviour
             ? _playerAnimations.PlayerAbilityAnimation(true)
             : _playerAnimations.PlayerAbilityAnimation(false));
 
-        InitInstanceAbility();
+        InitAbility();
     }
 
-    protected virtual void InitInstanceAbility()
+    protected virtual void InitAbility()
     {
-        var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitProjectileAbility(instancedAbility, _stats);
         StartCoroutine(Cooldown(_stats.Cooldown));
     }
 }

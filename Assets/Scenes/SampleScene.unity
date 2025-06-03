@@ -19170,14 +19170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6793cd151b114c4c8f18df417d617d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ability: {fileID: 0}
-  _spawnpoint: {fileID: 868551400}
-  _stats: {fileID: 0}
+  _stats: {fileID: 11400000, guid: 137e94e20f661434bbec235af7789f37, type: 2}
   _playerAnimations: {fileID: 1907395638}
   _playerModifiers: {fileID: 1907395637}
   _abilityColdownImage: {fileID: 1389458584}
-  _abilityImage: {fileID: 1699435863}
-  _dashAbilityStats: {fileID: 11400000, guid: 137e94e20f661434bbec235af7789f37, type: 2}
+  _abilityImage: {fileID: 625095727}
 --- !u!4 &868551400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5665756060595442235, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
@@ -24032,6 +24029,10 @@ PrefabInstance:
       propertyPath: _abilityColdownImage
       value: 
       objectReference: {fileID: 4770416111288292416}
+    - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: _dash
+      value: 
+      objectReference: {fileID: 844912966}
     - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: _playerBars
       value: 

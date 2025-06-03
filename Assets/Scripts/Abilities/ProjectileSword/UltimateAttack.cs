@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class UltimateAttack : Ability
+public abstract class UltimateAttack: AbstractAbility
 {
     
 }

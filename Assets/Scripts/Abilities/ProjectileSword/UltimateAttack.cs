@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public abstract class UltimateAttack: AbstractAbility
+public abstract class UltimateAttack: ProjectileAbility
 {
     
 }

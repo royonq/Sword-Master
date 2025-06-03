@@ -11,8 +11,9 @@ public abstract class Ability : MonoBehaviour
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
-    private bool _isAbilityUsing;
-    
+    protected bool _isAbilityUsing;
+    public bool IsAbilityUsing => _isAbilityUsing;
+
 
     private void Start()
     {
@@ -46,6 +47,7 @@ public abstract class Ability : MonoBehaviour
             return;
         }
         StartCoroutine(UseAbilityAfterAnimation());
+        StartCoroutine(Cooldown(_stats.Cooldown));
         SoundCaller.PlaySound(_stats.AbilitySound,true);
     }
 
@@ -59,8 +61,5 @@ public abstract class Ability : MonoBehaviour
         InitAbility();
     }
 
-    protected virtual void InitAbility()
-    {
-        StartCoroutine(Cooldown(_stats.Cooldown));
-    }
+    protected abstract void InitAbility();
 }

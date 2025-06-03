@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class AbstractAbility : Ability
+public abstract class ProjectileAbility : Ability
 {
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private GameObject _ability;
@@ -13,6 +13,5 @@ public abstract class AbstractAbility : Ability
     {
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
         InitProjectileAbility(instancedAbility, _stats);
-        base.InitAbility();
     }
 }

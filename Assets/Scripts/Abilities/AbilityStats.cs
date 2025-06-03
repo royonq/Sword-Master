@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class AbilityStats : ScriptableObject
 {

@@ -11,6 +11,7 @@ public class Player : Mob
     [SerializeField] private Ability _dash;
     private PlayerModifiers playerModifiers;
 
+    private bool IsDashing => _dash.IsAbilityUsing;
     protected override bool PlayOneShot => true;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;
@@ -22,18 +23,27 @@ public class Player : Mob
         var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
+    
+    public override void Move(Vector2 direction)
+    {
+        if (IsDashing)
+        {
+            return;
+        }
+        base.Move(direction);
+    }
 
-    public void Attack()
+    public void FirstAbility()
     {
         _deafultAttack.Use();
     }
 
-    public void UseUltimate()
+    public void SecondAbility()
     {
         _ultimate.Use();
     }
 
-    public void UseDash()
+    public void ThirdAbility()
     {
         _dash.Use();
     }

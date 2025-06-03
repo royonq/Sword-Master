@@ -1,4 +1,4 @@
-public class ThrowSwordAttack : AbstractAbility
+public class ThrowSwordAttack : ProjectileAbility
 {
 
 }

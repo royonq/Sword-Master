@@ -15,5 +15,5 @@ MonoBehaviour:
   _cooldown: 5
   _abilityIcon: {fileID: -2087600761, guid: dd6aa2d35b7d1334f97662a9d54d16fa, type: 3}
   _abilitySound: 1
-  _dashDistance: 10
-  _dashDuration: 5
+  _distance: 20
+  _duration: 3

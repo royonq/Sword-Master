@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ProjectileRotate : Projectile
 {
-    public override void Init(PhysicalAbilityStats stats, PlayerModifiers modifiers)
+    public override void Init(ProjectileStats stats, PlayerModifiers modifiers)
     {
         base.Init(stats, modifiers);
         RotateTowardsCrosshair();

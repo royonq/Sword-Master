@@ -1,6 +1,6 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewAbility", menuName = "Data/Abilities/SateliteSword")]
-public class SateliteSword : PhysicalAbilityStats
+public class SateliteSword : ProjectileStats
 {
 }

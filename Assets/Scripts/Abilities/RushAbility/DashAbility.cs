@@ -4,33 +4,30 @@ using UnityEngine.InputSystem;
 
 public class DashAbility : Ability
 {
+    [SerializeField] private Camera _camera;
     private Vector2 _direction;
     private Rigidbody2D _rb;
-    private Collider2D _col;
-
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
-        _col = GetComponentInParent<Collider2D>();
     }
 
     protected override void InitAbility()
     {
         var dashAbilityStats = _stats as DashAbilityStats;
-        StartCoroutine(Dash(dashAbilityStats.DashDistance, dashAbilityStats.DashDuration));
-        base.InitAbility();
+        StartCoroutine(Dash(dashAbilityStats.Distance, dashAbilityStats.Duration));
     }
 
     private void GetDirectionToCursor()
     {
-        var cursorWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         _direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
     }
 
     private IEnumerator Dash(float dashDistance, float dashDuration)
     {
+        _isAbilityUsing = true;
         GetDirectionToCursor();
-        _col.enabled = false;
 
         var start = _rb.position;
         var end = start + _direction * dashDistance;
@@ -44,6 +41,6 @@ public class DashAbility : Ability
         }
 
         _rb.MovePosition(end);
-        _col.enabled = true;
+        _isAbilityUsing = false;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class PhysicalAbilityStats : AbilityStats
+public abstract class ProjectileStats : AbilityStats
 {
     [SerializeField] private float _damage;
 

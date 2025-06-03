@@ -281,7 +281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4175817628633943829}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: UseUltimate
+        m_MethodName: SecondAbility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -329,7 +329,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4175817628633943829}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Attack
+        m_MethodName: FirstAbility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

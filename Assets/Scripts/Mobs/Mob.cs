@@ -23,7 +23,7 @@ public abstract class Mob : Damageable
         _deafultMovementSpeed = mobStats.MovementSpeed;
     }
 
-    public void Move(Vector2 direction)
+    public virtual void Move(Vector2 direction)
     {
         _rb.velocity = ModifierSpeed * direction;
         _mobAnimations.MoveIdleAnimation(direction);

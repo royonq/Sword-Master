@@ -19107,6 +19107,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1200565, y: 1.5402772}
   m_EdgeRadius: 0
+--- !u!20 &802151087 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2224018849297253726, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+  m_PrefabInstance: {fileID: 4901736820974533530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815419464
 GameObject:
   m_ObjectHideFlags: 0
@@ -19175,6 +19180,7 @@ MonoBehaviour:
   _playerModifiers: {fileID: 1907395637}
   _abilityColdownImage: {fileID: 1389458584}
   _abilityImage: {fileID: 625095727}
+  _camera: {fileID: 802151087}
 --- !u!4 &868551400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5665756060595442235, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
@@ -24041,6 +24047,22 @@ PrefabInstance:
       propertyPath: _damageableStats
       value: 
       objectReference: {fileID: 11400000, guid: ecd49b0475275f346abf4fa24341c572, type: 2}
+    - target: {fileID: 4277997725684962532, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: m_Size.x
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277997725684962532, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: m_Size.y
+      value: 8.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601420181534524812, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601420181534524812, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5665756060595442235, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.81
@@ -24111,7 +24133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8530537813596254653, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnDash
+      value: ThirdAbility
       objectReference: {fileID: 0}
     - target: {fileID: 8530537813596254653, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

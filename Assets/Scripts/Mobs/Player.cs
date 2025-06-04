@@ -1,17 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : Mob
 {
     public static event Action OnPlayerDeath;
 
     [SerializeField] private PlayerBar _playerBars;
-    [SerializeField] private Ability _deafultAttack;
-    [SerializeField] private Ability _ultimate;
-    [SerializeField] private Ability _dash;
+    [SerializeField] private Ability _firstAbility;
+    [SerializeField] private Ability _secondAbility;
+    [SerializeField] private Ability _thirdAbility;
     private PlayerModifiers playerModifiers;
-
-    private bool IsDashing => _dash.IsAbilityUsing;
     protected override bool PlayOneShot => true;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;
@@ -23,10 +22,17 @@ public class Player : Mob
         var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
-    
+
+    private bool IsUsingAbility()
+    {
+        return _secondAbility.IsAbilityUsing ||
+               _firstAbility.IsAbilityUsing ||
+               _thirdAbility.IsAbilityUsing;
+    }
+
     public override void Move(Vector2 direction)
     {
-        if (IsDashing)
+        if (IsUsingAbility())
         {
             return;
         }
@@ -35,17 +41,19 @@ public class Player : Mob
 
     public void FirstAbility()
     {
-        _deafultAttack.Use();
+        _firstAbility.Use();
     }
-
+    
     public void SecondAbility()
     {
-        _ultimate.Use();
+        _secondAbility.Use();
     }
+
+    
 
     public void ThirdAbility()
     {
-        _dash.Use();
+        _thirdAbility.Use();
     }
 
     protected override void Die()

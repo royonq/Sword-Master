@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class DashAbility : Ability
 {
     [SerializeField] private Camera _camera;
-    private Vector2 _direction;
     private Rigidbody2D _rb;
     private void Awake()
     {
@@ -17,20 +16,16 @@ public class DashAbility : Ability
         var dashAbilityStats = _stats as DashAbilityStats;
         StartCoroutine(Dash(dashAbilityStats.Distance, dashAbilityStats.Duration));
     }
-
-    private void GetDirectionToCursor()
-    {
-        var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        _direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
-    }
-
+    
     private IEnumerator Dash(float dashDistance, float dashDuration)
     {
         _isAbilityUsing = true;
-        GetDirectionToCursor();
+
+        var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
 
         var start = _rb.position;
-        var end = start + _direction * dashDistance;
+        var end = start + direction * dashDistance;
         float elapsed = 0;
 
         while (elapsed < dashDuration)

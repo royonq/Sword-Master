@@ -30,7 +30,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            _player.SecondAbility();
+            _player.FirstAbility();
         }
     }
 
@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.performed)
         {
-            _player.FirstAbility();
+            _player.SecondAbility();
         }
     }
 

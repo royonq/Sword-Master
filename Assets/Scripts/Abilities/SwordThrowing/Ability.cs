@@ -14,6 +14,7 @@ public abstract class Ability : MonoBehaviour
     protected bool _isAbilityUsing;
     public bool IsAbilityUsing => _isAbilityUsing;
 
+    protected abstract void InitAbility();
 
     private void Start()
     {
@@ -60,6 +61,4 @@ public abstract class Ability : MonoBehaviour
 
         InitAbility();
     }
-
-    protected abstract void InitAbility();
 }

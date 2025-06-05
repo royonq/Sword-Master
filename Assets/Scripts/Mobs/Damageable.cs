@@ -12,6 +12,7 @@ public abstract class Damageable : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("werghuse4r5hijklnoujiko");
         SetStats();
     }
 

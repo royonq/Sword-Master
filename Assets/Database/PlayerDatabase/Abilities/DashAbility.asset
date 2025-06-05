@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21450321d3e9c9647ad94bfe6d0e40fe, type: 3}
+  m_Name: DashAbility
+  m_EditorClassIdentifier: 
+  _cooldown: 5
+  _abilityIcon: {fileID: -2087600761, guid: dd6aa2d35b7d1334f97662a9d54d16fa, type: 3}
+  _abilitySound: 1
+  _distance: 20
+  _duration: 0.5

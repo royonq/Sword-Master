@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
@@ -48,6 +49,10 @@ public class SoundHandler : MonoBehaviour
 
     private void PlaySound(SoundType soundType, bool useOneShot)
     {
+        if (!_sounds.ContainsKey(soundType))
+        {
+            throw new ArgumentException($"Sound type {soundType} does not exist in the sound dictionary.");
+        }
         if (useOneShot)
         {
             PlayOneShot(soundType);
@@ -78,6 +83,11 @@ public class SoundHandler : MonoBehaviour
 
     private void SwitchBackgroundMusic(SoundType soundType)
     {
+        if (!_sounds.ContainsKey(soundType))
+        {
+            throw new ArgumentException($"Sound type {soundType} does not exist in the sound dictionary.");
+        }
+        
         StartCoroutine(FadeMusic(soundType));
     }
 

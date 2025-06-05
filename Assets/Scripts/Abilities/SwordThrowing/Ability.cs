@@ -4,19 +4,17 @@ using UnityEngine.UI;
 
 public abstract class Ability : MonoBehaviour
 {
-    [SerializeField] private GameObject _ability;
-    [SerializeField] private Transform _spawnpoint;
-    [SerializeField] private AbilityStats _stats;
+
+    [SerializeField] protected AbilityStats _stats;
     [SerializeField] private PlayerAnimations _playerAnimations;
-    [SerializeField] private PlayerModifiers _playerModifiers;
+    [SerializeField] protected PlayerModifiers _playerModifiers;
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
-    private bool _isAbilityUsing;
-    protected virtual void InitAbility(GameObject instancedAbility, AbilityStats stats)
-    {
-        instancedAbility.GetComponent<Projectile>().Init(stats, _playerModifiers);
-    }
+    
+    protected bool _isAbilityUsing;
+
+    protected abstract void InitAbility();
 
     private void Start()
     {
@@ -49,9 +47,9 @@ public abstract class Ability : MonoBehaviour
         {
             return;
         }
-
         StartCoroutine(UseAbilityAfterAnimation());
-        SoundCaller.PlaySound(_stats.AttackSound,true);
+        StartCoroutine(Cooldown(_stats.Cooldown));
+        SoundCaller.PlaySound(_stats.AbilitySound,true);
     }
 
     private IEnumerator UseAbilityAfterAnimation()
@@ -61,13 +59,6 @@ public abstract class Ability : MonoBehaviour
             ? _playerAnimations.PlayerAbilityAnimation(true)
             : _playerAnimations.PlayerAbilityAnimation(false));
 
-        InitInstanceAbility();
-    }
-
-    private void InitInstanceAbility()
-    {
-        var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitAbility(instancedAbility, _stats);
-        StartCoroutine(Cooldown(_stats.Cooldown));
+        InitAbility();
     }
 }

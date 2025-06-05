@@ -26,19 +26,27 @@ public class PlayerInput : MonoBehaviour
         _movementDirection = context.ReadValue<Vector2>().normalized;
     }
 
-    public void OnUseUltimate(InputAction.CallbackContext context)
+    public void FirstAbility(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            _player.UseUltimate();
+            _player.FirstAbility();
         }
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void SecondAbility(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            _player.Attack();
+            _player.SecondAbility();
+        }
+    }
+
+    public void ThirdAbility(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _player.ThirdAbility();
         }
     }
 

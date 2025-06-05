@@ -11,6 +11,7 @@ public class Player : Mob
     [SerializeField] private Ability _secondAbility;
     [SerializeField] private Ability _thirdAbility;
     private PlayerModifiers playerModifiers;
+    
     protected override bool PlayOneShot => true;
     protected override float ModifierSpeed => base.ModifierSpeed * playerModifiers.SpeedModifier;
     protected override float ModifierHealth => base.ModifierHealth * playerModifiers.HealthModifier;

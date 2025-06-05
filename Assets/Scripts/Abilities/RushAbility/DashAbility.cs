@@ -23,7 +23,7 @@ public class DashAbility : Ability
     private IEnumerator Dash(float dashDistance, float dashDuration)
     {
         _player.SetCanMove(false);
-
+        _player.SetInvulnerable(true);
         var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
 
@@ -40,5 +40,6 @@ public class DashAbility : Ability
 
         _rb.MovePosition(end);
         _player.SetCanMove(true);
+        _player.SetInvulnerable(false);
     }
 }

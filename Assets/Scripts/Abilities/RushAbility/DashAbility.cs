@@ -6,9 +6,12 @@ public class DashAbility : Ability
 {
     [SerializeField] private Camera _camera;
     private Rigidbody2D _rb;
+    private Player _player;
+
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
+        _player = GetComponentInParent<Player>();
     }
 
     protected override void InitAbility()
@@ -16,10 +19,10 @@ public class DashAbility : Ability
         var dashAbilityStats = _stats as DashAbilityStats;
         StartCoroutine(Dash(dashAbilityStats.Distance, dashAbilityStats.Duration));
     }
-    
+
     private IEnumerator Dash(float dashDistance, float dashDuration)
     {
-        _isAbilityUsing = true;
+        _player.SetCanMove(false);
 
         var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
@@ -36,6 +39,6 @@ public class DashAbility : Ability
         }
 
         _rb.MovePosition(end);
-        _isAbilityUsing = false;
+        _player.SetCanMove(true);
     }
 }

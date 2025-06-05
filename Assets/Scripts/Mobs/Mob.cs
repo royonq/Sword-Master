@@ -7,6 +7,7 @@ public abstract class Mob : Damageable
 
     private Rigidbody2D _rb;
     private float _deafultMovementSpeed;
+    private bool _canMove = true;
     protected virtual float ModifierSpeed => _deafultMovementSpeed;
     
     private void Awake()
@@ -23,8 +24,17 @@ public abstract class Mob : Damageable
         _deafultMovementSpeed = mobStats.MovementSpeed;
     }
 
+    public void SetCanMove(bool value)
+    {
+        _canMove = value;
+    }
+
     public virtual void Move(Vector2 direction)
     {
+        if (!_canMove)
+        {
+            return;
+        }
         _rb.velocity = ModifierSpeed * direction;
         _mobAnimations.MoveIdleAnimation(direction);
     }

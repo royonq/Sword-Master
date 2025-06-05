@@ -11,8 +11,8 @@ public abstract class Ability : MonoBehaviour
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
+    
     protected bool _isAbilityUsing;
-    public bool IsAbilityUsing => _isAbilityUsing;
 
     protected abstract void InitAbility();
 

@@ -22,23 +22,7 @@ public class Player : Mob
         var playerStats = _damageableStats as PlayerStats;
         _playerBars.SetMaxHealth(playerStats.MaxHealth);
     }
-
-    private bool IsUsingAbility()
-    {
-        return _secondAbility.IsAbilityUsing ||
-               _firstAbility.IsAbilityUsing ||
-               _thirdAbility.IsAbilityUsing;
-    }
-
-    public override void Move(Vector2 direction)
-    {
-        if (IsUsingAbility())
-        {
-            return;
-        }
-        base.Move(direction);
-    }
-
+    
     public void FirstAbility()
     {
         _firstAbility.Use();
@@ -48,9 +32,7 @@ public class Player : Mob
     {
         _secondAbility.Use();
     }
-
     
-
     public void ThirdAbility()
     {
         _thirdAbility.Use();

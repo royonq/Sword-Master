@@ -19181,6 +19181,28 @@ MonoBehaviour:
   _abilityColdownImage: {fileID: 1389458584}
   _abilityImage: {fileID: 625095727}
   _camera: {fileID: 802151087}
+--- !u!114 &844912968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2185565477427670971, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+  m_PrefabInstance: {fileID: 4901736820974533530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844912964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b90022ef26e4340a26f95bedef7a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &844912969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3543931935943867377, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+  m_PrefabInstance: {fileID: 4901736820974533530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844912964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da26c77572aeb64696e6b995391713b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &868551400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5665756060595442235, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
@@ -24043,6 +24065,18 @@ PrefabInstance:
       propertyPath: _playerBars
       value: 
       objectReference: {fileID: 910200871}
+    - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: _firstAbility
+      value: 
+      objectReference: {fileID: 844912969}
+    - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: _thirdAbility
+      value: 
+      objectReference: {fileID: 844912966}
+    - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
+      propertyPath: _secondAbility
+      value: 
+      objectReference: {fileID: 844912968}
     - target: {fileID: 4175817628633943829, guid: 84733b89f88e9344b9555bc47bfcdb00, type: 3}
       propertyPath: _damageableStats
       value: 

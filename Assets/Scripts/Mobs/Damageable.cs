@@ -8,12 +8,18 @@ public abstract class Damageable : MonoBehaviour
 
     protected float _currentHealth;
     protected virtual bool PlayOneShot => false;
+    private bool _isInvulnerable;
 
     private void Start()
     {
         SetStats();
     }
 
+    public void SetInvulnerable(bool value)
+    {
+        _isInvulnerable = value;
+    }
+    
     protected abstract void Die();
 
     protected virtual void SetStats()
@@ -24,6 +30,10 @@ public abstract class Damageable : MonoBehaviour
 
     public virtual void TakeDamage(float recivedDamage)
     {
+        if (_isInvulnerable)
+        {
+            return;
+        }
         _currentHealth -= recivedDamage;
         SoundCaller.PlaySound (_damageableStats.TakeDamageSound,PlayOneShot);
         if (_currentHealth <= 0)

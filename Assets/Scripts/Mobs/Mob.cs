@@ -29,7 +29,7 @@ public abstract class Mob : Damageable
         _canMove = value;
     }
 
-    public virtual void Move(Vector2 direction)
+    public void Move(Vector2 direction)
     {
         if (!_canMove)
         {

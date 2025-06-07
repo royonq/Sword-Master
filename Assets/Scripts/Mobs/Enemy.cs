@@ -44,9 +44,13 @@ public  class Enemy : Mob
 
     private IEnumerator StartSlow(float slowFactor, float duration)
     {
-        _currentSpeedMultiplier = slowFactor;
+        _currentSpeedMultiplier -= slowFactor;
+        if (_currentSpeedMultiplier < 0)
+        {
+           throw new Exception("Speed multiplier cannot be negative");
+        }
         yield return new WaitForSeconds(duration);
-        _currentSpeedMultiplier = 1f;
+        _currentSpeedMultiplier += slowFactor;
     }
 
 

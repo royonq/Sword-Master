@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using TMPro.Examples;
 using UnityEngine.InputSystem;
 
 public class DashAbility : Ability
@@ -66,28 +65,35 @@ public class DashAbility : Ability
     {
         var direction = (end - start).normalized;
         float length = Vector2.Distance(start, end);
-        
-        var hits = Physics2D.RaycastAll(start, direction,
-            length, LayerMask.GetMask("Enemy"));
+
+        var hits = Physics2D.BoxCastAll(start, Vector2.one * _slowRadius, 0f, direction, length,
+            LayerMask.GetMask("Enemy"));
 
         foreach (var hit in hits)
         {
             var enemy = hit.collider.GetComponent<Enemy>();
-
-            var distance = CalculateDistanceToLine(start, end, enemy.transform.position);
-            if (distance <= _slowRadius)
-            {
-                enemy.ApplySlow(_slowFactor,_slowDuration);
-            }
+            enemy.ApplySlow(_slowFactor, _slowDuration);
         }
     }
     
-    private float CalculateDistanceToLine(Vector2 segmentStart, Vector2 segmentEnd, Vector2 point)
+    private void OnDrawGizmos()
     {
-        var segment = segmentEnd - segmentStart;
-        float projection = Vector2.Dot(point - segmentStart, segment) / segment.sqrMagnitude;
-        projection = Mathf.Clamp01(projection);
-        var closestPoint = segmentStart + segment * projection;
-        return Vector2.Distance(point, closestPoint);
+
+        if (_dashAbilityStats == null)
+        {
+            return;
+        }
+        
+        var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        var direction = ((Vector2)cursorWorldPos - _rb.position).normalized;
+
+        var boxSize = Vector2.one * _slowRadius;
+        float length = _dashAbilityStats.Distance;
+
+        Gizmos.color = Color.cyan;
+        var oldMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(_rb.position + direction * length / 2, Quaternion.FromToRotation(Vector3.right, direction), Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(length, boxSize.y, 0.1f));
+        Gizmos.matrix = oldMatrix;
     }
 }

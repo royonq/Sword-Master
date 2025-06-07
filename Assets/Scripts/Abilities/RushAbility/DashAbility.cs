@@ -48,8 +48,11 @@ public class DashAbility : Ability
     yield return new WaitForSeconds(dashDuration);
 
     _rb.velocity = Vector2.zero;
-
-    HitEnemiesOnLine(_rb.position, _rb.position + direction * dashDistance);
+    
+    var start = _rb.position - direction * dashDistance;
+    var end = _rb.position;
+    HitEnemiesOnLine(start, end);
+    
     _player.SetCanMove(true);
     _player.SetInvulnerable(false);
     yield return new WaitForSeconds(_trail.time);

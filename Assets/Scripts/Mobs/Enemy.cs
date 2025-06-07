@@ -20,6 +20,9 @@ public  class Enemy : Mob
     private bool _isAttacking;
     private float _stopDistance;
     
+    private float _currentSpeedMultiplier = 1f;
+    protected override float ModifierSpeed => base.ModifierSpeed * _currentSpeedMultiplier;
+    
     protected override void SetStats()
     {
         base.SetStats();
@@ -32,6 +35,20 @@ public  class Enemy : Mob
         
         _attack = GetComponentInChildren<IAttack>();
     }
+
+
+    public void ApplySlow(float slowFactor, float duration)
+    { 
+        StartCoroutine(StartSlow(slowFactor, duration));
+    }
+
+    private IEnumerator StartSlow(float slowFactor, float duration)
+    {
+        _currentSpeedMultiplier = slowFactor;
+        yield return new WaitForSeconds(duration);
+        _currentSpeedMultiplier = 1f;
+    }
+
 
     public void SetTarget(Transform target)
     {

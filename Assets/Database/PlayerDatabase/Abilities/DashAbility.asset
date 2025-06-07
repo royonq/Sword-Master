@@ -17,3 +17,6 @@ MonoBehaviour:
   _abilitySound: 1
   _distance: 20
   _duration: 0.5
+  _slowFactor: 0.5
+  _slowDuration: 1.5
+  _slowRadius: 1

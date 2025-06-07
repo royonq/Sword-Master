@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 public class DashAbility : Ability
 {
     [SerializeField] private Camera _camera;
+    [SerializeField] private LayerMask _enemyLayer;
     private DashAbilityStats _dashAbilityStats;
     private Rigidbody2D _rb;
     private Player _player;
     
     private float _slowDuration;
-    private float _slowFactor;
+    private float _slowCoefficient;
     private float _slowRadius;
     
     private TrailRenderer _trail;
@@ -26,7 +27,7 @@ public class DashAbility : Ability
     {
         _dashAbilityStats = _stats as DashAbilityStats;
         _slowDuration = _dashAbilityStats.SlowDuration;
-        _slowFactor = _dashAbilityStats.SlowFactor;
+        _slowCoefficient = _dashAbilityStats.SlowCoefficient;
         _slowRadius = _dashAbilityStats.SlowRadius;
         
         StartCoroutine(Dash(_dashAbilityStats.Distance, _dashAbilityStats.Duration));
@@ -46,8 +47,8 @@ public class DashAbility : Ability
         float elapsed = 0;
         while (elapsed < dashDuration)
         {
-            var cerrentPosition = Vector2.Lerp(start, end, elapsed / dashDuration);
-            _rb.MovePosition(cerrentPosition);
+            var currentPosition = Vector2.Lerp(start, end, elapsed / dashDuration);
+            _rb.MovePosition(currentPosition);
             
             elapsed += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
@@ -58,6 +59,7 @@ public class DashAbility : Ability
         HitEnemiesOnLine(start, end);
         _player.SetCanMove(true);
         _player.SetInvulnerable(false);
+        yield return new WaitForSeconds(_trail.time);
         _trail.enabled = false;
     }
     
@@ -66,27 +68,26 @@ public class DashAbility : Ability
         var direction = (end - start).normalized;
         float length = Vector2.Distance(start, end);
 
-        var hits = Physics2D.BoxCastAll(start, Vector2.one * _slowRadius, 0f, direction, length,
-            LayerMask.GetMask("Enemy"));
+        var hits = Physics2D.BoxCastAll(start, Vector2.one * _slowRadius,
+            0, direction, length, _enemyLayer);
 
         foreach (var hit in hits)
         {
             var enemy = hit.collider.GetComponent<Enemy>();
-            enemy.ApplySlow(_slowFactor, _slowDuration);
+            enemy.ApplySlow(_slowCoefficient, _slowDuration);
         }
     }
     
     private void OnDrawGizmos()
     {
 
-        if (_dashAbilityStats == null)
+        if (_dashAbilityStats == null|| _rb == null || _camera == null)
         {
             return;
         }
         
         var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var direction = ((Vector2)cursorWorldPos - _rb.position).normalized;
-
         var boxSize = Vector2.one * _slowRadius;
         float length = _dashAbilityStats.Distance;
 

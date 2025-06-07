@@ -21,47 +21,40 @@ public class DashAbility : Ability
         _rb = GetComponentInParent<Rigidbody2D>();
         _player = GetComponentInParent<Player>();
         _trail = GetComponentInParent<TrailRenderer>();
-    }
-
-    protected override void InitAbility()
-    {
+        
         _dashAbilityStats = _stats as DashAbilityStats;
         _slowDuration = _dashAbilityStats.SlowDuration;
         _slowCoefficient = _dashAbilityStats.SlowCoefficient;
         _slowRadius = _dashAbilityStats.SlowRadius;
-        
+    }
+
+    protected override void InitAbility()
+    {
         StartCoroutine(Dash(_dashAbilityStats.Distance, _dashAbilityStats.Duration));
     }
 
     private IEnumerator Dash(float dashDistance, float dashDuration)
-    {
-        _player.SetCanMove(false);
-        _player.SetInvulnerable(true);
-        _trail.enabled = true;
-        var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
+{
+    _player.SetCanMove(false);
+    _player.SetInvulnerable(true);
+    _trail.enabled = true;
 
-        var start = _rb.position;
-        var end = start + direction * dashDistance;
-        
-        float elapsed = 0;
-        while (elapsed < dashDuration)
-        {
-            var currentPosition = Vector2.Lerp(start, end, elapsed / dashDuration);
-            _rb.MovePosition(currentPosition);
-            
-            elapsed += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
+    var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
 
-        _rb.MovePosition(end);
-        
-        HitEnemiesOnLine(start, end);
-        _player.SetCanMove(true);
-        _player.SetInvulnerable(false);
-        yield return new WaitForSeconds(_trail.time);
-        _trail.enabled = false;
-    }
+    float dashSpeed = dashDistance / dashDuration;
+    _rb.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+
+    yield return new WaitForSeconds(dashDuration);
+
+    _rb.velocity = Vector2.zero;
+
+    HitEnemiesOnLine(_rb.position, _rb.position + direction * dashDistance);
+    _player.SetCanMove(true);
+    _player.SetInvulnerable(false);
+    yield return new WaitForSeconds(_trail.time);
+    _trail.enabled = false;
+}
     
     private void HitEnemiesOnLine(Vector2 start, Vector2 end)
     {
@@ -81,7 +74,7 @@ public class DashAbility : Ability
     private void OnDrawGizmos()
     {
 
-        if (_dashAbilityStats == null|| _rb == null || _camera == null)
+        if (!Application.isPlaying)
         {
             return;
         }

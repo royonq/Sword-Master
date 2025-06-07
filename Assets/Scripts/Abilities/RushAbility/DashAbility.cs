@@ -49,8 +49,8 @@ public class DashAbility : Ability
 
     _rb.velocity = Vector2.zero;
     
-    var start = _rb.position - direction * dashDistance;
-    var end = _rb.position;
+    var start = _rb.position;
+    var end = _rb.position - direction * dashDistance;
     HitEnemiesOnLine(start, end);
     
     _player.SetCanMove(true);

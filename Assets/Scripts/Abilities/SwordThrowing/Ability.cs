@@ -29,6 +29,7 @@ public abstract class Ability : MonoBehaviour
 
     private IEnumerator Cooldown(float cooldown)
     {
+        _isAbilityUsing = true;
         _abilityColdownImage.fillAmount = 1;
 
         while (_abilityColdownImage.fillAmount > 0)
@@ -54,7 +55,6 @@ public abstract class Ability : MonoBehaviour
 
     private IEnumerator UseAbilityAfterAnimation()
     {
-        _isAbilityUsing = true;
         yield return StartCoroutine(this is UltimateAttack
             ? _playerAnimations.PlayerAbilityAnimation(true)
             : _playerAnimations.PlayerAbilityAnimation(false));

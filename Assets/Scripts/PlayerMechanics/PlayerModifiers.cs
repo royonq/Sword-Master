@@ -7,13 +7,12 @@ public class PlayerModifiers : MonoBehaviour
     private float _speedModifier = 1;
     public float SpeedUpgrade { set => _speedModifier += value; }
     public float SpeedModifier => _speedModifier;
-
-
+    
+    
     private float _damageModifier = 1;
     public float DamageUpgrade { set => _damageModifier += value; }
     public float DamageModifier => _damageModifier;
-
-
+    
     private float _healthModifier = 1;
     public float HealthUpgrade
     {

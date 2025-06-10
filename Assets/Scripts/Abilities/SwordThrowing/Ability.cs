@@ -11,14 +11,20 @@ public abstract class Ability : MonoBehaviour
 
     [SerializeField] private Image _abilityColdownImage;
     [SerializeField] private Image _abilityImage;
-
+    
     private bool _isAbilityUsing;
+    protected bool _isAbilityUpgraded;
 
     protected abstract void InitAbility();
 
     private void Start()
     {
         SetAbilityImage();
+    }
+    
+    public virtual void UpgradeAbility(ItemsData itemData)
+    {
+        _isAbilityUpgraded = true;
     }
 
     private void SetAbilityImage()

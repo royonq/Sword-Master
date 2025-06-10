@@ -13,9 +13,12 @@ public class DashAbility : Ability
     private float _slowDuration;
     private float _slowCoefficient;
     private float _slowRadius;
+    private float _dashDistance;
+    private float _dashDuration;
     
     private TrailRenderer _trail;
 
+    
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -26,11 +29,23 @@ public class DashAbility : Ability
         _slowDuration = _dashAbilityStats.SlowDuration;
         _slowCoefficient = _dashAbilityStats.SlowCoefficient;
         _slowRadius = _dashAbilityStats.SlowRadius;
+        _dashDistance = _dashAbilityStats.Distance; 
+        _dashDuration = _dashAbilityStats.Duration;
     }
 
     protected override void InitAbility()
     {
-        StartCoroutine(Dash(_dashAbilityStats.Distance, _dashAbilityStats.Duration));
+        StartCoroutine(Dash(_dashDistance, _dashDuration));
+    }
+
+    public override void UpgradeAbility(ItemsData itemData)
+    {
+        base.UpgradeAbility(itemData);
+        var upgradeStats = itemData as UpgradeDashAbility;
+        _dashDistance += upgradeStats.IncreaseDistance;
+        _slowDuration += upgradeStats.IncreaseSlowDuration;
+        _slowCoefficient += upgradeStats.IncreaseSlowCoefficient;
+        _slowRadius += upgradeStats.IncreaseSlowRadius;
     }
 
     private IEnumerator Dash(float dashDistance, float dashDuration)
@@ -51,7 +66,11 @@ public class DashAbility : Ability
     
     var start = _rb.position;
     var end = _rb.position - direction * dashDistance;
-    HitEnemiesOnLine(start, end);
+    
+    if (_isAbilityUpgraded)
+    {
+        HitEnemiesOnLine(start, end);
+    }
     
     _player.SetCanMove(true);
     _player.SetInvulnerable(false);

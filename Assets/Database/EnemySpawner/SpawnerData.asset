@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad254c962441b484e85e931754055078, type: 3}
   m_Name: SpawnerData
   m_EditorClassIdentifier: 
+  _enemies:
+    _serializedList: []
   _spawnXmax: 10
   _spawnXmin: 40
   _spawnY: 10

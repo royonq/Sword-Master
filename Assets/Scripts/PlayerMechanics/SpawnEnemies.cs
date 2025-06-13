@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,12 +11,11 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] private GameObject _waveHandler;
     [SerializeField] private GameObject _gate;
-    [SerializeField] private GameObject _enemy;
     [SerializeField] private Transform _target;
 
     [SerializeField] private SpawnerData _spawnerData;
     
-    private int _enemyCounter;
+    private int _waveCounter;
     private int _enemyTotal;
 
     private void OnEnable()
@@ -30,7 +30,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public void StartWave()
     {
-        _enemyTotal = _spawnerData.EnemyWave[_enemyCounter];
+        _enemyTotal = _spawnerData.EnemyWave[_waveCounter];
         StartCoroutine(SpawnEnemy());
         _gate.SetActive(true);
         OnStartWave?.Invoke();
@@ -38,19 +38,35 @@ public class SpawnEnemies : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        for (var i = 0; i < _spawnerData.EnemyWave[_enemyCounter]; i++)
+        for (var i = 0; i < _spawnerData.EnemyWave[_waveCounter]; i++)
         {
             
             yield return new WaitForSeconds(_spawnerData.SpawnRate);
             Vector3 _spawnOffset = new Vector2(Random.Range(_spawnerData.SpawnXmin, _spawnerData.SpawnXmax),
                 Random.Range(-_spawnerData.SpawnY, _spawnerData.SpawnY));
-            var newEnemy = Instantiate(_enemy, _target.position + _spawnOffset, transform.rotation);
+            var newEnemy = Instantiate(GetRandomEnemy(_waveCounter), _target.position + _spawnOffset, transform.rotation);
             var enemy = newEnemy.GetComponent<Enemy>();
            
             enemy.SetTarget(_target);
         }
 
-        _enemyCounter++;
+        _waveCounter++;
+    }
+    
+    private GameObject GetRandomEnemy(int waveIndex)
+    {
+        var weights = _spawnerData.EnemyWeights[waveIndex].Enemies;
+        int totalWeight = weights.Sum(pair => pair.Value);
+        var random = Random.Range(0, totalWeight);
+        var current = 0;
+        
+        foreach (var pair in weights)
+        {
+            current += pair.Value;
+            if (random < current)
+                return pair.Key;
+        }
+        throw new InvalidOperationException("Failed to select a random enemy. Check weights configuration."); 
     }
     
     private void UpdateEnemyCount()

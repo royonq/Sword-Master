@@ -4,7 +4,9 @@ public enum ItemTypes
     DamageBottle = 2,
     SpeedBottle = 3,
     
-    Familiar = 101
+    Familiar = 101,
+    
+    UpgradeDash = 201,
 }
 
 

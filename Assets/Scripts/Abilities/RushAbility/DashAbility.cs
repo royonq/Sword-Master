@@ -13,9 +13,12 @@ public class DashAbility : Ability
     private float _slowDuration;
     private float _slowCoefficient;
     private float _slowRadius;
-    
+    private float _dashForce;
+    private readonly float _dashDuration = 1;
+
     private TrailRenderer _trail;
 
+    
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -26,14 +29,25 @@ public class DashAbility : Ability
         _slowDuration = _dashAbilityStats.SlowDuration;
         _slowCoefficient = _dashAbilityStats.SlowCoefficient;
         _slowRadius = _dashAbilityStats.SlowRadius;
+        _dashForce = _dashAbilityStats.Force; 
     }
 
     protected override void InitAbility()
     {
-        StartCoroutine(Dash(_dashAbilityStats.Distance, _dashAbilityStats.Duration));
+        StartCoroutine(Dash());
     }
 
-    private IEnumerator Dash(float dashDistance, float dashDuration)
+    public override void UpgradeAbility(ItemsData itemData)
+    {
+        base.UpgradeAbility(itemData);
+        var upgradeStats = itemData as UpgradeDashAbility;
+        _dashForce += upgradeStats.IncreaseDistance;
+        _slowDuration += upgradeStats.IncreaseSlowDuration;
+        _slowCoefficient += upgradeStats.IncreaseSlowCoefficient;
+        _slowRadius += upgradeStats.IncreaseSlowRadius;
+    }
+
+    private IEnumerator Dash()
 {
     _player.SetCanMove(false);
     _player.SetInvulnerable(true);
@@ -42,16 +56,19 @@ public class DashAbility : Ability
     var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     var direction = ((Vector2)cursorWorldPos - (Vector2)transform.position).normalized;
 
-    float dashSpeed = dashDistance / dashDuration;
-    _rb.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+    _rb.AddForce(direction * _dashForce, ForceMode2D.Impulse);
 
-    yield return new WaitForSeconds(dashDuration);
+    yield return new WaitForSeconds(_dashDuration);
 
     _rb.velocity = Vector2.zero;
     
     var start = _rb.position;
-    var end = _rb.position - direction * dashDistance;
-    HitEnemiesOnLine(start, end);
+    var end = _rb.position - direction * _dashForce;
+    
+    if (_isAbilityUpgraded)
+    {
+        HitEnemiesOnLine(start, end);
+    }
     
     _player.SetCanMove(true);
     _player.SetInvulnerable(false);
@@ -85,7 +102,7 @@ public class DashAbility : Ability
         var cursorWorldPos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var direction = ((Vector2)cursorWorldPos - _rb.position).normalized;
         var boxSize = Vector2.one * _slowRadius;
-        float length = _dashAbilityStats.Distance;
+        float length = _dashAbilityStats.Force;
 
         Gizmos.color = Color.cyan;
         var oldMatrix = Gizmos.matrix;

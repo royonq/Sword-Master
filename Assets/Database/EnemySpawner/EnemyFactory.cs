@@ -12,6 +12,16 @@ public class EnemyFactory : MonoBehaviour
     [SerializeField] private EnemiesWeights _enemiesWeights;
     [SerializeField] private Transform _target;
 
+    
+    private void OnEnable()
+    {
+        SpawnEnemies.OnSpawnEnemy += SpawnEnemy;
+    }
+
+    private void OnDisable()
+    {
+        SpawnEnemies.OnSpawnEnemy -= SpawnEnemy;
+    }
 
     public void SpawnEnemy(int waveCounter, Vector3 spawnOffset)
     {

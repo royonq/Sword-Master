@@ -1184,6 +1184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294332783}
   - component: {fileID: 294332784}
+  - component: {fileID: 294332785}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -1220,9 +1221,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveHandler: {fileID: 2112555235}
   _gate: {fileID: 1200737248}
-  _enemy: {fileID: 6305043294565682012, guid: 530ce3453a94df94296110571e165861, type: 3}
-  _target: {fileID: 868551400}
   _spawnerData: {fileID: 11400000, guid: a7f4d532bafbeea4488e2348a55cd8ff, type: 2}
+  _enemyFactory: {fileID: 294332785}
+--- !u!114 &294332785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294332781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bfab02834810d49a84965a9f606bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 6305043294565682012, guid: b7a153f877ccf0f4db788a3b7882db6f, type: 3}
+    - Key: 2
+      Value: {fileID: 6305043294565682012, guid: 530ce3453a94df94296110571e165861, type: 3}
+  _enemiesWeights: {fileID: 11400000, guid: ec0fa2ac8a3d89d478de40a0ee814adc, type: 2}
+  _target: {fileID: 1617316992}
 --- !u!1 &302298514
 GameObject:
   m_ObjectHideFlags: 0

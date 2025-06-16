@@ -16,6 +16,8 @@ public class SpawnerData : ScriptableObject
 
     [SerializeField] private float _spawnRate;
     public float SpawnRate => _spawnRate;
+    
+    
 
     [SerializeField] private int[] _enemyWave;
     public int[] EnemyWave => _enemyWave;

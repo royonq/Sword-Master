@@ -14,7 +14,6 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private GameObject _gate;
 
     [SerializeField] private SpawnerData _spawnerData;
-    [SerializeField] private EnemyFactory _enemyFactory;
 
     private int _waveCounter;
     private int _enemyTotal;

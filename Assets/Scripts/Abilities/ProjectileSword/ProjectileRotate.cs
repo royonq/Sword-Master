@@ -3,13 +3,13 @@ using UnityEngine.InputSystem;
 
 public class ProjectileRotate : Projectile
 {
-    public override void Init(ProjectileStats stats, PlayerModifiers modifiers)
+    public override void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
     {
-        base.Init(stats, modifiers);
+        base.Init(damage, speed, lifeTime, modifiers);
         RotateTowardsCrosshair();
     }
 
-    public void RotateTowardsCrosshair()
+    private void RotateTowardsCrosshair()
     {
         Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector3 direction = cursorPosition - transform.position;

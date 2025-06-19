@@ -47,7 +47,7 @@ public  class Enemy : Mob
         _currentSpeedMultiplier -= slowFactor;
         if (_currentSpeedMultiplier < 0)
         {
-           throw new Exception("Speed multiplier cannot be negative");
+           throw new Exception("IncreaseSpeed multiplier cannot be negative");
         }
         yield return new WaitForSeconds(duration);
         _currentSpeedMultiplier += slowFactor;

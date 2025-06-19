@@ -4,9 +4,9 @@ public class SwordProjectile : ProjectileRotate
 {
     private Rigidbody2D _rb;
 
-    public override void Init(ProjectileStats stats, PlayerModifiers modifiers)
+    public override void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
     {
-        base.Init(stats, modifiers);
+        base.Init(damage, speed, lifeTime, modifiers);
         LaunchProjectile();
     }
 

@@ -7,6 +7,7 @@ public enum ItemTypes
     Familiar = 101,
     
     UpgradeDash = 201,
+    UpgradeSrowSwordAttack = 202,
 }
 
 

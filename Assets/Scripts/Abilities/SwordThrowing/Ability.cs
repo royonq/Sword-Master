@@ -10,7 +10,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] protected PlayerModifiers _playerModifiers;
 
     [SerializeField] private Image _abilityColdownImage;
-    [SerializeField] private Image _abilityImage;
+    [SerializeField] protected Image _abilityImage;
     
     private bool _isAbilityUsing;
     protected bool _isAbilityUpgraded;
@@ -48,7 +48,7 @@ public abstract class Ability : MonoBehaviour
         _isAbilityUsing = false;
     }
 
-    public void Use()
+    public virtual void Use()
     {
         if (_isAbilityUsing)
         {

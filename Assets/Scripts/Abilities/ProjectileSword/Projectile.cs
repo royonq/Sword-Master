@@ -6,11 +6,11 @@ public class Projectile : MonoBehaviour
     private float _damage;
     private float _lifeTime;
 
-    public virtual void Init(ProjectileStats stats, PlayerModifiers modifiers)
+    public virtual void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
     {
-        _damage = stats.Damage * modifiers.DamageModifier;
-        _speed = stats.Speed;
-        _lifeTime = stats.Lifetime;
+        _damage = damage * modifiers.DamageModifier;
+        _speed = speed;
+        _lifeTime = lifeTime;
 
         Destroy(gameObject, _lifeTime);
     }

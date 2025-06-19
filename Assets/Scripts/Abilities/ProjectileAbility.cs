@@ -12,7 +12,7 @@ public abstract class ProjectileAbility : Ability
     private float _damageModifier;
     private float _speedModifier;
     private float _cooldownModifier;
-    
+    private float _lifeTime;
     public bool _canUseAbility;
 
     private void OnEnable()
@@ -31,22 +31,22 @@ public abstract class ProjectileAbility : Ability
     private void Awake()
     {
         _projectileStats = _stats as ProjectileStats;
+        _damageModifier = _projectileStats.Damage;
+        _speedModifier = _projectileStats.Speed;
+        _lifeTime = _projectileStats.Lifetime;
     }
     
     
     protected override void InitAbility()
     {
         var instancedAbility = Instantiate(_ability, _spawnpoint.position, Quaternion.identity);
-        InitProjectileAbility(instancedAbility, _projectileStats);
+        InitProjectileAbility(instancedAbility);
     }
 
     
-    protected virtual void InitProjectileAbility(GameObject instancedAbility, ProjectileStats stats)
+    protected virtual void InitProjectileAbility(GameObject instancedAbility)
     {
-        float finalDamage = stats.Damage + _damageModifier;
-        float finalSpeed = stats.Speed + _speedModifier;
-        float finalLifetime = stats.Lifetime;
-        instancedAbility.GetComponent<Projectile>().Init(finalDamage, finalSpeed, finalLifetime, _playerModifiers);
+        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime, _playerModifiers);
     }
 
     
@@ -69,13 +69,12 @@ public abstract class ProjectileAbility : Ability
     public override void UpgradeAbility(ItemsData itemData)
     {
         base.UpgradeAbility(itemData);
+        var data = itemData as UpgradeSrowSwordAttack;
 
-        if (itemData is UpgradeSrowSwordAttack upgrade)
-        {
-            _damageModifier += upgrade.IncreaseDamage;
-            _speedModifier += upgrade.IncreaseSpeed;
-            _cooldownModifier += upgrade.IncreaseCooldown;
-        }
+        _damageModifier += data.IncreaseDamage;
+        _speedModifier += data.IncreaseSpeed;
+        _cooldownModifier += data.IncreaseCooldown;
+
 
         _abilityImage.color = Color.gray;
     }

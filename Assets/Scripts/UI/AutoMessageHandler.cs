@@ -5,6 +5,7 @@ public class AutoMessageHandler : MonoBehaviour
 {
     [SerializeField] private float _messageDurationTime;
     [SerializeField] private CanvasGroup _canvasGroup;
+    private readonly float _massageFadeTime = 2;
 
     private Coroutine _currentCoroutine;
 
@@ -37,23 +38,23 @@ public class AutoMessageHandler : MonoBehaviour
         _canvasGroup.alpha = 0;
 
 
-        float t = 0;
-        while (t < 1)
+        float time = 0;
+        while (time < 1)
         {
-            t += Time.deltaTime * _messageDurationTime;
-            _canvasGroup.alpha = Mathf.Lerp(0, 1, t);
+            time += Time.deltaTime * _messageDurationTime;
+            _canvasGroup.alpha = Mathf.Lerp(0, 1, time);
             yield return null;
         }
 
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(_massageFadeTime);
 
 
-        t = 0;
-        while (t < 1)
+        time = 0;
+        while (time < 1)
         {
-            t += Time.deltaTime * _messageDurationTime;
-            _canvasGroup.alpha = Mathf.Lerp(1, 0, t);
+            time += Time.deltaTime * _messageDurationTime;
+            _canvasGroup.alpha = Mathf.Lerp(1, 0, time);
             yield return null;
         }
 

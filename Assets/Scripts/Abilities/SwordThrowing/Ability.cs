@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private PlayerAnimations _playerAnimations;
     [SerializeField] protected PlayerModifiers _playerModifiers;
 
-    [SerializeField] protected Image _abilityColdownImage;
+    [SerializeField] private Image _abilityColdownImage;
     [SerializeField] protected Image _abilityImage;
     
     private bool _isAbilityUsing;

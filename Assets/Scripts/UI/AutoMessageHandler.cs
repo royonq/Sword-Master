@@ -1,13 +1,21 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class AutoMessageHandler : MonoBehaviour
 {
-    [SerializeField] private float _messageDurationTime;
-    [SerializeField] private CanvasGroup _canvasGroup;
     private readonly float _massageFadeTime = 2;
+    
+    [SerializeField] private float _messageDurationTime; 
+    private TMP_Text _text;
+    
+    private bool _isFadeing;
 
-    private Coroutine _currentCoroutine;
+    private void Start()
+    {
+        _text = GetComponent<TMP_Text>();
+        _text.CrossFadeAlpha(0, 0, false);
+    }
 
     private void OnEnable()
     {
@@ -23,42 +31,27 @@ public class AutoMessageHandler : MonoBehaviour
 
     private void ShowMessage()
     {
-        if (_currentCoroutine != null)
+        if (_isFadeing)
         {
-            StopCoroutine(_currentCoroutine);
+            return;
         }
 
-        _currentCoroutine = StartCoroutine(FadeInFadeOutMessage());
+        StartCoroutine(FadeInFadeOutMessage());
     }
 
 
     private IEnumerator FadeInFadeOutMessage()
     {
-        _canvasGroup.gameObject.SetActive(true);
-        _canvasGroup.alpha = 0;
-
-
-        float time = 0;
-        while (time < 1)
-        {
-            time += Time.deltaTime * _messageDurationTime;
-            _canvasGroup.alpha = Mathf.Lerp(0, 1, time);
-            yield return null;
-        }
-
+        _isFadeing = true;
+        
+        _text.CrossFadeAlpha(1, _massageFadeTime, false);
 
         yield return new WaitForSeconds(_massageFadeTime);
 
-
-        time = 0;
-        while (time < 1)
-        {
-            time += Time.deltaTime * _messageDurationTime;
-            _canvasGroup.alpha = Mathf.Lerp(1, 0, time);
-            yield return null;
-        }
-
-        _canvasGroup.gameObject.SetActive(false);
-        _currentCoroutine = null;
+        _text.CrossFadeAlpha(0, _massageFadeTime, false);
+        
+        yield return new WaitForSeconds(_massageFadeTime);
+        
+        _isFadeing = false;
     }
 }

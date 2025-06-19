@@ -99,10 +99,10 @@ public abstract class ProjectileAbility : Ability
     
     private IEnumerator AutoUse()
     {
-        while (_isAbilityUpgraded && _canUseAbility)
+        while (_canUseAbility)
         {
             base.Use();
-            var cooldown = Mathf.Max(0.1f, _projectileStats.Cooldown - _cooldownModifier);
+            var cooldown = _projectileStats.Cooldown - _cooldownModifier;
             yield return new WaitForSeconds(cooldown);
         }
     }

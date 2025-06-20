@@ -8,6 +8,7 @@ public enum ItemTypes
     
     UpgradeDash = 201,
     UpgradeSrowSwordAttack = 202,
+    UpgradeUltimate = 203,
 }
 
 

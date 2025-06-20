@@ -3,25 +3,35 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     protected float _speed;
-    private float _damage;
-    private float _lifeTime;
+    protected float _damage;
+    protected float _lifeTime;
+    protected bool _isUpgraded;
+    
+    protected Collider2D _attachedMobCollider;
 
-    public virtual void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
+    public virtual void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier,
+        Collider2D attachedMobCollider)
     {
-        _damage = damage * modifiers.DamageModifier;
+        _damage = damage * damageModifier;
         _speed = speed;
         _lifeTime = lifeTime;
+        _isUpgraded = isUpgraded;
 
         Destroy(gameObject, _lifeTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            _attachedMobCollider = collision;
             collision.GetComponent<Mob>().TakeDamage(_damage);
-
-            Destroy(gameObject);
+            Dispose();
         }
+    }
+
+    protected virtual void Dispose()
+    {
+        Destroy(gameObject);
     }
 }

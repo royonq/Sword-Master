@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using System.Collections;
 
 public abstract class ProjectileAbility : Ability
 {
@@ -8,10 +7,10 @@ public abstract class ProjectileAbility : Ability
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private GameObject _ability;
 
-    private ProjectileStats _projectileStats;
-    private float _damageModifier;
-    private float _speedModifier;
-    private float _cooldownModifier;
+    protected ProjectileStats _projectileStats;
+    protected float _damageModifier;
+    protected float _speedModifier;
+    protected float _cooldownModifier;
     private float _lifeTime;
     public bool _canUseAbility;
 
@@ -46,64 +45,17 @@ public abstract class ProjectileAbility : Ability
     
     protected virtual void InitProjectileAbility(GameObject instancedAbility)
     {
-        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime, _playerModifiers);
+        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime,_isAbilityUpgraded, _playerModifiers.DamageModifier,null );
     }
 
     
-    private void EnableAbility()
+    protected virtual void EnableAbility()
     {
         _canUseAbility = true;
-        if (_isAbilityUpgraded)
-        {
-            StartCoroutine(AutoUse());
-        }
     }
 
-    private void DisableAbility()
+    protected virtual void DisableAbility()
     {
         _canUseAbility = false;
-        StopCoroutine(AutoUse());
-    }
-    
-    
-    public override void UpgradeAbility(ItemsData itemData)
-    {
-        base.UpgradeAbility(itemData);
-        var data = itemData as UpgradeSrowSwordAttack;
-
-        _damageModifier += data.IncreaseDamage;
-        _speedModifier += data.IncreaseSpeed;
-        _cooldownModifier += data.IncreaseCooldown;
-
-
-        _abilityImage.color = Color.gray;
-    }
-
-    
-    public override void Use()
-    {
-        if (!_canUseAbility)
-        {
-            return;
-        }
-
-        if (_isAbilityUpgraded)
-        {
-            OnTryUseAutoAbility?.Invoke();
-            return;
-        }
-     
-        base.Use();
-    }
-
-    
-    private IEnumerator AutoUse()
-    {
-        while (_canUseAbility)
-        {
-            base.Use();
-            var cooldown = _projectileStats.Cooldown - _cooldownModifier;
-            yield return new WaitForSeconds(cooldown);
-        }
     }
 }

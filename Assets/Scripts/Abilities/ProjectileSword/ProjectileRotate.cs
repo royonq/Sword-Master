@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class ProjectileRotate : Projectile
 {
-    public override void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
+    public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier, Collider2D attachedMobCollider)
     {
-        base.Init(damage, speed, lifeTime, modifiers);
+        base.Init(damage, speed, lifeTime, isUpgraded, damageModifier, attachedMobCollider);
         RotateTowardsCrosshair();
     }
 

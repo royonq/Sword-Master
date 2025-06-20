@@ -11,6 +11,4 @@ public abstract class ProjectileStats : AbilityStats
 
     [SerializeField] private float _speed;
     public float Speed => _speed;
-
- 
 }

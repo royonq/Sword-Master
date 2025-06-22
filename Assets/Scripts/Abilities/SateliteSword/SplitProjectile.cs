@@ -7,7 +7,7 @@ public class SplitProjectile : SwordProjectile
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
   private Collider2D _projectilecollider;
-  public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier)
+  public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier = 1f)
   {
     base.Init(damage, speed, lifeTime, isUpgraded, damageModifier);
     LaunchProjectile();

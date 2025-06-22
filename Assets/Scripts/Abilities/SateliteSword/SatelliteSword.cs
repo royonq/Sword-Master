@@ -15,15 +15,23 @@ public class SatelliteSword : Projectile
         transform.Rotate(_speed * Time.fixedDeltaTime * Vector3.forward);
     }
     
-    protected override void Dispose(Collider2D mobCollider)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_isUpgraded || mobCollider == null)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-         
-            base.Dispose(mobCollider);
-            return;
-        }
+            if (!_isUpgraded)
+            {
+                base.OnTriggerEnter2D(collision);
+                return;
+            }
         
+            SplitProjectile(collision);
+            base.OnTriggerEnter2D(collision);
+        }
+    }
+
+    private void SplitProjectile(Collider2D mobCollider)
+    {
         float baseAngle = mobCollider.transform.localScale.x < 0 ? 0f : 180f;
 
         for (int angle = -45; angle <= 45; angle += 45)
@@ -36,9 +44,8 @@ public class SatelliteSword : Projectile
                 rotation
             );
             var afterHit = instancedProjectile.GetComponent<SplitProjectile>();
-            afterHit.Init(_hitProjectileStats.Damage, _hitProjectileStats.Speed, _hitProjectileStats.Lifetime, _isUpgraded, 1);
+            afterHit.Init(_hitProjectileStats.Damage, _hitProjectileStats.Speed, _hitProjectileStats.Lifetime, _isUpgraded);
             afterHit.SetIgnoreCollider(mobCollider);
         }
-        base.Dispose(mobCollider);
     }
 }

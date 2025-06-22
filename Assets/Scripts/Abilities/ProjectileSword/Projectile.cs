@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    protected  void Dispose()
+    private void Dispose()
     {
         Destroy(gameObject);
     }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df25430db42b824e86385c6007969db, type: 3}
   m_Name: AfterhitProjectile
   m_EditorClassIdentifier: 
-  _damage: 0
-  _speed: 0
-  _lifetime: 0
+  _damage: 5
+  _speed: 5
+  _lifetime: 2

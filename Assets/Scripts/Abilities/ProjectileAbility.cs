@@ -45,7 +45,7 @@ public abstract class ProjectileAbility : Ability
     
     protected virtual void InitProjectileAbility(GameObject instancedAbility)
     {
-        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime,_isAbilityUpgraded, _playerModifiers.DamageModifier,null );
+        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime,_isAbilityUpgraded, _playerModifiers.DamageModifier);
     }
 
     

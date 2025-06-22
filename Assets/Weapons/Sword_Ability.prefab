@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _satellitePrefab: {fileID: 6213419874689058171, guid: 1e97ec0e34970254b9a9cff5b5e64323, type: 3}
+  _hitProjectileStats: {fileID: 11400000, guid: eda4e3e0294f38c45938ad360edcb9bc, type: 2}
 --- !u!50 &4175093554220880449
 Rigidbody2D:
   serializedVersion: 4

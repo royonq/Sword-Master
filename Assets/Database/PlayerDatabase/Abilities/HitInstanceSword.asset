@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fccc1d379a0ae4096f22dfefef43cf, type: 3}
-  m_Name: Orc
+  m_Script: {fileID: 11500000, guid: 301db281ef7582e4f909523249b5e55f, type: 3}
+  m_Name: HitInstanceSword
   m_EditorClassIdentifier: 
-  _maxHealth: 30
-  _takeDamageSound: 103
-  _movementSpeed: 5
+  _cooldown: 0
+  _abilityIcon: {fileID: 0}
+  _abilitySound: 0
   _damage: 5
-  _moneyToDrop: 20
-  _killExpirience: 10
-  _attackDistance: 2
+  _lifetime: 1
+  _speed: 4

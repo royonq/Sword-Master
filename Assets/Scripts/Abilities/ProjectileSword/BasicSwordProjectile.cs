@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ProjectileRotate : Projectile
+public class BasicSwordProjectile : SwordProjectile
 {
-    public override void Init(float damage, float speed, float lifeTime, PlayerModifiers modifiers)
+    public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier)
     {
-        base.Init(damage, speed, lifeTime, modifiers);
+        base.Init(damage, speed, lifeTime, isUpgraded, damageModifier);
         RotateTowardsCrosshair();
+        LaunchProjectile();
     }
 
     private void RotateTowardsCrosshair()

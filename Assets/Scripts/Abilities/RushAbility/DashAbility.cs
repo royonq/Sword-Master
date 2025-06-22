@@ -17,7 +17,6 @@ public class DashAbility : Ability
     private readonly float _dashDuration = 1;
 
     private TrailRenderer _trail;
-
     
     private void Awake()
     {

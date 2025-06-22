@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3445922e858342741ac2f3e778e505ac, type: 3}
   m_Name: EnemyArcher
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 30
   _takeDamageSound: 103
   _movementSpeed: 4
   _damage: 20

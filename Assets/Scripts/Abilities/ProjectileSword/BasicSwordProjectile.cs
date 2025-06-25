@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class BasicSwordProjectile : SwordProjectile
 {
-    public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier)
+    public override void Init(ProjectileState state, float damageModifier)
     {
-        base.Init(damage, speed, lifeTime, isUpgraded, damageModifier);
+        base.Init(state, damageModifier);
         RotateTowardsCrosshair();
         LaunchProjectile();
     }

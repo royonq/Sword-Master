@@ -7,6 +7,7 @@ public abstract class ProjectileAbility : Ability
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private GameObject _ability;
 
+    private ProjectileState _state;
     protected ProjectileStats _projectileStats;
     protected float _damageModifier;
     protected float _speedModifier;
@@ -30,9 +31,14 @@ public abstract class ProjectileAbility : Ability
     private void Awake()
     {
         _projectileStats = _stats as ProjectileStats;
-        _damageModifier = _projectileStats.Damage;
-        _speedModifier = _projectileStats.Speed;
-        _lifeTime = _projectileStats.Lifetime;
+
+        _state = new ProjectileState
+        {
+            Damage = _projectileStats.Damage,
+            Speed = _projectileStats.Speed,
+            LifeTime = _projectileStats.Lifetime,
+            IsUpgraded = _isAbilityUpgraded
+        };
     }
     
     
@@ -45,7 +51,7 @@ public abstract class ProjectileAbility : Ability
     
     protected virtual void InitProjectileAbility(GameObject instancedAbility)
     {
-        instancedAbility.GetComponent<Projectile>().Init(_damageModifier, _speedModifier, _lifeTime,_isAbilityUpgraded, _playerModifiers.DamageModifier);
+        instancedAbility.GetComponent<Projectile>().Init(_state, _playerModifiers.DamageModifier);
     }
 
     

@@ -7,12 +7,12 @@ public class Projectile : MonoBehaviour
     private float _lifeTime;
     protected bool _isUpgraded;
     
-    public virtual void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier = 1f)
+    public virtual void Init(ProjectileState stats, float damageModifier = 1f)
     {
-        _damage = damage * damageModifier;
-        _speed = speed;
-        _lifeTime = lifeTime;
-        _isUpgraded = isUpgraded;
+        _damage = stats.Damage * damageModifier;
+        _speed = stats.Speed;
+        _lifeTime = stats.LifeTime;
+        _isUpgraded = stats.IsUpgraded;
 
         Destroy(gameObject, _lifeTime);
     }

@@ -6,9 +6,9 @@ public class SplitProjectile : SwordProjectile
 {
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
-  public override void Init(ProjectileState stats, float damageModifier = 1f)
+  public override void Init(ProjectileState state, float damageModifier = 1f)
   {
-    base.Init(stats, damageModifier);
+    base.Init(state, damageModifier);
     LaunchProjectile();
   }
 

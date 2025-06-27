@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class BasicSwordProjectile : SwordProjectile
 {
-    public override void Init(ProjectileState state, float damageModifier)
+    public override void Init(in ProjectileAbility.ProjectileStates state, float damageModifier)
     {
         base.Init(state, damageModifier);
         RotateTowardsCrosshair();

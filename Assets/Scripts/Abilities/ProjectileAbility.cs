@@ -7,7 +7,7 @@ public abstract class ProjectileAbility : Ability
     [SerializeField] private Transform _spawnpoint;
     [SerializeField] private GameObject _ability;
 
-    private ProjectileState _state;
+    private ProjectileStates _states;
     protected ProjectileStats _projectileStats;
     protected float _damageModifier;
     protected float _speedModifier;
@@ -31,15 +31,14 @@ public abstract class ProjectileAbility : Ability
     private void Awake()
     {
         _projectileStats = _stats as ProjectileStats;
-
-        _state = new ProjectileState
-        {
-            Damage = _projectileStats.Damage,
-            Speed = _projectileStats.Speed,
-            LifeTime = _projectileStats.Lifetime,
-            IsUpgraded = _isAbilityUpgraded
-        };
+        _damageModifier = _projectileStats.Damage;
+        _speedModifier = _projectileStats.Speed;
+        _cooldownModifier = _projectileStats.Cooldown;
+        _lifeTime = _projectileStats.Lifetime;
+        
+        _states = new ProjectileStates(this);
     }
+    
     
     
     protected override void InitAbility()
@@ -51,7 +50,7 @@ public abstract class ProjectileAbility : Ability
     
     protected virtual void InitProjectileAbility(GameObject instancedAbility)
     {
-        instancedAbility.GetComponent<Projectile>().Init(_state, _playerModifiers.DamageModifier);
+        instancedAbility.GetComponent<Projectile>().Init(_states, _playerModifiers.DamageModifier);
     }
 
     
@@ -63,5 +62,19 @@ public abstract class ProjectileAbility : Ability
     protected virtual void DisableAbility()
     {
         _canUseAbility = false;
+    }
+
+    public readonly struct ProjectileStates
+    {
+        private readonly ProjectileAbility _ability;
+        public float Damage => _ability._damageModifier;
+        public float Speed => _ability._speedModifier;
+        public float LifeTime => _ability._lifeTime;
+        public bool IsUpgraded => _ability._isAbilityUpgraded;
+
+        public ProjectileStates(ProjectileAbility ability)
+        {
+            _ability = ability;
+        }
     }
 }

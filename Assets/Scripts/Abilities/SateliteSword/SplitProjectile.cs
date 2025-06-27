@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,9 +5,14 @@ public class SplitProjectile : SwordProjectile
 {
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
-  public override void Init(ProjectileState state, float damageModifier = 1f)
+
+  public void Init(in ProjectileAfterHitStats.SplitStats state, float damageModifier = 1f)
   {
-    base.Init(state, damageModifier);
+    _damage = state.InitDamage * damageModifier;
+    _speed = state.InitSpeed;
+    _lifeTime = state.InitLifetime;
+
+    Destroy(gameObject, _lifeTime);
     LaunchProjectile();
   }
 

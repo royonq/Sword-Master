@@ -1,21 +1,14 @@
-using System;
 using UnityEngine;
 
 public class SatelliteSword : Projectile
 {
     [SerializeField] private GameObject _satellitePrefab;
     [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
-    private ProjectileState _state; 
+    private ProjectileAfterHitStats.SplitStats _states;
 
     private void Awake()
     {
-        _state = new ProjectileState
-        {
-            Damage = _hitProjectileStats.Damage,
-            Speed = _hitProjectileStats.Speed,
-            LifeTime = _hitProjectileStats.Lifetime,
-            IsUpgraded = _hitProjectileStats
-        };
+        _states =  new ProjectileAfterHitStats.SplitStats(_hitProjectileStats);
     }
 
     private void FixedUpdate()
@@ -57,7 +50,7 @@ public class SatelliteSword : Projectile
                 rotation
             );
             var afterHit = instancedProjectile.GetComponent<SplitProjectile>();
-            afterHit.Init(_state);
+            afterHit.Init(_states);
             afterHit.SetIgnoreCollider(mobCollider);
         }
     }

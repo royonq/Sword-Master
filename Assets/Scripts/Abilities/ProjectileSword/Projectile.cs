@@ -3,11 +3,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     protected float _speed;
-    protected float _damage;
-    protected float _lifeTime;
+    private float _damage;
+    private float _lifeTime;
     protected bool _isUpgraded;
     
-    public virtual void Init(in ProjectileAbility.ProjectileStates state, float damageModifier = 1f)
+    public virtual void Init(in IProjectileState state, float damageModifier = 1f)
     {
         _damage = state.Damage * damageModifier;
         _speed = state.Speed;

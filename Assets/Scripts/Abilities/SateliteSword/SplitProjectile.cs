@@ -6,13 +6,9 @@ public class SplitProjectile : SwordProjectile
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
 
-  public void Init(in SplitStats state, float damageModifier = 1f)
+  public void Init(in IProjectileState state, float damageModifier = 1f)
   {
-    _damage = state.InitDamage * damageModifier;
-    _speed = state.InitSpeed;
-    _lifeTime = state.InitLifetime;
-
-    Destroy(gameObject, _lifeTime);
+    base.Init(state, damageModifier);
     LaunchProjectile();
   }
 
@@ -34,12 +30,13 @@ public class SplitProjectile : SwordProjectile
       base.OnTriggerEnter2D(collision);
     }
   }
-  public readonly struct SplitStats
+  public readonly struct SplitStats : IProjectileState
   {
     private readonly ProjectileAfterHitStats _projectile;
-    public float InitDamage => _projectile.Damage;
-    public float InitSpeed => _projectile.Speed;
-    public float InitLifetime => _projectile.Lifetime;
+    public float Damage => _projectile.Damage;
+    public float Speed => _projectile.Speed;
+    public float LifeTime => _projectile.Lifetime;
+    public bool IsUpgraded => false;
     public SplitStats(ProjectileAfterHitStats projectile)
     {
       _projectile = projectile;

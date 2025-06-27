@@ -14,7 +14,7 @@ public abstract class ProjectileAbility : Ability
     protected float _cooldownModifier;
     private float _lifeTime;
     public bool _canUseAbility;
-
+    
     private void OnEnable()
     {
         SpawnEnemies.OnStartWave += EnableAbility;
@@ -35,7 +35,7 @@ public abstract class ProjectileAbility : Ability
         _speedModifier = _projectileStats.Speed;
         _cooldownModifier = _projectileStats.Cooldown;
         _lifeTime = _projectileStats.Lifetime;
-        
+
         _states = new ProjectileStates(this);
     }
     
@@ -64,7 +64,7 @@ public abstract class ProjectileAbility : Ability
         _canUseAbility = false;
     }
 
-    public readonly struct ProjectileStates
+    private readonly struct ProjectileStates : IProjectileState
     {
         private readonly ProjectileAbility _ability;
         public float Damage => _ability._damageModifier;

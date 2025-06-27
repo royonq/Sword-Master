@@ -3,14 +3,8 @@ using UnityEngine;
 public class SatelliteSword : Projectile
 {
     [SerializeField] private GameObject _satellitePrefab;
-    [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
-    private SplitProjectile.SplitStats _states;
-
-    private void Awake()
-    {
-        _states =  new SplitProjectile.SplitStats(_hitProjectileStats);
-    }
-
+    
+    
     private void FixedUpdate()
     {
         RotateAroundPlayer();

@@ -3,13 +3,19 @@ using UnityEngine;
 
 public class SplitProjectile : SwordProjectile
 {
+  [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
+  
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
-
-  public void Init(in IProjectileState state, float damageModifier = 1f)
+  
+  public override void Init(in ProjectileAbility.ProjectileStates  state, float damageModifier = 1f)
   {
-    base.Init(state, damageModifier);
+    _states = state;
+    _damage = _hitProjectileStats.Damage;
+    _speed = _hitProjectileStats.Speed;
+    _lifeTime = _hitProjectileStats.Lifetime;
     LaunchProjectile();
+    Destroy(gameObject, _lifeTime);
   }
 
   public void SetIgnoreCollider(Collider2D collider)
@@ -28,18 +34,6 @@ public class SplitProjectile : SwordProjectile
     if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && _ignoreCollider!=collision)
     {
       base.OnTriggerEnter2D(collision);
-    }
-  }
-  public readonly struct SplitStats : IProjectileState
-  {
-    private readonly ProjectileAfterHitStats _projectile;
-    public float Damage => _projectile.Damage;
-    public float Speed => _projectile.Speed;
-    public float LifeTime => _projectile.Lifetime;
-    public bool IsUpgraded => false;
-    public SplitStats(ProjectileAfterHitStats projectile)
-    {
-      _projectile = projectile;
     }
   }
 }

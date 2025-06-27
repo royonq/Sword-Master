@@ -64,7 +64,7 @@ public abstract class ProjectileAbility : Ability
         _canUseAbility = false;
     }
 
-    private readonly struct ProjectileStates : IProjectileState
+    public readonly struct ProjectileStates
     {
         private readonly ProjectileAbility _ability;
         public float Damage => _ability._damageModifier;

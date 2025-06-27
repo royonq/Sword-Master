@@ -6,7 +6,7 @@ public class SplitProjectile : SwordProjectile
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
 
-  public void Init(in ProjectileAfterHitStats.SplitStats state, float damageModifier = 1f)
+  public void Init(in SplitStats state, float damageModifier = 1f)
   {
     _damage = state.InitDamage * damageModifier;
     _speed = state.InitSpeed;
@@ -32,6 +32,17 @@ public class SplitProjectile : SwordProjectile
     if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && _ignoreCollider!=collision)
     {
       base.OnTriggerEnter2D(collision);
+    }
+  }
+  public readonly struct SplitStats
+  {
+    private readonly ProjectileAfterHitStats _projectile;
+    public float InitDamage => _projectile.Damage;
+    public float InitSpeed => _projectile.Speed;
+    public float InitLifetime => _projectile.Lifetime;
+    public SplitStats(ProjectileAfterHitStats projectile)
+    {
+      _projectile = projectile;
     }
   }
 }

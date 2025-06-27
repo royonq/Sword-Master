@@ -4,11 +4,11 @@ public class SatelliteSword : Projectile
 {
     [SerializeField] private GameObject _satellitePrefab;
     [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
-    private ProjectileAfterHitStats.SplitStats _states;
+    private SplitProjectile.SplitStats _states;
 
     private void Awake()
     {
-        _states =  new ProjectileAfterHitStats.SplitStats(_hitProjectileStats);
+        _states =  new SplitProjectile.SplitStats(_hitProjectileStats);
     }
 
     private void FixedUpdate()

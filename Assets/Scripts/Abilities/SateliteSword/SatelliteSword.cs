@@ -19,14 +19,14 @@ public class SatelliteSword : Projectile
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            
             if (!_isUpgraded)
             {
                 base.OnTriggerEnter2D(collision);
                 return;
             }
-        
-            SplitProjectile(collision);
             base.OnTriggerEnter2D(collision);
+            SplitProjectile(collision);
         }
     }
 

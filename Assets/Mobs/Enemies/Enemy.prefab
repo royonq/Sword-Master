@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4264612403728949264}
   - component: {fileID: 7850722125316552870}
   - component: {fileID: 6003274257852262763}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: SwordCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996845264454821332}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

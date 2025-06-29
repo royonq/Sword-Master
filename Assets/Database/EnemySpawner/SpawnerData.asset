@@ -15,5 +15,5 @@ MonoBehaviour:
   _spawnXmax: 10
   _spawnXmin: 40
   _spawnY: 10
-  _spawnRate: 2
-  _enemyWave: 030000000400000006000000
+  _spawnRate: 0.5
+  _enemyWave: 640000000400000006000000

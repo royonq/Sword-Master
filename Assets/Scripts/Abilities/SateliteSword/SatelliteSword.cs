@@ -3,7 +3,7 @@ using UnityEngine;
 public class SatelliteSword : Projectile
 {
     [SerializeField] private GameObject _satellitePrefab;
-    [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
+    
     
     private void FixedUpdate()
     {
@@ -19,14 +19,14 @@ public class SatelliteSword : Projectile
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            
             if (!_isUpgraded)
             {
                 base.OnTriggerEnter2D(collision);
                 return;
             }
-        
-            SplitProjectile(collision);
             base.OnTriggerEnter2D(collision);
+            SplitProjectile(collision);
         }
     }
 
@@ -44,7 +44,7 @@ public class SatelliteSword : Projectile
                 rotation
             );
             var afterHit = instancedProjectile.GetComponent<SplitProjectile>();
-            afterHit.Init(_hitProjectileStats.Damage, _hitProjectileStats.Speed, _hitProjectileStats.Lifetime, _isUpgraded);
+            afterHit.Init(_states);
             afterHit.SetIgnoreCollider(mobCollider);
         }
     }

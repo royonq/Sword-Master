@@ -1,15 +1,21 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class SplitProjectile : SwordProjectile
 {
+  [SerializeField] private ProjectileAfterHitStats _hitProjectileStats;
+  
   private readonly float _ignoreTime = 0.5f;
   private Collider2D _ignoreCollider;
-  public override void Init(float damage, float speed, float lifeTime, bool isUpgraded, float damageModifier = 1f)
+  
+  public override void Init(in ProjectileAbility.ProjectileStates  state, float damageModifier = 1f)
   {
-    base.Init(damage, speed, lifeTime, isUpgraded, damageModifier);
+    _states = state;
+    _damage = _hitProjectileStats.Damage;
+    _speed = _hitProjectileStats.Speed;
+    _lifeTime = _hitProjectileStats.Lifetime;
     LaunchProjectile();
+    Destroy(gameObject, _lifeTime);
   }
 
   public void SetIgnoreCollider(Collider2D collider)

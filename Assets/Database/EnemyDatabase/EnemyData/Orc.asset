@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 30
   _takeDamageSound: 103
-  _movementSpeed: 5
+  _movementSpeed: 4
   _damage: 5
   _moneyToDrop: 20
   _killExpirience: 10

@@ -12,3 +12,4 @@ public class ProjectileAfterHitStats : ScriptableObject
     [SerializeField] private float _lifetime;
     public float Lifetime => _lifetime;
 }
+

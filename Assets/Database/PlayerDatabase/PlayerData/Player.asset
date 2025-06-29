@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8ff0bf33e330f44baf38bef5826a06, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
+  _maxHealth: 100
   _takeDamageSound: 3
   _movementSpeed: 15
   _damage: 10

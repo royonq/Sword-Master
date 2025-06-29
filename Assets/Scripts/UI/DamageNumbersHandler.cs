@@ -36,7 +36,7 @@ public class DamageNumbersHandler : MonoBehaviour
     {
         Enemy.OnTakeDamage -= ShowDamageNumber;
     }
-    
+
     private void ShowDamageNumber(float damage, Vector2 enemyPosition)
     {
         var offsetX = Random.Range(-_offset, _offset);
@@ -48,7 +48,7 @@ public class DamageNumbersHandler : MonoBehaviour
         damageNumber.transform.position = spawnPosition;
         StartCoroutine(MoveAndReturn(damageNumber));
     }
-    
+
     private IEnumerator MoveAndReturn(GameObject damageNumber)
     {
         var lifetime = _damageNumberStats.LifeTime;
